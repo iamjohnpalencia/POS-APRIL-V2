@@ -2066,6 +2066,7 @@ Module RetrieveModule
     Public Sub DisplayInbox()
         Try
             If PROMPT_MESSAGE_DATATABLE.Rows.Count > 0 Then
+                POS.Enabled = False
                 Dim ConnectionLocal As MySqlConnection = LocalhostConn()
                 For i As Integer = 0 To PROMPT_MESSAGE_DATATABLE.Rows.Count - 1 Step +1
                     Dim sql = "INSERT INTO loc_message (`server_message_id`,`from`, `subject`, `content`, `guid`, `store_id`, `active`, `created_at`, `origin`, `seen`) VALUES (@1,@2,@3,@4,@5,@6,@7,@8,@9,@10)"
@@ -2094,6 +2095,11 @@ Module RetrieveModule
                 Next
             Else
                 POS.Enabled = True
+                For Each btn As Button In POS.Panel3.Controls.OfType(Of Button)()
+                    If btn.Text = "Simply Perfect" Then
+                        btn.PerformClick()
+                    End If
+                Next
             End If
 
         Catch ex As Exception

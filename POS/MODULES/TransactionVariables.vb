@@ -72,8 +72,26 @@
             SeniorDetails.NOTDISCOUNTEDAMOUNT = 0
 
             TRANSACTIONMODE = "Walk-In"
+
+            INVENTORY_DATATABLE = New DataTable
+            UPDATE_WORKER_CANCEL = False
+            UPDATE_ROW_COUNT = 0
+            UPDATE_PRODUCTS_DATATABLE = New DataTable
+            UPDATE_CATEGORY_DATATABLE = New DataTable
+            UPDATE_FORMULA_DATATABLE = New DataTable
+            UPDATE_INVENTORY_DATATABLE = New DataTable
+            UPDATE_COUPONS_DATATABLE = New DataTable
+            UPDATE_PARTNERS_DATATABLE = New DataTable
+            UPDATE_PRICE_CHANGE_DATATABLE = New DataTable
+            UPDATE_PRICE_CHANGE_BOOL = False
+            UPDATE_COUPON_APPROVAL_DATATABLE = New DataTable
+            UPDATE_COUPON_APPROVAL_BOOL = False
+            UPDATE_CUSTOM_PROD_APP_DATATABLE = New DataTable
+            UPDATE_CUSTOM_PROD_APP_BOOL = False
+            PROMPT_MESSAGE_DATATABLE = New DataTable
+            SELECT_DISCTINCT_PARTNERS_DT = New DataTable
         Catch ex As Exception
-            SendErrorReport(ex.TargetSite)
+            SendErrorReport(ex.ToString)
         End Try
     End Sub
 

@@ -2104,7 +2104,7 @@ Public Class POS
                 UPDATE_CUSTOM_PROD_APP_BOOL = False
             End If
 
-            DisplayInbox()
+
 
             BackgroundWorkerContent.WorkerReportsProgress = True
             BackgroundWorkerContent.WorkerSupportsCancellation = True
@@ -2277,11 +2277,9 @@ Public Class POS
             End If
             LoadCategory()
 
-            For Each btn As Button In Panel3.Controls.OfType(Of Button)()
-                If btn.Text = "Simply Perfect" Then
-                    btn.PerformClick()
-                End If
-            Next
+
+
+            DisplayInbox()
 
         Catch ex As Exception
             SendErrorReport(ex.ToString)
