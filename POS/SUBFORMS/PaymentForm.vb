@@ -61,10 +61,18 @@
     Private Sub TextBoxMONEY_TextChanged(sender As Object, e As EventArgs) Handles TextBoxMONEY.TextChanged
         Try
             If Val(TextBoxMONEY.Text) = 0 Then
-                TextBoxCHANGE.Text = "0"
+                TextBoxCHANGE.Text = "0.00"
+                TextBoxMONEY.Text = "0.00"
             End If
-            TextBoxCHANGE.Text = NUMBERFORMAT(Double.Parse(TextBoxMONEY.Text) - Double.Parse(TextBoxTOTALPAY.Text))
+            If Val(TextBoxTOTALPAY.Text) > 0 Then
+                If Val(TextBoxMONEY.Text) > 0 Then
+                    TextBoxCHANGE.Text = NUMBERFORMAT(Double.Parse(TextBoxMONEY.Text) - Double.Parse(TextBoxTOTALPAY.Text))
+                End If
+
+            End If
+
         Catch ex As Exception
+
         End Try
     End Sub
     Public Sub buttonpressedenter(ByVal btntext As String)
@@ -96,6 +104,7 @@
                 buttonpressedenterpayment(btntext:=ButtonNo9.Text)
             End If
         End If
+
     End Sub
     Private Sub ButtonNo8_Click(sender As Object, e As EventArgs) Handles ButtonNo8.Click
         If payment = False Then
@@ -109,6 +118,7 @@
                 buttonpressedenterpayment(btntext:=ButtonNo8.Text)
             End If
         End If
+
     End Sub
     Private Sub ButtonNo7_Click(sender As Object, e As EventArgs) Handles ButtonNo7.Click
         If payment = False Then
@@ -122,6 +132,7 @@
                 buttonpressedenterpayment(btntext:=ButtonNo7.Text)
             End If
         End If
+
     End Sub
     Private Sub ButtonNo6_Click(sender As Object, e As EventArgs) Handles ButtonNo6.Click
         If payment = False Then
@@ -135,6 +146,7 @@
                 buttonpressedenterpayment(btntext:=ButtonNo6.Text)
             End If
         End If
+
     End Sub
     Private Sub ButtonNo5_Click(sender As Object, e As EventArgs) Handles ButtonNo5.Click
         If payment = False Then
@@ -148,6 +160,7 @@
                 buttonpressedenterpayment(btntext:=ButtonNo5.Text)
             End If
         End If
+
     End Sub
     Private Sub ButtonNo4_Click(sender As Object, e As EventArgs) Handles ButtonNo4.Click
         If payment = False Then
@@ -161,6 +174,7 @@
                 buttonpressedenterpayment(btntext:=ButtonNo4.Text)
             End If
         End If
+
     End Sub
     Private Sub ButtonNo3_Click(sender As Object, e As EventArgs) Handles ButtonNo3.Click
         If payment = False Then
@@ -174,6 +188,7 @@
                 buttonpressedenterpayment(btntext:=ButtonNo3.Text)
             End If
         End If
+
     End Sub
     Private Sub ButtonNo2_Click(sender As Object, e As EventArgs) Handles ButtonNo2.Click
         If payment = False Then
@@ -187,6 +202,7 @@
                 buttonpressedenterpayment(btntext:=ButtonNo2.Text)
             End If
         End If
+
     End Sub
     Private Sub ButtonNo1_Click(sender As Object, e As EventArgs) Handles ButtonNo1.Click
         If payment = False Then
@@ -200,6 +216,7 @@
                 buttonpressedenterpayment(btntext:=ButtonNo1.Text)
             End If
         End If
+
     End Sub
     Private Sub ButtonNo0_Click(sender As Object, e As EventArgs) Handles ButtonNo0.Click
         If payment = False Then
@@ -236,9 +253,10 @@
     End Sub
     Private Sub ButtonClear_Click(sender As Object, e As EventArgs) Handles ButtonClear.Click
         If payment = False Then
-            TextBoxMONEY.Text = 0
-            TextBoxCHANGE.Text = 0
+            TextBoxMONEY.Text = "0.00"
+            TextBoxCHANGE.Text = "0.00"
         End If
+
     End Sub
     Private Sub PaymentForm_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.NumPad0 Then
@@ -276,10 +294,12 @@
 
     Private Sub ButtonEx1000_Click(sender As Object, e As EventArgs) Handles ButtonEx1000.Click
         TextBoxMONEY.Text = 1000
+
     End Sub
 
     Private Sub ButtonEX500_Click(sender As Object, e As EventArgs) Handles ButtonEX500.Click
         TextBoxMONEY.Text = 500
+
     End Sub
 
     Private Sub ButtonEX200_Click(sender As Object, e As EventArgs) Handles ButtonEX200.Click
@@ -295,8 +315,20 @@
     End Sub
 
     Private Sub TextBoxCHANGE_TextChanged(sender As Object, e As EventArgs) Handles TextBoxCHANGE.TextChanged
-        If Val(TextBoxCHANGE.Text) = 0 Then
-            TextBoxMONEY.Text = "0.00"
-        End If
+        'If Val(TextBoxCHANGE.Text) = 0 Then
+        '    TextBoxMONEY.Text = "0.00"
+        'End If
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        TextBoxMONEY.Text = TextBoxTOTALPAY.Text
+    End Sub
+
+    'Private Sub 
+    '    Try
+    '        TextBoxCHANGE.Text = Double.Parse(TextBoxMONEY.Text) - Double.Parse(TextBoxTOTALPAY.Text)
+    '    Catch ex As Exception
+    '        SendErrorReport(ex.ToString)
+    '    End Try
+    'End Sub
 End Class

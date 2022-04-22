@@ -73,13 +73,13 @@ Public Class Reports
             viewdeposit(False)
             FillDatagridZreadInv(False)
             LoadCrewSales(False)
-            If ClientRole = "Admin" Then
-                ButtonZreadAdmin.Visible = True
+            'If ClientRole = "Admin" Then
+            '    ButtonZreadAdmin.Visible = True
 
-            Else
-                ButtonZreadAdmin.Visible = False
+            'Else
+            '    ButtonZreadAdmin.Visible = False
 
-            End If
+            'End If
 
             If S_Zreading = Format(Now().AddDays(1), "yyyy-MM-dd") Then
                 'ButtonZread.Enabled = False

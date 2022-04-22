@@ -2186,6 +2186,7 @@ Partial Class Reports
         Me.ButtonZreadAdmin.Name = "ButtonZreadAdmin"
         Me.ButtonZreadAdmin.Size = New System.Drawing.Size(110, 22)
         Me.ButtonZreadAdmin.Text = "Z-Reading(Admin)"
+        Me.ButtonZreadAdmin.Visible = False
         '
         'ToolStripButtonZReadingReprint
         '
