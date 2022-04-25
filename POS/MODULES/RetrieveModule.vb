@@ -1634,6 +1634,7 @@ Module RetrieveModule
             UPDATE_COUPONS_DATATABLE.Columns.Add("Effectivedate")
             UPDATE_COUPONS_DATATABLE.Columns.Add("Expirydate")
             UPDATE_COUPONS_DATATABLE.Columns.Add("date_created")
+            UPDATE_COUPONS_DATATABLE.Columns.Add("active")
 
             Dim Query = "SELECT * FROM tbcoupon"
             Dim CmdCheck As MySqlCommand = New MySqlCommand(Query, LocalhostConn)
@@ -1644,7 +1645,7 @@ Module RetrieveModule
             Dim daserver As MySqlDataAdapter
             Dim dtserver As DataTable
             If DtCheck.Rows.Count < 1 Then
-                Dim sql = "SELECT `ID`,`Couponname_`,`Desc_`,`Discountvalue_`,`Referencevalue_`,`Type`,`Bundlebase_`,`BBValue_`,`Bundlepromo_`,`BPValue_`,`Effectivedate`,`Expirydate`,`date_created` FROM admin_coupon"
+                Dim sql = "SELECT `ID`,`Couponname_`,`Desc_`,`Discountvalue_`,`Referencevalue_`,`Type`,`Bundlebase_`,`BBValue_`,`Bundlepromo_`,`BPValue_`,`Effectivedate`,`Expirydate`,`date_created`,`active` FROM admin_coupon"
                 cmdserver = New MySqlCommand(sql, ServerCloudCon())
                 daserver = New MySqlDataAdapter(cmdserver)
                 dtserver = New DataTable
@@ -1676,6 +1677,7 @@ Module RetrieveModule
                     Prod("Effectivedate") = dtserver(i)(10)
                     Prod("Expirydate") = dtserver(i)(11)
                     Prod("date_created") = dtserver(i)(12)
+                    Prod("active") = dtserver(i)(13)
                     UPDATE_COUPONS_DATATABLE.Rows.Add(Prod)
                     If UPDATE_WORKER_CANCEL = False Then
                         If FromPosUpdate = 1 Then
@@ -1699,7 +1701,7 @@ Module RetrieveModule
                             Ids += "," & LoadCouponsLocal(i)(1) & ""
                         End If
                     Next
-                    Dim sql = "SELECT `ID`,`Couponname_`,`Desc_`,`Discountvalue_`,`Referencevalue_`,`Type`,`Bundlebase_`,`BBValue_`,`Bundlepromo_`,`BPValue_`,`Effectivedate`,`Expirydate`,`date_created` FROM admin_coupon WHERE ID IN (" & Ids & ")"
+                    Dim sql = "SELECT `ID`,`Couponname_`,`Desc_`,`Discountvalue_`,`Referencevalue_`,`Type`,`Bundlebase_`,`BBValue_`,`Bundlepromo_`,`BPValue_`,`Effectivedate`,`Expirydate`,`date_created`,`active` FROM admin_coupon WHERE ID IN (" & Ids & ")"
                     cmdserver = New MySqlCommand(sql, ServerCloudCon())
                     daserver = New MySqlDataAdapter(cmdserver)
                     dtserver = New DataTable
@@ -1720,6 +1722,7 @@ Module RetrieveModule
                             Prod("Effectivedate") = dtserver(i)(10)
                             Prod("Expirydate") = dtserver(i)(11)
                             Prod("date_created") = dtserver(i)(12)
+                            Prod("active") = dtserver(i)(13)
                             UPDATE_COUPONS_DATATABLE.Rows.Add(Prod)
                         End If
                         If UPDATE_WORKER_CANCEL = False Then
@@ -1734,7 +1737,7 @@ Module RetrieveModule
                             End If
                         End If
                     Next
-                    Dim sql2 = "SELECT `ID`,`Couponname_`,`Desc_`,`Discountvalue_`,`Referencevalue_`,`Type`,`Bundlebase_`,`BBValue_`,`Bundlepromo_`,`BPValue_`,`Effectivedate`,`Expirydate`,`date_created` FROM admin_coupon WHERE ID NOT IN (" & Ids & ")"
+                    Dim sql2 = "SELECT `ID`,`Couponname_`,`Desc_`,`Discountvalue_`,`Referencevalue_`,`Type`,`Bundlebase_`,`BBValue_`,`Bundlepromo_`,`BPValue_`,`Effectivedate`,`Expirydate`,`date_created`,`active` FROM admin_coupon WHERE ID NOT IN (" & Ids & ")"
                     cmdserver = New MySqlCommand(sql2, ServerCloudCon())
                     daserver = New MySqlDataAdapter(cmdserver)
                     dtserver = New DataTable
@@ -1755,6 +1758,7 @@ Module RetrieveModule
                             Prod("Effectivedate") = dtserver(i)(10)
                             Prod("Expirydate") = dtserver(i)(11)
                             Prod("date_created") = dtserver(i)(12)
+                            Prod("active") = dtserver(i)(13)
                             UPDATE_COUPONS_DATATABLE.Rows.Add(Prod)
                             If UPDATE_WORKER_CANCEL = False Then
                                 If FromPosUpdate = 1 Then

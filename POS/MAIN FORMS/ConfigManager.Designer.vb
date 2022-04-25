@@ -149,17 +149,19 @@ Partial Class ConfigManager
         Me.Label42 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel9 = New System.Windows.Forms.TableLayoutPanel()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.TextBoxZeroRatedTax = New System.Windows.Forms.TextBox()
         Me.ButtonEditAddSettings = New System.Windows.Forms.Button()
         Me.ButtonGetExportPath = New System.Windows.Forms.Button()
         Me.ButtonSaveAddSettings = New System.Windows.Forms.Button()
-        Me.TextBoxExportPath = New System.Windows.Forms.TextBox()
-        Me.Label17 = New System.Windows.Forms.Label()
         Me.Label56 = New System.Windows.Forms.Label()
-        Me.TextBoxTerminalNo = New System.Windows.Forms.TextBox()
+        Me.RadioButtonNO = New System.Windows.Forms.RadioButton()
+        Me.TextBoxExportPath = New System.Windows.Forms.TextBox()
         Me.RadioButtonYES = New System.Windows.Forms.RadioButton()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.TextBoxTerminalNo = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
-        Me.RadioButtonNO = New System.Windows.Forms.RadioButton()
         Me.TextBoxTax = New System.Windows.Forms.TextBox()
         Me.TextBoxSINumber = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
@@ -167,6 +169,7 @@ Partial Class ConfigManager
         Me.Label58 = New System.Windows.Forms.Label()
         Me.Label57 = New System.Windows.Forms.Label()
         Me.Label47 = New System.Windows.Forms.Label()
+        Me.Label83 = New System.Windows.Forms.Label()
         Me.GroupBox19 = New System.Windows.Forms.GroupBox()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
@@ -288,18 +291,6 @@ Partial Class ConfigManager
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox21 = New System.Windows.Forms.GroupBox()
         Me.DataGridViewCoupons = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column28 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column29 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column30 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column31 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox15 = New System.Windows.Forms.GroupBox()
         Me.DataGridViewINVENTORY = New System.Windows.Forms.DataGridView()
         Me.Column35 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -393,9 +384,19 @@ Partial Class ConfigManager
         Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.BackgroundWorkerValidateSerial = New System.ComponentModel.BackgroundWorker()
-        Me.TextBoxZeroRatedTax = New System.Windows.Forms.TextBox()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label83 = New System.Windows.Forms.Label()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column28 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column29 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column30 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column31 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column59 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -1954,6 +1955,25 @@ Partial Class ConfigManager
         Me.GroupBox10.TabStop = False
         Me.GroupBox10.Text = "Additional Settings"
         '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(35, 141)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(96, 14)
+        Me.Label16.TabIndex = 296
+        Me.Label16.Text = "Zero Rated Tax:"
+        '
+        'TextBoxZeroRatedTax
+        '
+        Me.TextBoxZeroRatedTax.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBoxZeroRatedTax.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxZeroRatedTax.Location = New System.Drawing.Point(38, 160)
+        Me.TextBoxZeroRatedTax.Name = "TextBoxZeroRatedTax"
+        Me.TextBoxZeroRatedTax.Size = New System.Drawing.Size(107, 15)
+        Me.TextBoxZeroRatedTax.TabIndex = 295
+        '
         'ButtonEditAddSettings
         '
         Me.ButtonEditAddSettings.BackColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(74, Byte), Integer), CType(CType(74, Byte), Integer))
@@ -1996,25 +2016,6 @@ Partial Class ConfigManager
         Me.ButtonSaveAddSettings.Text = "Save"
         Me.ButtonSaveAddSettings.UseVisualStyleBackColor = False
         '
-        'TextBoxExportPath
-        '
-        Me.TextBoxExportPath.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBoxExportPath.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxExportPath.Location = New System.Drawing.Point(38, 43)
-        Me.TextBoxExportPath.Name = "TextBoxExportPath"
-        Me.TextBoxExportPath.Size = New System.Drawing.Size(200, 15)
-        Me.TextBoxExportPath.TabIndex = 282
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(35, 104)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(76, 14)
-        Me.Label17.TabIndex = 292
-        Me.Label17.Text = "Terminal No."
-        '
         'Label56
         '
         Me.Label56.AutoSize = True
@@ -2025,14 +2026,26 @@ Partial Class ConfigManager
         Me.Label56.TabIndex = 285
         Me.Label56.Text = "Zero Rated:"
         '
-        'TextBoxTerminalNo
+        'RadioButtonNO
         '
-        Me.TextBoxTerminalNo.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBoxTerminalNo.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxTerminalNo.Location = New System.Drawing.Point(38, 123)
-        Me.TextBoxTerminalNo.Name = "TextBoxTerminalNo"
-        Me.TextBoxTerminalNo.Size = New System.Drawing.Size(245, 15)
-        Me.TextBoxTerminalNo.TabIndex = 291
+        Me.RadioButtonNO.AutoSize = True
+        Me.RadioButtonNO.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButtonNO.Location = New System.Drawing.Point(244, 159)
+        Me.RadioButtonNO.Name = "RadioButtonNO"
+        Me.RadioButtonNO.Size = New System.Drawing.Size(40, 18)
+        Me.RadioButtonNO.TabIndex = 288
+        Me.RadioButtonNO.TabStop = True
+        Me.RadioButtonNO.Text = "No"
+        Me.RadioButtonNO.UseVisualStyleBackColor = True
+        '
+        'TextBoxExportPath
+        '
+        Me.TextBoxExportPath.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBoxExportPath.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxExportPath.Location = New System.Drawing.Point(38, 43)
+        Me.TextBoxExportPath.Name = "TextBoxExportPath"
+        Me.TextBoxExportPath.Size = New System.Drawing.Size(200, 15)
+        Me.TextBoxExportPath.TabIndex = 282
         '
         'RadioButtonYES
         '
@@ -2045,6 +2058,25 @@ Partial Class ConfigManager
         Me.RadioButtonYES.TabStop = True
         Me.RadioButtonYES.Text = "Yes"
         Me.RadioButtonYES.UseVisualStyleBackColor = True
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(35, 104)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(76, 14)
+        Me.Label17.TabIndex = 292
+        Me.Label17.Text = "Terminal No."
+        '
+        'TextBoxTerminalNo
+        '
+        Me.TextBoxTerminalNo.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBoxTerminalNo.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxTerminalNo.Location = New System.Drawing.Point(38, 123)
+        Me.TextBoxTerminalNo.Name = "TextBoxTerminalNo"
+        Me.TextBoxTerminalNo.Size = New System.Drawing.Size(245, 15)
+        Me.TextBoxTerminalNo.TabIndex = 291
         '
         'Label18
         '
@@ -2065,18 +2097,6 @@ Partial Class ConfigManager
         Me.Label20.Size = New System.Drawing.Size(76, 14)
         Me.Label20.TabIndex = 283
         Me.Label20.Text = "Export Path:"
-        '
-        'RadioButtonNO
-        '
-        Me.RadioButtonNO.AutoSize = True
-        Me.RadioButtonNO.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButtonNO.Location = New System.Drawing.Point(244, 159)
-        Me.RadioButtonNO.Name = "RadioButtonNO"
-        Me.RadioButtonNO.Size = New System.Drawing.Size(40, 18)
-        Me.RadioButtonNO.TabIndex = 288
-        Me.RadioButtonNO.TabStop = True
-        Me.RadioButtonNO.Text = "No"
-        Me.RadioButtonNO.UseVisualStyleBackColor = True
         '
         'TextBoxTax
         '
@@ -2141,6 +2161,15 @@ Partial Class ConfigManager
         Me.Label47.Size = New System.Drawing.Size(117, 19)
         Me.Label47.TabIndex = 291
         Me.Label47.Text = "____________"
+        '
+        'Label83
+        '
+        Me.Label83.AutoSize = True
+        Me.Label83.Location = New System.Drawing.Point(35, 158)
+        Me.Label83.Name = "Label83"
+        Me.Label83.Size = New System.Drawing.Size(117, 19)
+        Me.Label83.TabIndex = 297
+        Me.Label83.Text = "____________"
         '
         'GroupBox19
         '
@@ -3523,7 +3552,7 @@ Partial Class ConfigManager
         Me.DataGridViewCoupons.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.DataGridViewCoupons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewCoupons.ColumnHeadersVisible = False
-        Me.DataGridViewCoupons.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.Column25, Me.Column26, Me.Column27, Me.Column28, Me.Column29, Me.Column30, Me.Column31})
+        Me.DataGridViewCoupons.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.Column25, Me.Column26, Me.Column27, Me.Column28, Me.Column29, Me.Column30, Me.Column31, Me.Column59})
         Me.DataGridViewCoupons.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridViewCoupons.Location = New System.Drawing.Point(3, 23)
         Me.DataGridViewCoupons.Name = "DataGridViewCoupons"
@@ -3531,66 +3560,6 @@ Partial Class ConfigManager
         Me.DataGridViewCoupons.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridViewCoupons.Size = New System.Drawing.Size(470, 70)
         Me.DataGridViewCoupons.TabIndex = 65
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Column18"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Column19"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Column20"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Column21"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.HeaderText = "Column22"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        '
-        'Column25
-        '
-        Me.Column25.HeaderText = "Column25"
-        Me.Column25.Name = "Column25"
-        '
-        'Column26
-        '
-        Me.Column26.HeaderText = "Column26"
-        Me.Column26.Name = "Column26"
-        '
-        'Column27
-        '
-        Me.Column27.HeaderText = "Column27"
-        Me.Column27.Name = "Column27"
-        '
-        'Column28
-        '
-        Me.Column28.HeaderText = "Column28"
-        Me.Column28.Name = "Column28"
-        '
-        'Column29
-        '
-        Me.Column29.HeaderText = "Column29"
-        Me.Column29.Name = "Column29"
-        '
-        'Column30
-        '
-        Me.Column30.HeaderText = "Column30"
-        Me.Column30.Name = "Column30"
-        '
-        'Column31
-        '
-        Me.Column31.HeaderText = "Column31"
-        Me.Column31.Name = "Column31"
         '
         'GroupBox15
         '
@@ -4255,33 +4224,70 @@ Partial Class ConfigManager
         'BackgroundWorkerValidateSerial
         '
         '
-        'TextBoxZeroRatedTax
+        'DataGridViewTextBoxColumn6
         '
-        Me.TextBoxZeroRatedTax.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBoxZeroRatedTax.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxZeroRatedTax.Location = New System.Drawing.Point(38, 160)
-        Me.TextBoxZeroRatedTax.Name = "TextBoxZeroRatedTax"
-        Me.TextBoxZeroRatedTax.Size = New System.Drawing.Size(107, 15)
-        Me.TextBoxZeroRatedTax.TabIndex = 295
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Column18"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         '
-        'Label16
+        'DataGridViewTextBoxColumn7
         '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(35, 141)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(96, 14)
-        Me.Label16.TabIndex = 296
-        Me.Label16.Text = "Zero Rated Tax:"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Column19"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
         '
-        'Label83
+        'DataGridViewTextBoxColumn8
         '
-        Me.Label83.AutoSize = True
-        Me.Label83.Location = New System.Drawing.Point(35, 158)
-        Me.Label83.Name = "Label83"
-        Me.Label83.Size = New System.Drawing.Size(117, 19)
-        Me.Label83.TabIndex = 297
-        Me.Label83.Text = "____________"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Column20"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Column21"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.HeaderText = "Column22"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        '
+        'Column25
+        '
+        Me.Column25.HeaderText = "Column25"
+        Me.Column25.Name = "Column25"
+        '
+        'Column26
+        '
+        Me.Column26.HeaderText = "Column26"
+        Me.Column26.Name = "Column26"
+        '
+        'Column27
+        '
+        Me.Column27.HeaderText = "Column27"
+        Me.Column27.Name = "Column27"
+        '
+        'Column28
+        '
+        Me.Column28.HeaderText = "Column28"
+        Me.Column28.Name = "Column28"
+        '
+        'Column29
+        '
+        Me.Column29.HeaderText = "Column29"
+        Me.Column29.Name = "Column29"
+        '
+        'Column30
+        '
+        Me.Column30.HeaderText = "Column30"
+        Me.Column30.Name = "Column30"
+        '
+        'Column31
+        '
+        Me.Column31.HeaderText = "Column31"
+        Me.Column31.Name = "Column31"
+        '
+        'Column59
+        '
+        Me.Column59.HeaderText = "Column59"
+        Me.Column59.Name = "Column59"
         '
         'ConfigManager
         '
@@ -4711,18 +4717,6 @@ Partial Class ConfigManager
     Friend WithEvents RadioButtonPrintReturnsNo As RadioButton
     Friend WithEvents RadioButtonPrintReturnsYes As RadioButton
     Friend WithEvents Label29 As Label
-    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
-    Friend WithEvents Column25 As DataGridViewTextBoxColumn
-    Friend WithEvents Column26 As DataGridViewTextBoxColumn
-    Friend WithEvents Column27 As DataGridViewTextBoxColumn
-    Friend WithEvents Column28 As DataGridViewTextBoxColumn
-    Friend WithEvents Column29 As DataGridViewTextBoxColumn
-    Friend WithEvents Column30 As DataGridViewTextBoxColumn
-    Friend WithEvents Column31 As DataGridViewTextBoxColumn
     Friend WithEvents TextBoxProvName As TextBox
     Friend WithEvents TextBoxMunName As TextBox
     Friend WithEvents Label39 As Label
@@ -4789,4 +4783,17 @@ Partial Class ConfigManager
     Friend WithEvents Label16 As Label
     Friend WithEvents TextBoxZeroRatedTax As TextBox
     Friend WithEvents Label83 As Label
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
+    Friend WithEvents Column25 As DataGridViewTextBoxColumn
+    Friend WithEvents Column26 As DataGridViewTextBoxColumn
+    Friend WithEvents Column27 As DataGridViewTextBoxColumn
+    Friend WithEvents Column28 As DataGridViewTextBoxColumn
+    Friend WithEvents Column29 As DataGridViewTextBoxColumn
+    Friend WithEvents Column30 As DataGridViewTextBoxColumn
+    Friend WithEvents Column31 As DataGridViewTextBoxColumn
+    Friend WithEvents Column59 As DataGridViewTextBoxColumn
 End Class

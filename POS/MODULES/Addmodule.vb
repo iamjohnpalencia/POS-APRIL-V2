@@ -351,9 +351,9 @@ Module Addmodule
                     cmdlocal = New MySqlCommand(sql, Connection)
                     Dim result As Integer = cmdlocal.ExecuteScalar
                     If result = 0 Then
-                        sql = "INSERT INTO `tbcoupon`(`Couponname_`, `Desc_`, `Discountvalue_`, `Referencevalue_`, `Type`, `Bundlebase_`, `BBValue_`, `Bundlepromo_`, `BPValue_`, `Effectivedate`, `Expirydate`, `active`, `store_id`, `crew_id`, `guid`, `origin`, `synced`, `date_created`) VALUES (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@16,@17)"
+                        sql = "INSERT INTO `tbcoupon`(`Couponname_`, `Desc_`, `Discountvalue_`, `Referencevalue_`, `Type`, `Bundlebase_`, `BBValue_`, `Bundlepromo_`, `BPValue_`, `Effectivedate`, `Expirydate`, `date_created`, `active`, `store_id`, `crew_id`, `guid`, `origin`, `synced`) VALUES (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@16,@17)"
                     Else
-                        sql = "UPDATE `tbcoupon` SET `Couponname_` = @0, `Desc_` = @1, `Discountvalue_` = @2, `Referencevalue_` = @3, `Type` = @4, `Bundlebase_` = @5, `BBValue_` = @6, `Bundlepromo_` = @7, `BPValue_` = @8, `Effectivedate` = @9, `Expirydate` = @10, `active` = @11, `store_id` = @12, `crew_id` = @13, `guid` = @14, `origin` = @15, `synced` = @16, `date_created` = @17 WHERE ID = " & UPDATE_COUPONS_DATATABLE(i)(0)
+                        sql = "UPDATE `tbcoupon` SET `Couponname_` = @0, `Desc_` = @1, `Discountvalue_` = @2, `Referencevalue_` = @3, `Type` = @4, `Bundlebase_` = @5, `BBValue_` = @6, `Bundlepromo_` = @7, `BPValue_` = @8, `Effectivedate` = @9, `Expirydate` = @10, `date_created` = @11, `active` = @12, `store_id` = @13, `crew_id` = @14, `guid` = @15, `origin` = @16, `synced` = @17 WHERE ID = " & UPDATE_COUPONS_DATATABLE(i)(0)
                     End If
                     Dim Crew As String = ""
                     If FromPosUpdate = 1 Then
@@ -361,6 +361,7 @@ Module Addmodule
                     Else
                         Crew = "0"
                     End If
+
                     cmdlocal = New MySqlCommand(sql, Connection)
                     cmdlocal.Parameters.Add("@0", MySqlDbType.Text).Value = UPDATE_COUPONS_DATATABLE(i)(1)
                     cmdlocal.Parameters.Add("@1", MySqlDbType.Text).Value = UPDATE_COUPONS_DATATABLE(i)(2)
@@ -373,13 +374,13 @@ Module Addmodule
                     cmdlocal.Parameters.Add("@8", MySqlDbType.Text).Value = UPDATE_COUPONS_DATATABLE(i)(9)
                     cmdlocal.Parameters.Add("@9", MySqlDbType.Text).Value = UPDATE_COUPONS_DATATABLE(i)(10)
                     cmdlocal.Parameters.Add("@10", MySqlDbType.Text).Value = UPDATE_COUPONS_DATATABLE(i)(11)
-                    cmdlocal.Parameters.Add("@11", MySqlDbType.Text).Value = "1"
-                    cmdlocal.Parameters.Add("@12", MySqlDbType.Text).Value = ClientStoreID
-                    cmdlocal.Parameters.Add("@13", MySqlDbType.Text).Value = Crew
-                    cmdlocal.Parameters.Add("@14", MySqlDbType.Text).Value = ClientGuid
-                    cmdlocal.Parameters.Add("@15", MySqlDbType.Text).Value = "Server"
-                    cmdlocal.Parameters.Add("@16", MySqlDbType.Text).Value = "Synced"
-                    cmdlocal.Parameters.Add("@17", MySqlDbType.Text).Value = UPDATE_COUPONS_DATATABLE(i)(12)
+                    cmdlocal.Parameters.Add("@11", MySqlDbType.Text).Value = UPDATE_COUPONS_DATATABLE(i)(12)
+                    cmdlocal.Parameters.Add("@12", MySqlDbType.Text).Value = UPDATE_COUPONS_DATATABLE(i)(13)
+                    cmdlocal.Parameters.Add("@13", MySqlDbType.Text).Value = ClientStoreID
+                    cmdlocal.Parameters.Add("@14", MySqlDbType.Text).Value = Crew
+                    cmdlocal.Parameters.Add("@15", MySqlDbType.Text).Value = ClientGuid
+                    cmdlocal.Parameters.Add("@16", MySqlDbType.Text).Value = "Server"
+                    cmdlocal.Parameters.Add("@17", MySqlDbType.Text).Value = "Synced"
                     cmdlocal.ExecuteNonQuery()
                     If FromPosUpdate = 0 Then
                         Loading.Instance.Invoke(Sub()

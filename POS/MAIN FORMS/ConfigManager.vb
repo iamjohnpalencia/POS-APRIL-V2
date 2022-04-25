@@ -1825,7 +1825,7 @@ Public Class ConfigManager
             fields = "*"
             Dim DatatableCoupons = GLOBAL_SELECT_ALL_FUNCTION_CLOUD(table, fields, DataGridViewCoupons)
             For Each row As DataRow In DatatableCoupons.Rows
-                DataGridViewCoupons.Rows.Add(row("Couponname_"), row("Desc_"), row("Discountvalue_"), row("Referencevalue_"), row("Type"), row("Bundlebase_"), row("BBValue_"), row("Bundlepromo_"), row("BPValue_"), row("Effectivedate"), row("Expirydate"), row("date_created"))
+                DataGridViewCoupons.Rows.Add(row("Couponname_"), row("Desc_"), row("Discountvalue_"), row("Referencevalue_"), row("Type"), row("Bundlebase_"), row("BBValue_"), row("Bundlepromo_"), row("BPValue_"), row("Effectivedate"), row("Expirydate"), row("date_created"), row("active"))
             Next
             TextBox1.Text += FullDate24HR() & " :    Complete(Fetching of coupons data)" & vbNewLine
         Catch ex As Exception
@@ -2070,7 +2070,7 @@ Public Class ConfigManager
                     cmdlocal.Parameters.Add("@14", MySqlDbType.Text).Value = UserGUID
                     cmdlocal.Parameters.Add("@15", MySqlDbType.Text).Value = "Server"
                     cmdlocal.Parameters.Add("@16", MySqlDbType.Text).Value = "Synced"
-                    cmdlocal.Parameters.Add("@17", MySqlDbType.Text).Value = 1
+                    cmdlocal.Parameters.Add("@17", MySqlDbType.Text).Value = .Rows(i).Cells(12).Value.ToString
                     cmdlocal.ExecuteNonQuery()
                 Next
                 ConnectionLocal.Close()
