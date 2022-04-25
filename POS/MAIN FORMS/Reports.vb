@@ -2403,6 +2403,8 @@ Public Class Reports
 
     Private Sub GenerateTxtFile(VoidReturn As Boolean)
         Try
+            Dim Denom As String = ""
+
             Dim connectionlocal As MySqlConnection = LocalhostConn()
             Dim sql As String = ""
             Dim cmd As MySqlCommand
@@ -2434,6 +2436,7 @@ Public Class Reports
 
             End With
             If VoidReturn Then
+                Denom = "-"
                 sql = "SELECT count(id) FROM loc_receipt WHERE type IN ('Header','REFUND-HEADER') AND status = 1 ORDER BY id ASC"
             Else
                 sql = "SELECT count(id) FROM loc_receipt WHERE type IN ('Header','SALES-INVOICE') AND status = 1 ORDER BY id ASC"
@@ -2531,11 +2534,11 @@ Public Class Reports
                                 TxtFileLine(a) = "     @" & dt(ai)(3) & "         " & price
                                 a += 1
                             Else
-                                TxtFileLine(a) = dt(ai)(4) & "      " & dt(ai)(2) & "      " & dt(ai)(5) & "      " & price
+                                TxtFileLine(a) = dt(ai)(4) & "      " & dt(ai)(2) & "      " & dt(ai)(5) & "      " & Denom & price
                                 a += 1
                             End If
                         Else
-                            TxtFileLine(a) = dt(ai)(4) & "      " & dt(ai)(2) & "      " & dt(ai)(5) & "      " & price
+                            TxtFileLine(a) = dt(ai)(4) & "      " & dt(ai)(2) & "      " & dt(ai)(5) & "      " & Denom & price
                             a += 1
                             If dt(ai)(17) > 0 Then
                                 TxtFileLine(a) = "     + UPGRADE BRWN " & dt(ai)(17)
@@ -2576,32 +2579,32 @@ Public Class Reports
                                 TxtFileLine(a) = "Sub Total:                " & NETSALES
                                 a += 1
                                 If reader("discount_type") <> "N/A" Then
-                                    TxtFileLine(a) = "Discount: " & reader("discount_type") & "        " & reader("totaldiscount")
+                                    TxtFileLine(a) = "Discount: " & reader("discount_type") & "        " & Denom & reader("totaldiscount")
                                     a += 1
                                 Else
-                                    TxtFileLine(a) = "Discount:                 " & reader("totaldiscount")
+                                    TxtFileLine(a) = "Discount:                 " & Denom & reader("totaldiscount")
                                     a += 1
                                 End If
 
-                                TxtFileLine(a) = "Order Total:              " & reader("amountdue")
+                                TxtFileLine(a) = "Order Total:              " & Denom & reader("amountdue")
                                 a += 1
-                                TxtFileLine(a) = "Credit Sale:              " & reader("amounttendered")
+                                TxtFileLine(a) = "Credit Sale:              " & Denom & reader("amounttendered")
                                 a += 1
-                                TxtFileLine(a) = "Change:                   " & reader("change")
+                                TxtFileLine(a) = "Change:                   " & Denom & reader("change")
                                 a += 1
                                 TxtFileLine(a) = "    ***********************"
                                 a += 1
                                 TxtFileLine(a) = "-------------------------------"
                                 a += 1
-                                TxtFileLine(a) = "Vatable Sales:            " & reader("vatablesales")
+                                TxtFileLine(a) = "Vatable Sales:            " & Denom & reader("vatablesales")
                                 a += 1
-                                TxtFileLine(a) = "Vat Exempt Sales:         " & reader("vatexemptsales")
+                                TxtFileLine(a) = "Vat Exempt Sales:         " & Denom & reader("vatexemptsales")
                                 a += 1
-                                TxtFileLine(a) = "Vat Amount:               " & reader("vatpercentage")
+                                TxtFileLine(a) = "Vat Amount:               " & Denom & reader("vatpercentage")
                                 a += 1
-                                TxtFileLine(a) = "Less Vat:                 " & "0.00"
+                                TxtFileLine(a) = "Less Vat:                 " & Denom & "0.00"
                                 a += 1
-                                TxtFileLine(a) = "Zero Rated Sales:         " & reader("zeroratedsales")
+                                TxtFileLine(a) = "Zero Rated Sales:         " & Denom & reader("zeroratedsales")
                                 a += 1
                                 TxtFileLine(a) = "    ***********************"
                                 a += 1
