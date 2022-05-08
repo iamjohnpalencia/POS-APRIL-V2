@@ -16,13 +16,9 @@ Public Class ConfirmRefund
 
         Try
             If CheckColumnIfExist("user_code", "loc_users WHERE user_code = '" & Trim(TextBox1.Text) & "' AND user_level IN ('Manager', 'Admin', 'Head Crew')") Then
-                Dim UserCodeID = returnselect("user_id", "loc_users WHERE user_code = '" & Trim(TextBox1.Text) & "'")
-                SettingsForm.INSERTRETURNS(TRANSACTIONNUMBER)
-                GLOBAL_SYSTEM_LOGS("REFUND", "Crew: " & ClientCrewID & ", TRN. ID: " & TRANSACTIONNUMBER & ", Code: " & UserCodeID & ", Total: " & REFUNDTOTAL)
-                UpdateInventory(True)
-                DisableCouponTotal(TRANSACTIONNUMBER)
+
                 Button3.PerformClick()
-                Close()
+
             Else
                 MessageBox.Show("User code does not exist", "NOTICE", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
@@ -59,7 +55,13 @@ Public Class ConfirmRefund
 
             ReceiptHeaderOne(sender, e, True, "", False, True)
             ReceiptBody(sender, e, True, TRANSACTIONNUMBER, False)
-            ReceiptBodyFooter(sender, e, True, TRANSACTIONNUMBER)
+
+            If SettingsForm.DataGridViewITEMRETURN1.SelectedRows(0).Cells(2).Value > 0 Then
+                ReceiptBodyFooter(sender, e, True, TRANSACTIONNUMBER, True, True)
+            Else
+                ReceiptBodyFooter(sender, e, True, TRANSACTIONNUMBER, True, False)
+            End If
+
             ReceiptFooterOne(sender, e, True, False)
 
         Catch ex As Exception
@@ -115,6 +117,14 @@ Public Class ConfirmRefund
                 Next
                 ReprintReturnsForm = 1
             End If
+
+            Dim UserCodeID = returnselect("user_id", "loc_users WHERE user_code = '" & Trim(TextBox1.Text) & "'")
+            SettingsForm.INSERTRETURNS(TRANSACTIONNUMBER)
+            GLOBAL_SYSTEM_LOGS("REFUND", "Crew: " & ClientCrewID & ", TRN. ID: " & TRANSACTIONNUMBER & ", Code: " & UserCodeID & ", Total: " & REFUNDTOTAL)
+            UpdateInventory(True)
+            DisableCouponTotal(TRANSACTIONNUMBER)
+
+            Close()
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try

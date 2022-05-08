@@ -146,8 +146,8 @@ Module publicVariables
     Public ValidDatabaseLocalConnection As Boolean = False
 
     Public DISABLESERVEROTHERSPRODUCT As Boolean = False
-    Public DisallowedCharacters As String = "!#$%'~`{}^¨|°¬+[]^¨\/,;=?<>*&()-+=" & """"
-    Public DisallowedCharactersCustom As String = "!#$%'~`{}^¨|°¬+[]^¨\,;=?<>*&()+=" & """"
+    Public DisallowedCharacters As String = "!#$%'~`{}^¨|°¬+[]^¨\/,;=?<>*&-+=" & """"
+    Public DisallowedCharactersCustom As String = "!#$%'~`{}^¨|°¬+[]^¨\,;=?<>*&+=" & """"
 
     Public ProductTotalPrice As Double = 0
     Public HASOTHERSLOCALPRODUCT As Boolean = False
@@ -169,7 +169,7 @@ Module publicVariables
     Public XREADORZREAD As String
 
     Public INVENTORY_DATATABLE As DataTable
-    'Updates Variables
+    '################################################################ Updates Variables
     Public UPDATE_WORKER_CANCEL As Boolean = False
     Public UPDATE_ROW_COUNT As Integer = 0
     Public UPDATE_PRODUCTS_DATATABLE As DataTable
@@ -191,8 +191,16 @@ Module publicVariables
 
 
     Public PROMPT_MESSAGE_DATATABLE As DataTable = New DataTable
-    'Public CustomProductsApproval As DataTable
-    'Dim CustomProdctsAppBool As Boolean = False
-
     Public SELECT_DISCTINCT_PARTNERS_DT As DataTable
+
+
+    '################################################################ CUSTOMER INFORMATION
+    Public CUST_INFO_FILLED As Boolean = False
+    Public CUST_INFO_NAME As String = ""
+    Public CUST_INFO_TIN As String = ""
+    Public CUST_INFO_ADDRESS As String = ""
+    Public CUST_INFO_BUSINESS As String = ""
+    '################################################################ EJOURNAL 
+    Public EJOURNAL_TotalLines As Integer = 0
+    Public EJOURLAN_Content As String = ""
 End Module

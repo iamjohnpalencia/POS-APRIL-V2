@@ -31,7 +31,7 @@ Public Class Inventory
             loadstockadjustmentreport(False)
             loadfastmovingstock()
             loadstockentry(False)
-
+            FillDatagridZreadInv(False)
             loadinventorycustom()
             loadinventorycustomdisapp()
 
@@ -340,5 +340,40 @@ Public Class Inventory
         Catch ex As Exception
             SendErrorReport(ex.ToString)
         End Try
+    End Sub
+    Private Sub FillDatagridZreadInv(searchdate As Boolean)
+        Try
+            table = "loc_zread_inventory I INNER JOIN loc_product_formula F ON F.server_formula_id = I.server_inventory_id "
+            fields = "I.product_ingredients as Ingredients, i.sku , CONCAT_WS(' ', ROUND(I.stock_primary,0), F.primary_unit) as PrimaryValue , CONCAT_WS(' ', ROUND(I.stock_secondary,0), F.secondary_unit) as UOM , ROUND(I.stock_no_of_servings,0) as NoofServings, I.zreading"
+            If searchdate = False Then
+                where = "zreading = '" & Format(Now(), "yyyy-MM-dd") & "' AND I.stock_status = 1 AND I.store_id = " & ClientStoreID & " ORDER BY I.product_ingredients ASC"
+                GLOBAL_SELECT_ALL_FUNCTION_WHERE(table:=table, datagrid:=DataGridViewZreadInvData, fields:=fields, where:=where)
+            Else
+                where = "zreading = '" & Format(DateTimePickerZXreading.Value, "yyyy-MM-dd") & "' AND I.stock_status = 1 AND I.store_id = " & ClientStoreID & " ORDER BY I.product_ingredients ASC"
+                GLOBAL_SELECT_ALL_FUNCTION_WHERE(table:=table, datagrid:=DataGridViewZreadInvData, fields:=fields, where:=where)
+            End If
+            With DataGridViewZreadInvData
+                .Columns(0).HeaderText = "Ingredients"
+                .Columns(1).HeaderText = "SKU"
+                .Columns(2).HeaderText = "Primary Value"
+                .Columns(3).HeaderText = "UOM"
+                .Columns(4).HeaderText = "No. of Servings"
+                .Columns(5).HeaderText = "Zreading Date"
+            End With
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+            SendErrorReport(ex.ToString)
+        End Try
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        FillDatagridZreadInv(True)
+    End Sub
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If CheckBox1.Checked Then
+            DateTimePickerZXreadingTo.Enabled = False
+        Else
+            DateTimePickerZXreadingTo.Enabled = True
+        End If
     End Sub
 End Class

@@ -22,43 +22,40 @@ Partial Class Reports
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle100 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle101 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle102 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle103 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle104 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle105 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Reports))
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle34 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle35 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle36 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle106 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle107 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle108 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle109 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle110 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle111 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle112 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle113 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle114 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle115 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle116 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle117 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle118 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle119 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle120 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle121 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle122 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle123 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle124 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle125 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle126 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle127 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle128 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle129 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle130 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle131 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle132 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
@@ -99,7 +96,6 @@ Partial Class Reports
         Me.ToolStripLabel5 = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripButton4 = New System.Windows.Forms.ToolStripButton()
         Me.ComboBoxTransactionType = New System.Windows.Forms.ToolStripComboBox()
-        Me.ToolStripButton7 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripLabel6 = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripComboBoxStatus = New System.Windows.Forms.ToolStripComboBox()
         Me.ToolStripButton6 = New System.Windows.Forms.ToolStripButton()
@@ -224,22 +220,6 @@ Partial Class Reports
         Me.Label18 = New System.Windows.Forms.Label()
         Me.DateTimePicker16 = New System.Windows.Forms.DateTimePicker()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
-        Me.DataGridViewZreadInvData = New System.Windows.Forms.DataGridView()
-        Me.ToolStrip4 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripButtonXReading = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButtonZReading = New System.Windows.Forms.ToolStripButton()
-        Me.ButtonZreadAdmin = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButtonZReadingReprint = New System.Windows.Forms.ToolStripButton()
-        Me.Panel20 = New System.Windows.Forms.Panel()
-        Me.DateTimePickerZXreadingTo = New System.Windows.Forms.DateTimePicker()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.DataGridViewZreadInventory = New System.Windows.Forms.DataGridView()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.DateTimePickerZXreading = New System.Windows.Forms.DateTimePicker()
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.Panel13 = New System.Windows.Forms.Panel()
@@ -252,6 +232,19 @@ Partial Class Reports
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.BackgroundWorkerViewReport = New System.ComponentModel.BackgroundWorker()
         Me.BackgroundWorkerEJournal = New System.ComponentModel.BackgroundWorker()
+        Me.DateTimePickerZXreading = New System.Windows.Forms.DateTimePicker()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.DateTimePickerZXreadingTo = New System.Windows.Forms.DateTimePicker()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Panel23 = New System.Windows.Forms.Panel()
+        Me.ButtonZREADREPRINT = New System.Windows.Forms.Button()
+        Me.Button10 = New System.Windows.Forms.Button()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.ButtonZReading = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.ButtonXREAD = New System.Windows.Forms.Button()
+        Me.DataGridViewZreadInventory = New System.Windows.Forms.DataGridView()
         Me.Panel6.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -301,13 +294,10 @@ Partial Class Reports
         CType(Me.DataGridViewDeposits, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel34.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        Me.TableLayoutPanel4.SuspendLayout()
-        Me.GroupBox7.SuspendLayout()
-        CType(Me.DataGridViewZreadInvData, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ToolStrip4.SuspendLayout()
-        Me.Panel20.SuspendLayout()
-        CType(Me.DataGridViewZreadInventory, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout()
+        Me.Panel23.SuspendLayout()
+        CType(Me.DataGridViewZreadInventory, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel6
@@ -375,29 +365,29 @@ Partial Class Reports
         Me.DataGridViewTransactionDetails.AllowUserToDeleteRows = False
         Me.DataGridViewTransactionDetails.AllowUserToResizeColumns = False
         Me.DataGridViewTransactionDetails.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.DataGridViewTransactionDetails.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle100.BackColor = System.Drawing.Color.White
+        Me.DataGridViewTransactionDetails.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle100
         Me.DataGridViewTransactionDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridViewTransactionDetails.BackgroundColor = System.Drawing.Color.White
         Me.DataGridViewTransactionDetails.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 12.0!)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTransactionDetails.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle101.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle101.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
+        DataGridViewCellStyle101.Font = New System.Drawing.Font("Tahoma", 12.0!)
+        DataGridViewCellStyle101.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle101.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle101.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle101.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewTransactionDetails.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle101
         Me.DataGridViewTransactionDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewTransactionDetails.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column21, Me.Column22, Me.Column23, Me.Column24, Me.Column25, Me.Column26, Me.Column27})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Tahoma", 12.0!)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(209, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewTransactionDetails.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle102.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle102.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle102.Font = New System.Drawing.Font("Tahoma", 12.0!)
+        DataGridViewCellStyle102.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle102.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(209, Byte), Integer))
+        DataGridViewCellStyle102.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle102.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewTransactionDetails.DefaultCellStyle = DataGridViewCellStyle102
         Me.DataGridViewTransactionDetails.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridViewTransactionDetails.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridViewTransactionDetails.EnableHeadersVisualStyles = False
@@ -487,29 +477,29 @@ Partial Class Reports
         Me.DataGridViewDaily.AllowUserToDeleteRows = False
         Me.DataGridViewDaily.AllowUserToResizeColumns = False
         Me.DataGridViewDaily.AllowUserToResizeRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        Me.DataGridViewDaily.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle103.BackColor = System.Drawing.Color.White
+        Me.DataGridViewDaily.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle103
         Me.DataGridViewDaily.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridViewDaily.BackgroundColor = System.Drawing.Color.White
         Me.DataGridViewDaily.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Tahoma", 12.0!)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewDaily.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle104.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle104.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
+        DataGridViewCellStyle104.Font = New System.Drawing.Font("Tahoma", 12.0!)
+        DataGridViewCellStyle104.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle104.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle104.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle104.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewDaily.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle104
         Me.DataGridViewDaily.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewDaily.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column9, Me.Column10, Me.Column11, Me.Column12, Me.Column13, Me.Column14, Me.Column15, Me.Column16, Me.Column17, Me.Column18, Me.Column19, Me.Column20, Me.Column40})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Tahoma", 12.0!)
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(209, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewDaily.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle105.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle105.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle105.Font = New System.Drawing.Font("Tahoma", 12.0!)
+        DataGridViewCellStyle105.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle105.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(209, Byte), Integer))
+        DataGridViewCellStyle105.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle105.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewDaily.DefaultCellStyle = DataGridViewCellStyle105
         Me.DataGridViewDaily.Dock = System.Windows.Forms.DockStyle.Top
         Me.DataGridViewDaily.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridViewDaily.EnableHeadersVisualStyles = False
@@ -622,7 +612,7 @@ Partial Class Reports
         'ToolStrip2
         '
         Me.ToolStrip2.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel5, Me.ToolStripButton4, Me.ComboBoxTransactionType, Me.ToolStripButton7, Me.ToolStripLabel6, Me.ToolStripComboBoxStatus, Me.ToolStripButton6})
+        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel5, Me.ToolStripButton4, Me.ComboBoxTransactionType, Me.ToolStripLabel6, Me.ToolStripComboBoxStatus, Me.ToolStripButton6})
         Me.ToolStrip2.Location = New System.Drawing.Point(3, 40)
         Me.ToolStrip2.Name = "ToolStrip2"
         Me.ToolStrip2.Size = New System.Drawing.Size(1117, 25)
@@ -651,21 +641,9 @@ Partial Class Reports
         'ComboBoxTransactionType
         '
         Me.ComboBoxTransactionType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBoxTransactionType.Items.AddRange(New Object() {"All", "Walk-In", "Registered", "Grab", "Gcash", "Paymaya", "Food Panda", "Shopee", "Representation Expenses", "Others"})
+        Me.ComboBoxTransactionType.Items.AddRange(New Object() {"All", "Walk-In", "Registered", "Grab", "Gcash", "Paymaya", "Food Panda", "Shopee", "Complementary Expenses", "Others"})
         Me.ComboBoxTransactionType.Name = "ComboBoxTransactionType"
         Me.ComboBoxTransactionType.Size = New System.Drawing.Size(121, 25)
-        '
-        'ToolStripButton7
-        '
-        Me.ToolStripButton7.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStripButton7.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.ToolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.ToolStripButton7.ForeColor = System.Drawing.Color.White
-        Me.ToolStripButton7.Image = CType(resources.GetObject("ToolStripButton7.Image"), System.Drawing.Image)
-        Me.ToolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton7.Name = "ToolStripButton7"
-        Me.ToolStripButton7.Size = New System.Drawing.Size(154, 22)
-        Me.ToolStripButton7.Text = "Generate txt file(Ejournal)"
         '
         'ToolStripLabel6
         '
@@ -747,29 +725,29 @@ Partial Class Reports
         Me.DataGridViewSysLog.AllowUserToDeleteRows = False
         Me.DataGridViewSysLog.AllowUserToResizeColumns = False
         Me.DataGridViewSysLog.AllowUserToResizeRows = False
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
-        Me.DataGridViewSysLog.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle106.BackColor = System.Drawing.Color.White
+        Me.DataGridViewSysLog.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle106
         Me.DataGridViewSysLog.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridViewSysLog.BackgroundColor = System.Drawing.Color.White
         Me.DataGridViewSysLog.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Tahoma", 11.0!)
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewSysLog.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle107.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle107.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
+        DataGridViewCellStyle107.Font = New System.Drawing.Font("Tahoma", 11.0!)
+        DataGridViewCellStyle107.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle107.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle107.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle107.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewSysLog.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle107
         Me.DataGridViewSysLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewSysLog.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3})
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Tahoma", 11.0!)
-        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(209, Byte), Integer))
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewSysLog.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle108.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle108.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle108.Font = New System.Drawing.Font("Tahoma", 11.0!)
+        DataGridViewCellStyle108.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle108.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(209, Byte), Integer))
+        DataGridViewCellStyle108.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle108.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewSysLog.DefaultCellStyle = DataGridViewCellStyle108
         Me.DataGridViewSysLog.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridViewSysLog.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridViewSysLog.EnableHeadersVisualStyles = False
@@ -868,28 +846,28 @@ Partial Class Reports
         Me.DataGridViewSales.AllowUserToDeleteRows = False
         Me.DataGridViewSales.AllowUserToResizeColumns = False
         Me.DataGridViewSales.AllowUserToResizeRows = False
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.White
-        Me.DataGridViewSales.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle109.BackColor = System.Drawing.Color.White
+        Me.DataGridViewSales.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle109
         Me.DataGridViewSales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridViewSales.BackgroundColor = System.Drawing.Color.White
         Me.DataGridViewSales.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Tahoma", 11.0!)
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewSales.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle110.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle110.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
+        DataGridViewCellStyle110.Font = New System.Drawing.Font("Tahoma", 11.0!)
+        DataGridViewCellStyle110.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle110.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle110.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle110.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewSales.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle110
         Me.DataGridViewSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Tahoma", 11.0!)
-        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(209, Byte), Integer))
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewSales.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle111.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle111.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle111.Font = New System.Drawing.Font("Tahoma", 11.0!)
+        DataGridViewCellStyle111.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle111.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(209, Byte), Integer))
+        DataGridViewCellStyle111.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle111.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewSales.DefaultCellStyle = DataGridViewCellStyle111
         Me.DataGridViewSales.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridViewSales.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridViewSales.EnableHeadersVisualStyles = False
@@ -1049,30 +1027,30 @@ Partial Class Reports
         Me.DataGridViewCustomReport.AllowUserToAddRows = False
         Me.DataGridViewCustomReport.AllowUserToDeleteRows = False
         Me.DataGridViewCustomReport.AllowUserToOrderColumns = True
-        DataGridViewCellStyle13.BackColor = System.Drawing.Color.White
-        Me.DataGridViewCustomReport.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle112.BackColor = System.Drawing.Color.White
+        Me.DataGridViewCustomReport.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle112
         Me.DataGridViewCustomReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridViewCustomReport.BackgroundColor = System.Drawing.Color.White
         Me.DataGridViewCustomReport.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridViewCustomReport.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Tahoma", 11.0!)
-        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewCustomReport.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle113.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle113.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
+        DataGridViewCellStyle113.Font = New System.Drawing.Font("Tahoma", 11.0!)
+        DataGridViewCellStyle113.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle113.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle113.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle113.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewCustomReport.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle113
         Me.DataGridViewCustomReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewCustomReport.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column33, Me.Column34, Me.Column35, Me.Column36, Me.Column37, Me.Column38, Me.Column39})
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle15.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("Tahoma", 11.0!)
-        DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(209, Byte), Integer))
-        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewCustomReport.DefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle114.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle114.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle114.Font = New System.Drawing.Font("Tahoma", 11.0!)
+        DataGridViewCellStyle114.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle114.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(209, Byte), Integer))
+        DataGridViewCellStyle114.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle114.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewCustomReport.DefaultCellStyle = DataGridViewCellStyle114
         Me.DataGridViewCustomReport.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridViewCustomReport.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridViewCustomReport.EnableHeadersVisualStyles = False
@@ -1323,28 +1301,28 @@ Partial Class Reports
         Me.DataGridViewEXPENSES.AllowUserToDeleteRows = False
         Me.DataGridViewEXPENSES.AllowUserToResizeColumns = False
         Me.DataGridViewEXPENSES.AllowUserToResizeRows = False
-        DataGridViewCellStyle16.BackColor = System.Drawing.Color.White
-        Me.DataGridViewEXPENSES.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle115.BackColor = System.Drawing.Color.White
+        Me.DataGridViewEXPENSES.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle115
         Me.DataGridViewEXPENSES.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridViewEXPENSES.BackgroundColor = System.Drawing.Color.White
         Me.DataGridViewEXPENSES.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
-        DataGridViewCellStyle17.Font = New System.Drawing.Font("Tahoma", 11.0!)
-        DataGridViewCellStyle17.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewEXPENSES.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle116.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle116.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
+        DataGridViewCellStyle116.Font = New System.Drawing.Font("Tahoma", 11.0!)
+        DataGridViewCellStyle116.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle116.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle116.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle116.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewEXPENSES.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle116
         Me.DataGridViewEXPENSES.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle18.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle18.Font = New System.Drawing.Font("Tahoma", 11.0!)
-        DataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(209, Byte), Integer))
-        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewEXPENSES.DefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle117.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle117.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle117.Font = New System.Drawing.Font("Tahoma", 11.0!)
+        DataGridViewCellStyle117.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle117.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(209, Byte), Integer))
+        DataGridViewCellStyle117.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle117.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewEXPENSES.DefaultCellStyle = DataGridViewCellStyle117
         Me.DataGridViewEXPENSES.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridViewEXPENSES.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridViewEXPENSES.EnableHeadersVisualStyles = False
@@ -1432,28 +1410,28 @@ Partial Class Reports
         Me.DataGridViewEXPENSEDET.AllowUserToDeleteRows = False
         Me.DataGridViewEXPENSEDET.AllowUserToResizeColumns = False
         Me.DataGridViewEXPENSEDET.AllowUserToResizeRows = False
-        DataGridViewCellStyle19.BackColor = System.Drawing.Color.White
-        Me.DataGridViewEXPENSEDET.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle19
+        DataGridViewCellStyle118.BackColor = System.Drawing.Color.White
+        Me.DataGridViewEXPENSEDET.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle118
         Me.DataGridViewEXPENSEDET.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridViewEXPENSEDET.BackgroundColor = System.Drawing.Color.White
         Me.DataGridViewEXPENSEDET.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
-        DataGridViewCellStyle20.Font = New System.Drawing.Font("Tahoma", 11.0!)
-        DataGridViewCellStyle20.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewEXPENSEDET.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle20
+        DataGridViewCellStyle119.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle119.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
+        DataGridViewCellStyle119.Font = New System.Drawing.Font("Tahoma", 11.0!)
+        DataGridViewCellStyle119.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle119.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle119.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle119.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewEXPENSEDET.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle119
         Me.DataGridViewEXPENSEDET.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle21.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle21.Font = New System.Drawing.Font("Tahoma", 11.0!)
-        DataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(209, Byte), Integer))
-        DataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewEXPENSEDET.DefaultCellStyle = DataGridViewCellStyle21
+        DataGridViewCellStyle120.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle120.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle120.Font = New System.Drawing.Font("Tahoma", 11.0!)
+        DataGridViewCellStyle120.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle120.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(209, Byte), Integer))
+        DataGridViewCellStyle120.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle120.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewEXPENSEDET.DefaultCellStyle = DataGridViewCellStyle120
         Me.DataGridViewEXPENSEDET.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridViewEXPENSEDET.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridViewEXPENSEDET.EnableHeadersVisualStyles = False
@@ -1500,28 +1478,28 @@ Partial Class Reports
         Me.DataGridViewTRANSACTIONLOGS.AllowUserToDeleteRows = False
         Me.DataGridViewTRANSACTIONLOGS.AllowUserToResizeColumns = False
         Me.DataGridViewTRANSACTIONLOGS.AllowUserToResizeRows = False
-        DataGridViewCellStyle22.BackColor = System.Drawing.Color.White
-        Me.DataGridViewTRANSACTIONLOGS.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle22
+        DataGridViewCellStyle121.BackColor = System.Drawing.Color.White
+        Me.DataGridViewTRANSACTIONLOGS.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle121
         Me.DataGridViewTRANSACTIONLOGS.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridViewTRANSACTIONLOGS.BackgroundColor = System.Drawing.Color.White
         Me.DataGridViewTRANSACTIONLOGS.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
-        DataGridViewCellStyle23.Font = New System.Drawing.Font("Tahoma", 11.0!)
-        DataGridViewCellStyle23.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTRANSACTIONLOGS.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle23
+        DataGridViewCellStyle122.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle122.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
+        DataGridViewCellStyle122.Font = New System.Drawing.Font("Tahoma", 11.0!)
+        DataGridViewCellStyle122.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle122.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle122.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle122.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewTRANSACTIONLOGS.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle122
         Me.DataGridViewTRANSACTIONLOGS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle24.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle24.Font = New System.Drawing.Font("Tahoma", 11.0!)
-        DataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(209, Byte), Integer))
-        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewTRANSACTIONLOGS.DefaultCellStyle = DataGridViewCellStyle24
+        DataGridViewCellStyle123.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle123.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle123.Font = New System.Drawing.Font("Tahoma", 11.0!)
+        DataGridViewCellStyle123.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle123.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(209, Byte), Integer))
+        DataGridViewCellStyle123.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle123.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewTRANSACTIONLOGS.DefaultCellStyle = DataGridViewCellStyle123
         Me.DataGridViewTRANSACTIONLOGS.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridViewTRANSACTIONLOGS.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridViewTRANSACTIONLOGS.EnableHeadersVisualStyles = False
@@ -1613,29 +1591,29 @@ Partial Class Reports
         Me.DataGridViewCrewSales.AllowUserToDeleteRows = False
         Me.DataGridViewCrewSales.AllowUserToResizeColumns = False
         Me.DataGridViewCrewSales.AllowUserToResizeRows = False
-        DataGridViewCellStyle25.BackColor = System.Drawing.Color.White
-        Me.DataGridViewCrewSales.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle25
+        DataGridViewCellStyle124.BackColor = System.Drawing.Color.White
+        Me.DataGridViewCrewSales.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle124
         Me.DataGridViewCrewSales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridViewCrewSales.BackgroundColor = System.Drawing.Color.White
         Me.DataGridViewCrewSales.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
-        DataGridViewCellStyle26.Font = New System.Drawing.Font("Tahoma", 11.0!)
-        DataGridViewCellStyle26.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewCrewSales.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle26
+        DataGridViewCellStyle125.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle125.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
+        DataGridViewCellStyle125.Font = New System.Drawing.Font("Tahoma", 11.0!)
+        DataGridViewCellStyle125.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle125.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle125.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle125.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewCrewSales.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle125
         Me.DataGridViewCrewSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewCrewSales.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column28, Me.Column29, Me.Column30, Me.Column31, Me.Column32})
-        DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle27.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle27.Font = New System.Drawing.Font("Tahoma", 11.0!)
-        DataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(209, Byte), Integer))
-        DataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewCrewSales.DefaultCellStyle = DataGridViewCellStyle27
+        DataGridViewCellStyle126.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle126.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle126.Font = New System.Drawing.Font("Tahoma", 11.0!)
+        DataGridViewCellStyle126.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle126.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(209, Byte), Integer))
+        DataGridViewCellStyle126.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle126.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewCrewSales.DefaultCellStyle = DataGridViewCellStyle126
         Me.DataGridViewCrewSales.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridViewCrewSales.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridViewCrewSales.EnableHeadersVisualStyles = False
@@ -1824,29 +1802,29 @@ Partial Class Reports
         Me.DataGridViewReturns.AllowUserToDeleteRows = False
         Me.DataGridViewReturns.AllowUserToResizeColumns = False
         Me.DataGridViewReturns.AllowUserToResizeRows = False
-        DataGridViewCellStyle28.BackColor = System.Drawing.Color.White
-        Me.DataGridViewReturns.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle28
+        DataGridViewCellStyle127.BackColor = System.Drawing.Color.White
+        Me.DataGridViewReturns.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle127
         Me.DataGridViewReturns.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridViewReturns.BackgroundColor = System.Drawing.Color.White
         Me.DataGridViewReturns.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
-        DataGridViewCellStyle29.Font = New System.Drawing.Font("Tahoma", 11.0!)
-        DataGridViewCellStyle29.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewReturns.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle29
+        DataGridViewCellStyle128.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle128.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
+        DataGridViewCellStyle128.Font = New System.Drawing.Font("Tahoma", 11.0!)
+        DataGridViewCellStyle128.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle128.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle128.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle128.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewReturns.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle128
         Me.DataGridViewReturns.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewReturns.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column41, Me.Column42, Me.Column43, Me.Column44, Me.Column45})
-        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle30.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle30.Font = New System.Drawing.Font("Tahoma", 11.0!)
-        DataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(209, Byte), Integer))
-        DataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewReturns.DefaultCellStyle = DataGridViewCellStyle30
+        DataGridViewCellStyle129.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle129.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle129.Font = New System.Drawing.Font("Tahoma", 11.0!)
+        DataGridViewCellStyle129.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle129.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(209, Byte), Integer))
+        DataGridViewCellStyle129.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle129.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewReturns.DefaultCellStyle = DataGridViewCellStyle129
         Me.DataGridViewReturns.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridViewReturns.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridViewReturns.EnableHeadersVisualStyles = False
@@ -1985,28 +1963,28 @@ Partial Class Reports
         Me.DataGridViewDeposits.AllowUserToDeleteRows = False
         Me.DataGridViewDeposits.AllowUserToResizeColumns = False
         Me.DataGridViewDeposits.AllowUserToResizeRows = False
-        DataGridViewCellStyle31.BackColor = System.Drawing.Color.White
-        Me.DataGridViewDeposits.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle31
+        DataGridViewCellStyle130.BackColor = System.Drawing.Color.White
+        Me.DataGridViewDeposits.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle130
         Me.DataGridViewDeposits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridViewDeposits.BackgroundColor = System.Drawing.Color.White
         Me.DataGridViewDeposits.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
-        DataGridViewCellStyle32.Font = New System.Drawing.Font("Tahoma", 11.0!)
-        DataGridViewCellStyle32.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewDeposits.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle32
+        DataGridViewCellStyle131.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle131.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
+        DataGridViewCellStyle131.Font = New System.Drawing.Font("Tahoma", 11.0!)
+        DataGridViewCellStyle131.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle131.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle131.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle131.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewDeposits.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle131
         Me.DataGridViewDeposits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle33.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle33.Font = New System.Drawing.Font("Tahoma", 11.0!)
-        DataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(209, Byte), Integer))
-        DataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewDeposits.DefaultCellStyle = DataGridViewCellStyle33
+        DataGridViewCellStyle132.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle132.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle132.Font = New System.Drawing.Font("Tahoma", 11.0!)
+        DataGridViewCellStyle132.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle132.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(209, Byte), Integer))
+        DataGridViewCellStyle132.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle132.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewDeposits.DefaultCellStyle = DataGridViewCellStyle132
         Me.DataGridViewDeposits.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridViewDeposits.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridViewDeposits.EnableHeadersVisualStyles = False
@@ -2071,224 +2049,14 @@ Partial Class Reports
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.TableLayoutPanel4)
+        Me.TabPage1.Controls.Add(Me.TableLayoutPanel1)
         Me.TabPage1.Location = New System.Drawing.Point(4, 27)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(1123, 473)
         Me.TabPage1.TabIndex = 10
-        Me.TabPage1.Text = "TabPage1"
+        Me.TabPage1.Text = "Others"
         Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'TableLayoutPanel4
-        '
-        Me.TableLayoutPanel4.ColumnCount = 1
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel4.Controls.Add(Me.GroupBox7, 0, 0)
-        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 3)
-        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
-        Me.TableLayoutPanel4.RowCount = 1
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(1117, 467)
-        Me.TableLayoutPanel4.TabIndex = 8
-        '
-        'GroupBox7
-        '
-        Me.GroupBox7.Controls.Add(Me.DataGridViewZreadInvData)
-        Me.GroupBox7.Controls.Add(Me.ToolStrip4)
-        Me.GroupBox7.Controls.Add(Me.Panel20)
-        Me.GroupBox7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox7.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox7.Location = New System.Drawing.Point(3, 3)
-        Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(1111, 461)
-        Me.GroupBox7.TabIndex = 164
-        Me.GroupBox7.TabStop = False
-        Me.GroupBox7.Text = "Inventory(Zreading)"
-        '
-        'DataGridViewZreadInvData
-        '
-        Me.DataGridViewZreadInvData.AllowUserToAddRows = False
-        Me.DataGridViewZreadInvData.AllowUserToDeleteRows = False
-        Me.DataGridViewZreadInvData.AllowUserToResizeColumns = False
-        Me.DataGridViewZreadInvData.AllowUserToResizeRows = False
-        DataGridViewCellStyle34.BackColor = System.Drawing.Color.White
-        Me.DataGridViewZreadInvData.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle34
-        Me.DataGridViewZreadInvData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridViewZreadInvData.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridViewZreadInvData.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
-        DataGridViewCellStyle35.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle35.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewZreadInvData.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle35
-        Me.DataGridViewZreadInvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle36.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle36.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(209, Byte), Integer))
-        DataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewZreadInvData.DefaultCellStyle = DataGridViewCellStyle36
-        Me.DataGridViewZreadInvData.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridViewZreadInvData.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.DataGridViewZreadInvData.EnableHeadersVisualStyles = False
-        Me.DataGridViewZreadInvData.Location = New System.Drawing.Point(3, 84)
-        Me.DataGridViewZreadInvData.Name = "DataGridViewZreadInvData"
-        Me.DataGridViewZreadInvData.Size = New System.Drawing.Size(1105, 374)
-        Me.DataGridViewZreadInvData.TabIndex = 7
-        '
-        'ToolStrip4
-        '
-        Me.ToolStrip4.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButtonXReading, Me.ToolStripButtonZReading, Me.ButtonZreadAdmin, Me.ToolStripButtonZReadingReprint})
-        Me.ToolStrip4.Location = New System.Drawing.Point(3, 59)
-        Me.ToolStrip4.Name = "ToolStrip4"
-        Me.ToolStrip4.Size = New System.Drawing.Size(1105, 25)
-        Me.ToolStrip4.TabIndex = 8
-        Me.ToolStrip4.Text = "ToolStrip4"
-        '
-        'ToolStripButtonXReading
-        '
-        Me.ToolStripButtonXReading.BackColor = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(77, Byte), Integer))
-        Me.ToolStripButtonXReading.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.ToolStripButtonXReading.ForeColor = System.Drawing.Color.White
-        Me.ToolStripButtonXReading.Image = CType(resources.GetObject("ToolStripButtonXReading.Image"), System.Drawing.Image)
-        Me.ToolStripButtonXReading.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButtonXReading.Name = "ToolStripButtonXReading"
-        Me.ToolStripButtonXReading.Size = New System.Drawing.Size(66, 22)
-        Me.ToolStripButtonXReading.Text = "X-Reading"
-        '
-        'ToolStripButtonZReading
-        '
-        Me.ToolStripButtonZReading.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.ToolStripButtonZReading.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.ToolStripButtonZReading.ForeColor = System.Drawing.Color.White
-        Me.ToolStripButtonZReading.Image = CType(resources.GetObject("ToolStripButtonZReading.Image"), System.Drawing.Image)
-        Me.ToolStripButtonZReading.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButtonZReading.Name = "ToolStripButtonZReading"
-        Me.ToolStripButtonZReading.Size = New System.Drawing.Size(66, 22)
-        Me.ToolStripButtonZReading.Text = "Z-Reading"
-        '
-        'ButtonZreadAdmin
-        '
-        Me.ButtonZreadAdmin.BackColor = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(77, Byte), Integer))
-        Me.ButtonZreadAdmin.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.ButtonZreadAdmin.Enabled = False
-        Me.ButtonZreadAdmin.ForeColor = System.Drawing.Color.White
-        Me.ButtonZreadAdmin.Image = CType(resources.GetObject("ButtonZreadAdmin.Image"), System.Drawing.Image)
-        Me.ButtonZreadAdmin.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ButtonZreadAdmin.Name = "ButtonZreadAdmin"
-        Me.ButtonZreadAdmin.Size = New System.Drawing.Size(110, 22)
-        Me.ButtonZreadAdmin.Text = "Z-Reading(Admin)"
-        Me.ButtonZreadAdmin.Visible = False
-        '
-        'ToolStripButtonZReadingReprint
-        '
-        Me.ToolStripButtonZReadingReprint.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStripButtonZReadingReprint.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.ToolStripButtonZReadingReprint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.ToolStripButtonZReadingReprint.ForeColor = System.Drawing.Color.White
-        Me.ToolStripButtonZReadingReprint.Image = CType(resources.GetObject("ToolStripButtonZReadingReprint.Image"), System.Drawing.Image)
-        Me.ToolStripButtonZReadingReprint.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButtonZReadingReprint.Name = "ToolStripButtonZReadingReprint"
-        Me.ToolStripButtonZReadingReprint.Size = New System.Drawing.Size(115, 22)
-        Me.ToolStripButtonZReadingReprint.Text = "Z-Reading (Reprint)"
-        Me.ToolStripButtonZReadingReprint.ToolTipText = "Z-Reading (Reprint)"
-        '
-        'Panel20
-        '
-        Me.Panel20.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.Panel20.Controls.Add(Me.DateTimePickerZXreadingTo)
-        Me.Panel20.Controls.Add(Me.CheckBox1)
-        Me.Panel20.Controls.Add(Me.Panel9)
-        Me.Panel20.Controls.Add(Me.Label19)
-        Me.Panel20.Controls.Add(Me.DataGridViewZreadInventory)
-        Me.Panel20.Controls.Add(Me.Button7)
-        Me.Panel20.Controls.Add(Me.DateTimePickerZXreading)
-        Me.Panel20.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel20.Location = New System.Drawing.Point(3, 22)
-        Me.Panel20.Name = "Panel20"
-        Me.Panel20.Size = New System.Drawing.Size(1105, 37)
-        Me.Panel20.TabIndex = 4
-        '
-        'DateTimePickerZXreadingTo
-        '
-        Me.DateTimePickerZXreadingTo.Enabled = False
-        Me.DateTimePickerZXreadingTo.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.DateTimePickerZXreadingTo.Location = New System.Drawing.Point(453, 6)
-        Me.DateTimePickerZXreadingTo.Name = "DateTimePickerZXreadingTo"
-        Me.DateTimePickerZXreadingTo.Size = New System.Drawing.Size(260, 22)
-        Me.DateTimePickerZXreadingTo.TabIndex = 22
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Checked = True
-        Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox1.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.CheckBox1.Location = New System.Drawing.Point(102, 9)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(79, 18)
-        Me.CheckBox1.TabIndex = 21
-        Me.CheckBox1.Text = "Inventory"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'Panel9
-        '
-        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel9.Location = New System.Drawing.Point(941, 0)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(164, 37)
-        Me.Panel9.TabIndex = 20
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label19.Location = New System.Drawing.Point(12, 10)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(84, 14)
-        Me.Label19.TabIndex = 18
-        Me.Label19.Text = "Filter By Date "
-        '
-        'DataGridViewZreadInventory
-        '
-        Me.DataGridViewZreadInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewZreadInventory.Location = New System.Drawing.Point(891, 6)
-        Me.DataGridViewZreadInventory.Name = "DataGridViewZreadInventory"
-        Me.DataGridViewZreadInventory.ReadOnly = True
-        Me.DataGridViewZreadInventory.Size = New System.Drawing.Size(44, 23)
-        Me.DataGridViewZreadInventory.TabIndex = 3
-        Me.DataGridViewZreadInventory.Visible = False
-        '
-        'Button7
-        '
-        Me.Button7.BackColor = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(77, Byte), Integer))
-        Me.Button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button7.FlatAppearance.BorderSize = 0
-        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button7.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Button7.ForeColor = System.Drawing.Color.White
-        Me.Button7.Location = New System.Drawing.Point(719, 6)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(84, 22)
-        Me.Button7.TabIndex = 17
-        Me.Button7.Text = "Search"
-        Me.Button7.UseVisualStyleBackColor = False
-        '
-        'DateTimePickerZXreading
-        '
-        Me.DateTimePickerZXreading.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.DateTimePickerZXreading.Location = New System.Drawing.Point(187, 6)
-        Me.DateTimePickerZXreading.Name = "DateTimePickerZXreading"
-        Me.DateTimePickerZXreading.Size = New System.Drawing.Size(260, 22)
-        Me.DateTimePickerZXreading.TabIndex = 4
         '
         'Panel15
         '
@@ -2361,6 +2129,162 @@ Partial Class Reports
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'DateTimePickerZXreading
+        '
+        Me.DateTimePickerZXreading.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.DateTimePickerZXreading.Location = New System.Drawing.Point(19, 41)
+        Me.DateTimePickerZXreading.Name = "DateTimePickerZXreading"
+        Me.DateTimePickerZXreading.Size = New System.Drawing.Size(250, 22)
+        Me.DateTimePickerZXreading.TabIndex = 22
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(16, 17)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(231, 18)
+        Me.Label20.TabIndex = 18
+        Me.Label20.Text = "Filter By Z-Read Date (From - To)"
+        '
+        'DateTimePickerZXreadingTo
+        '
+        Me.DateTimePickerZXreadingTo.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.DateTimePickerZXreadingTo.Location = New System.Drawing.Point(276, 41)
+        Me.DateTimePickerZXreadingTo.Name = "DateTimePickerZXreadingTo"
+        Me.DateTimePickerZXreadingTo.Size = New System.Drawing.Size(250, 22)
+        Me.DateTimePickerZXreadingTo.TabIndex = 4
+        '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.ColumnCount = 3
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 550.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.Panel23, 1, 1)
+        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 3)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 3
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1117, 467)
+        Me.TableLayoutPanel1.TabIndex = 8
+        '
+        'Panel23
+        '
+        Me.Panel23.Controls.Add(Me.DataGridViewZreadInventory)
+        Me.Panel23.Controls.Add(Me.ButtonZREADREPRINT)
+        Me.Panel23.Controls.Add(Me.Button9)
+        Me.Panel23.Controls.Add(Me.Label20)
+        Me.Panel23.Controls.Add(Me.DateTimePickerZXreading)
+        Me.Panel23.Controls.Add(Me.DateTimePickerZXreadingTo)
+        Me.Panel23.Controls.Add(Me.Button10)
+        Me.Panel23.Controls.Add(Me.ButtonZReading)
+        Me.Panel23.Controls.Add(Me.Button6)
+        Me.Panel23.Controls.Add(Me.Button5)
+        Me.Panel23.Controls.Add(Me.ButtonXREAD)
+        Me.Panel23.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel23.Location = New System.Drawing.Point(286, 119)
+        Me.Panel23.Name = "Panel23"
+        Me.Panel23.Size = New System.Drawing.Size(544, 227)
+        Me.Panel23.TabIndex = 0
+        '
+        'ButtonZREADREPRINT
+        '
+        Me.ButtonZREADREPRINT.BackColor = System.Drawing.SystemColors.Window
+        Me.ButtonZREADREPRINT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonZREADREPRINT.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonZREADREPRINT.Location = New System.Drawing.Point(361, 69)
+        Me.ButtonZREADREPRINT.Name = "ButtonZREADREPRINT"
+        Me.ButtonZREADREPRINT.Size = New System.Drawing.Size(165, 42)
+        Me.ButtonZREADREPRINT.TabIndex = 14
+        Me.ButtonZREADREPRINT.Text = "ZREAD(REPRINT)"
+        Me.ButtonZREADREPRINT.UseVisualStyleBackColor = False
+        '
+        'Button10
+        '
+        Me.Button10.BackColor = System.Drawing.SystemColors.Window
+        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button10.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button10.Location = New System.Drawing.Point(361, 117)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(165, 42)
+        Me.Button10.TabIndex = 13
+        Me.Button10.Text = "USER LOGS"
+        Me.Button10.UseVisualStyleBackColor = False
+        '
+        'Button9
+        '
+        Me.Button9.BackColor = System.Drawing.SystemColors.Window
+        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button9.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button9.Location = New System.Drawing.Point(19, 165)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(507, 42)
+        Me.Button9.TabIndex = 12
+        Me.Button9.Text = "AUDIT TRAIL"
+        Me.Button9.UseVisualStyleBackColor = False
+        '
+        'ButtonZReading
+        '
+        Me.ButtonZReading.BackColor = System.Drawing.SystemColors.Window
+        Me.ButtonZReading.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonZReading.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonZReading.Location = New System.Drawing.Point(190, 69)
+        Me.ButtonZReading.Name = "ButtonZReading"
+        Me.ButtonZReading.Size = New System.Drawing.Size(165, 42)
+        Me.ButtonZReading.TabIndex = 11
+        Me.ButtonZReading.Text = "ZREAD"
+        Me.ButtonZReading.UseVisualStyleBackColor = False
+        '
+        'Button6
+        '
+        Me.Button6.BackColor = System.Drawing.SystemColors.Window
+        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button6.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.Location = New System.Drawing.Point(190, 117)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(165, 42)
+        Me.Button6.TabIndex = 10
+        Me.Button6.Text = "SYSTEM LOGS"
+        Me.Button6.UseVisualStyleBackColor = False
+        '
+        'Button5
+        '
+        Me.Button5.BackColor = System.Drawing.SystemColors.Window
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.Location = New System.Drawing.Point(19, 117)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(165, 42)
+        Me.Button5.TabIndex = 9
+        Me.Button5.Text = "E-JOURNAL(.TXT)"
+        Me.Button5.UseVisualStyleBackColor = False
+        '
+        'ButtonXREAD
+        '
+        Me.ButtonXREAD.BackColor = System.Drawing.SystemColors.Window
+        Me.ButtonXREAD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonXREAD.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonXREAD.Location = New System.Drawing.Point(19, 69)
+        Me.ButtonXREAD.Name = "ButtonXREAD"
+        Me.ButtonXREAD.Size = New System.Drawing.Size(165, 42)
+        Me.ButtonXREAD.TabIndex = 8
+        Me.ButtonXREAD.Text = "XREAD"
+        Me.ButtonXREAD.UseVisualStyleBackColor = False
+        '
+        'DataGridViewZreadInventory
+        '
+        Me.DataGridViewZreadInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewZreadInventory.Location = New System.Drawing.Point(276, 12)
+        Me.DataGridViewZreadInventory.Name = "DataGridViewZreadInventory"
+        Me.DataGridViewZreadInventory.ReadOnly = True
+        Me.DataGridViewZreadInventory.Size = New System.Drawing.Size(44, 23)
+        Me.DataGridViewZreadInventory.TabIndex = 23
+        Me.DataGridViewZreadInventory.Visible = False
         '
         'Reports
         '
@@ -2447,17 +2371,12 @@ Partial Class Reports
         Me.Panel34.ResumeLayout(False)
         Me.Panel34.PerformLayout()
         Me.TabPage1.ResumeLayout(False)
-        Me.TableLayoutPanel4.ResumeLayout(False)
-        Me.GroupBox7.ResumeLayout(False)
-        Me.GroupBox7.PerformLayout()
-        CType(Me.DataGridViewZreadInvData, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ToolStrip4.ResumeLayout(False)
-        Me.ToolStrip4.PerformLayout()
-        Me.Panel20.ResumeLayout(False)
-        Me.Panel20.PerformLayout()
-        CType(Me.DataGridViewZreadInventory, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.Panel23.ResumeLayout(False)
+        Me.Panel23.PerformLayout()
+        CType(Me.DataGridViewZreadInventory, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2540,17 +2459,9 @@ Partial Class Reports
     Friend WithEvents DateTimePicker16 As DateTimePicker
     Friend WithEvents DataGridViewDeposits As DataGridView
     Friend WithEvents TabPage9 As TabPage
-    Friend WithEvents DataGridViewZreadInventory As DataGridView
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
-    Friend WithEvents GroupBox7 As GroupBox
-    Friend WithEvents Panel20 As Panel
-    Friend WithEvents Label19 As Label
-    Friend WithEvents Button7 As Button
-    Friend WithEvents DateTimePickerZXreading As DateTimePicker
-    Friend WithEvents DataGridViewZreadInvData As DataGridView
     Friend WithEvents CheckBoxPRINTALL As CheckBox
     Friend WithEvents Column21 As DataGridViewTextBoxColumn
     Friend WithEvents Column22 As DataGridViewTextBoxColumn
@@ -2577,7 +2488,6 @@ Partial Class Reports
     Friend WithEvents LabelCrewSalesTotal As Label
     Friend WithEvents LabelCrewSalesQty As Label
     Friend WithEvents Label15 As Label
-    Friend WithEvents Panel9 As Panel
     Friend WithEvents TabPage10 As TabPage
     Friend WithEvents DateTimePicker17 As DateTimePicker
     Friend WithEvents Label14 As Label
@@ -2602,7 +2512,6 @@ Partial Class Reports
     Friend WithEvents ToolStripButton4 As ToolStripButton
     Friend WithEvents ComboBoxTransactionType As ToolStripComboBox
     Friend WithEvents ToolStripButton6 As ToolStripButton
-    Friend WithEvents ToolStripButton7 As ToolStripButton
     Friend WithEvents BackgroundWorkerEJournal As System.ComponentModel.BackgroundWorker
     Friend WithEvents StatusStrip2 As StatusStrip
     Friend WithEvents ToolStripStatusLabel3 As ToolStripStatusLabel
@@ -2611,8 +2520,6 @@ Partial Class Reports
     Friend WithEvents ToolStripButtonPrintSales As ToolStripButton
     Friend WithEvents ToolStrip5 As ToolStrip
     Friend WithEvents ToolStripButton9 As ToolStripButton
-    Friend WithEvents ToolStrip4 As ToolStrip
-    Friend WithEvents ButtonZreadAdmin As ToolStripButton
     Friend WithEvents ToolStripLabel4 As ToolStripLabel
     Friend WithEvents ToolStripComboBoxDiscType As ToolStripComboBox
     Friend WithEvents Column41 As DataGridViewTextBoxColumn
@@ -2621,11 +2528,6 @@ Partial Class Reports
     Friend WithEvents Column44 As DataGridViewTextBoxColumn
     Friend WithEvents ToolStripLabel5 As ToolStripLabel
     Friend WithEvents Column45 As DataGridViewTextBoxColumn
-    Friend WithEvents DateTimePickerZXreadingTo As DateTimePicker
-    Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents ToolStripButtonXReading As ToolStripButton
-    Friend WithEvents ToolStripButtonZReading As ToolStripButton
-    Friend WithEvents ToolStripButtonZReadingReprint As ToolStripButton
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
@@ -2655,4 +2557,17 @@ Partial Class Reports
     Friend WithEvents Panel3 As Panel
     Friend WithEvents ToolStripLabel6 As ToolStripLabel
     Friend WithEvents ToolStripComboBoxStatus As ToolStripComboBox
+    Friend WithEvents DateTimePickerZXreading As DateTimePicker
+    Friend WithEvents Label20 As Label
+    Friend WithEvents DateTimePickerZXreadingTo As DateTimePicker
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents Panel23 As Panel
+    Friend WithEvents ButtonZREADREPRINT As Button
+    Friend WithEvents Button10 As Button
+    Friend WithEvents Button9 As Button
+    Friend WithEvents ButtonZReading As Button
+    Friend WithEvents Button6 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents ButtonXREAD As Button
+    Friend WithEvents DataGridViewZreadInventory As DataGridView
 End Class

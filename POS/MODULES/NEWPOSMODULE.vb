@@ -213,18 +213,18 @@ Module NEWPOSMODULE
                                     MsgBox("Add-Ons are exclusive for fbw waffles only")
                                 Else
                                     ThisIsMyInventoryID = .TextBoxINC.Text
-                                    .DataGridViewOrders.Rows.Insert(DatagridviewRowIndex + 1, Name, TotalQuantity, NUMBERFORMAT(ProductOriginalPrice), TotalAddOnPrice, .TextBoxINC.Text, ProductID, Code, Category, .DataGridViewOrders.SelectedRows(0).Cells(5).Value.ToString, "AOCLASSIC", InventoryID, 0, Origin, Addontype, halfbatch)
+                                    .DataGridViewOrders.Rows.Insert(DatagridviewRowIndex + 1, Name, TotalQuantity, NUMBERFORMAT(ProductOriginalPrice), NUMBERFORMAT(TotalAddOnPrice), .TextBoxINC.Text, ProductID, Code, Category, .DataGridViewOrders.SelectedRows(0).Cells(5).Value.ToString, "AOCLASSIC", InventoryID, 0, Origin, Addontype, halfbatch, 0, 0, 0, 0, 0, 0, 0, 0)
                                 End If
                             Else
                                 ThisIsMyInventoryID = .TextBoxINC.Text
-                                .DataGridViewOrders.Rows.Add(Name, TotalQuantity, NUMBERFORMAT(ProductOriginalPrice), TotalAddOnPrice, .TextBoxINC.Text, ProductID, Code, Category, ProductID, "AOPREMIUM", InventoryID, 0, Origin, Addontype, halfbatch, 0, 0, 0, 0, 0, 0, 0, 0)
+                                .DataGridViewOrders.Rows.Add(Name, TotalQuantity, NUMBERFORMAT(ProductOriginalPrice), NUMBERFORMAT(TotalAddOnPrice), .TextBoxINC.Text, ProductID, Code, Category, ProductID, "AOPREMIUM", InventoryID, 0, Origin, Addontype, halfbatch, 0, 0, 0, 0, 0, 0, 0, 0)
                             End If
                         Else
                             If Addontype = "Classic" Then
                                 MsgBox("Select product first")
                             Else
                                 ThisIsMyInventoryID = .TextBoxINC.Text
-                                .DataGridViewOrders.Rows.Add(Name, TotalQuantity, NUMBERFORMAT(ProductOriginalPrice), TotalAddOnPrice, .TextBoxINC.Text, ProductID, Code, Category, ProductID, "AOPREMIUM", InventoryID, 0, Origin, Addontype, halfbatch, 0, 0, 0, 0, 0, 0, 0, 0)
+                                .DataGridViewOrders.Rows.Add(Name, TotalQuantity, NUMBERFORMAT(ProductOriginalPrice), NUMBERFORMAT(TotalAddOnPrice), .TextBoxINC.Text, ProductID, Code, Category, ProductID, "AOPREMIUM", InventoryID, 0, Origin, Addontype, halfbatch, 0, 0, 0, 0, 0, 0, 0, 0)
                             End If
                         End If
                     Else

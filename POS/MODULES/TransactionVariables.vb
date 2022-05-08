@@ -90,6 +90,13 @@
             UPDATE_CUSTOM_PROD_APP_BOOL = False
             PROMPT_MESSAGE_DATATABLE = New DataTable
             SELECT_DISCTINCT_PARTNERS_DT = New DataTable
+
+            CUST_INFO_FILLED = False
+            CUST_INFO_NAME = ""
+            CUST_INFO_TIN = ""
+            CUST_INFO_ADDRESS = ""
+            CUST_INFO_BUSINESS = ""
+
         Catch ex As Exception
             SendErrorReport(ex.ToString)
         End Try

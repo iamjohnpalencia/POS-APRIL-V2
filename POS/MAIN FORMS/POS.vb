@@ -1203,7 +1203,30 @@ Public Class POS
         End Try
     End Sub
 #Region "Transaction Process"
-
+    Private Sub InsertCustInfo()
+        Try
+            Dim ConnectionLocal As MySqlConnection = LocalhostConn()
+            Dim cmd As MySqlCommand
+            Dim sql = "INSERT INTO loc_customer_info (`transaction_number`, `cust_name`, `cust_tin`,`cust_address`, `cust_business`, `crew_id`, `store_id`, `created_at`, `active`, `synced`)
+                       VALUES (@1,@2,@3,@4,@5,@6,@7,@8,@9,@10)"
+            For i As Integer = 0 To DataGridViewInv.Rows.Count - 1 Step +1
+                cmd = New MySqlCommand(sql, ConnectionLocal)
+                cmd.Parameters.Add("@1", MySqlDbType.Text).Value = S_TRANSACTION_NUMBER
+                cmd.Parameters.Add("@2", MySqlDbType.Text).Value = CUST_INFO_NAME
+                cmd.Parameters.Add("@3", MySqlDbType.Text).Value = CUST_INFO_TIN
+                cmd.Parameters.Add("@4", MySqlDbType.Text).Value = CUST_INFO_ADDRESS
+                cmd.Parameters.Add("@5", MySqlDbType.Text).Value = CUST_INFO_BUSINESS
+                cmd.Parameters.Add("@6", MySqlDbType.Text).Value = ClientCrewID
+                cmd.Parameters.Add("@7", MySqlDbType.Text).Value = ClientStoreID
+                cmd.Parameters.Add("@8", MySqlDbType.Text).Value = FullDate24HR()
+                cmd.Parameters.Add("@9", MySqlDbType.Text).Value = "1"
+                cmd.Parameters.Add("@10", MySqlDbType.Text).Value = "Unsynced"
+                cmd.ExecuteNonQuery()
+            Next
+        Catch ex As Exception
+            SendErrorReport(ex.ToString)
+        End Try
+    End Sub
     Private Sub InsertFMStock()
         Try
             Dim ConnectionLocal As MySqlConnection = LocalhostConn()
@@ -1305,14 +1328,14 @@ Public Class POS
                     cmd.Parameters.Add("@17", MySqlDbType.Text).Value = TRANSACTIONMODE
                     cmd.Parameters.Add("@18", MySqlDbType.Int64).Value = .Rows(i).Cells(11).Value
                     cmd.Parameters.Add("@19", MySqlDbType.Text).Value = .Rows(i).Cells(13).Value
-                    cmd.Parameters.Add("@20", MySqlDbType.Double).Value = .Rows(i).Cells(15).Value
-                    cmd.Parameters.Add("@21", MySqlDbType.Double).Value = .Rows(i).Cells(16).Value
-                    cmd.Parameters.Add("@22", MySqlDbType.Double).Value = .Rows(i).Cells(17).Value
-                    cmd.Parameters.Add("@23", MySqlDbType.Double).Value = .Rows(i).Cells(18).Value
-                    cmd.Parameters.Add("@24", MySqlDbType.Double).Value = .Rows(i).Cells(19).Value
-                    cmd.Parameters.Add("@25", MySqlDbType.Double).Value = .Rows(i).Cells(20).Value
-                    cmd.Parameters.Add("@26", MySqlDbType.Double).Value = .Rows(i).Cells(21).Value
-                    cmd.Parameters.Add("@27", MySqlDbType.Double).Value = .Rows(i).Cells(22).Value
+                    cmd.Parameters.Add("@20", MySqlDbType.Double).Value = If(.Rows(i).Cells(15).Value > 0, .Rows(i).Cells(15).Value, 0)
+                    cmd.Parameters.Add("@21", MySqlDbType.Double).Value = If(.Rows(i).Cells(16).Value > 0, .Rows(i).Cells(15).Value, 0)
+                    cmd.Parameters.Add("@22", MySqlDbType.Double).Value = If(.Rows(i).Cells(17).Value > 0, .Rows(i).Cells(15).Value, 0)
+                    cmd.Parameters.Add("@23", MySqlDbType.Double).Value = If(.Rows(i).Cells(18).Value > 0, .Rows(i).Cells(15).Value, 0)
+                    cmd.Parameters.Add("@24", MySqlDbType.Double).Value = If(.Rows(i).Cells(19).Value > 0, .Rows(i).Cells(15).Value, 0)
+                    cmd.Parameters.Add("@25", MySqlDbType.Double).Value = If(.Rows(i).Cells(20).Value > 0, .Rows(i).Cells(15).Value, 0)
+                    cmd.Parameters.Add("@26", MySqlDbType.Double).Value = If(.Rows(i).Cells(21).Value > 0, .Rows(i).Cells(15).Value, 0)
+                    cmd.Parameters.Add("@27", MySqlDbType.Double).Value = If(.Rows(i).Cells(22).Value > 0, .Rows(i).Cells(15).Value, 0)
                     cmd.ExecuteNonQuery()
                     totalcostofgoods = 0
                 Next
@@ -1482,7 +1505,7 @@ Public Class POS
 
             INSERTTHISDATE = S_Zreading & " " & Format(Now(), "HH:mm:ss")
             SUPERAMOUNTDUE = Convert.ToDecimal(Double.Parse(TextBoxGRANDTOTAL.Text))
-            If TRANSACTIONMODE = "Representation Expenses" Then
+            If TRANSACTIONMODE = "Complementary Expenses" Then
                 ACTIVE = 3
             End If
             GROSSSALE = NUMBERFORMAT(Double.Parse(Label76.Text))
@@ -1570,6 +1593,15 @@ Public Class POS
                             Next
                         End If
 
+                        If CUST_INFO_FILLED Then
+                            ThreadOrder = New Thread(AddressOf InsertCustInfo)
+                            ThreadOrder.Start()
+                            THREADLIST.Add(ThreadOrder)
+                            For Each t In THREADLIST
+                                t.Join()
+                            Next
+                        End If
+
                         If DiscAppleid Then
                             ThreadOrder = New Thread(AddressOf InsertSeniorDetails)
                             ThreadOrder.Start()
@@ -1634,7 +1666,12 @@ Public Class POS
         If DataGridViewOrders.Rows.Count > 0 Then
             Try
                 Dim TotalLines As Integer = 0
-                Dim BodyLine As Integer = 550
+                Dim BodyLine As Integer = 560
+                If DiscAppleid Then
+                    BodyLine = 560
+                Else
+                    BodyLine = 510
+                End If
                 Dim CountHeaderLine As Integer = count("id", "loc_receipt WHERE type = 'Header' AND status = 1")
                 Dim ProductLine As Integer = 0
                 Dim CountFooterLine As Integer = count("id", "loc_receipt WHERE type = 'Footer' AND status = 1")
@@ -1689,6 +1726,7 @@ Public Class POS
                      MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
 
+            InsertIntoEJournal()
             GLOBAL_FUNCTION_UPDATE("loc_settings", "S_Trn_No = " & S_TRANSACTION_NUMBER, "settings_id = 1")
             GLOBAL_FUNCTION_UPDATE("loc_settings", "S_SI_No = " & S_SI_NUMBER, "settings_id = 1")
             selectmax(1)
@@ -1781,7 +1819,12 @@ Public Class POS
 
             ReceiptHeaderOne(sender, e, False, "", False, True)
             ReceiptBody(sender, e, False, "", False)
-            ReceiptBodyFooter(sender, e, False, "")
+            If DiscAppleid Then
+                ReceiptBodyFooter(sender, e, False, "", False, True)
+            Else
+                ReceiptBodyFooter(sender, e, False, "", False, False)
+            End If
+
             ReceiptFooterOne(sender, e, False, True)
 
         Catch ex As Exception

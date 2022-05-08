@@ -76,7 +76,7 @@ Partial Class TransactionType
         Me.ButtonRepEx.Name = "ButtonRepEx"
         Me.ButtonRepEx.Size = New System.Drawing.Size(180, 40)
         Me.ButtonRepEx.TabIndex = 107
-        Me.ButtonRepEx.Text = "Rep. Expenses"
+        Me.ButtonRepEx.Text = "Complementary Expenses"
         Me.ButtonRepEx.UseVisualStyleBackColor = False
         '
         'ButtonPayMaya

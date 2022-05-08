@@ -324,6 +324,20 @@
         TextBoxMONEY.Text = TextBoxTOTALPAY.Text
     End Sub
 
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        If Button7.Text = "Customer Information" Then
+            Enabled = False
+            Me.TopMost = False
+            CustomerInfo.Show()
+            CustomerInfo.TopMost = True
+        Else
+            CUST_INFO_FILLED = False
+            Button7.Text = "Customer Information"
+            Button7.BackColor = Color.White
+            Button7.ForeColor = Color.Black
+        End If
+    End Sub
+
     'Private Sub 
     '    Try
     '        TextBoxCHANGE.Text = Double.Parse(TextBoxMONEY.Text) - Double.Parse(TextBoxTOTALPAY.Text)

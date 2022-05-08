@@ -25,12 +25,13 @@ Partial Class PaymentForm
         Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.ButtonEX50 = New System.Windows.Forms.Button()
-        Me.ButtonEx1000 = New System.Windows.Forms.Button()
-        Me.ButtonEX500 = New System.Windows.Forms.Button()
-        Me.ButtonEX200 = New System.Windows.Forms.Button()
         Me.ButtonEX100 = New System.Windows.Forms.Button()
+        Me.ButtonEX200 = New System.Windows.Forms.Button()
+        Me.ButtonEX500 = New System.Windows.Forms.Button()
+        Me.ButtonEx1000 = New System.Windows.Forms.Button()
         Me.TextBoxDiscType = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -63,7 +64,6 @@ Partial Class PaymentForm
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
@@ -135,6 +135,22 @@ Partial Class PaymentForm
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(133, 467)
         Me.TableLayoutPanel1.TabIndex = 256
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(74, Byte), Integer), CType(CType(74, Byte), Integer))
+        Me.Button1.Location = New System.Drawing.Point(3, 3)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(127, 60)
+        Me.Button1.TabIndex = 257
+        Me.Button1.Text = "EXACT"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'Button7
         '
         Me.Button7.BackColor = System.Drawing.Color.White
@@ -148,6 +164,7 @@ Partial Class PaymentForm
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(127, 65)
         Me.Button7.TabIndex = 113
+        Me.Button7.Text = "Customer Information"
         Me.Button7.UseVisualStyleBackColor = False
         '
         'ButtonEX50
@@ -166,37 +183,21 @@ Partial Class PaymentForm
         Me.ButtonEX50.Text = "50"
         Me.ButtonEX50.UseVisualStyleBackColor = False
         '
-        'ButtonEx1000
+        'ButtonEX100
         '
-        Me.ButtonEx1000.BackColor = System.Drawing.Color.White
-        Me.ButtonEx1000.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ButtonEx1000.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ButtonEx1000.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.ButtonEx1000.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonEx1000.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.ButtonEx1000.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(74, Byte), Integer), CType(CType(74, Byte), Integer))
-        Me.ButtonEx1000.Location = New System.Drawing.Point(3, 69)
-        Me.ButtonEx1000.Name = "ButtonEx1000"
-        Me.ButtonEx1000.Size = New System.Drawing.Size(127, 60)
-        Me.ButtonEx1000.TabIndex = 108
-        Me.ButtonEx1000.Text = "1000"
-        Me.ButtonEx1000.UseVisualStyleBackColor = False
-        '
-        'ButtonEX500
-        '
-        Me.ButtonEX500.BackColor = System.Drawing.Color.White
-        Me.ButtonEX500.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ButtonEX500.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ButtonEX500.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.ButtonEX500.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonEX500.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.ButtonEX500.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(74, Byte), Integer), CType(CType(74, Byte), Integer))
-        Me.ButtonEX500.Location = New System.Drawing.Point(3, 135)
-        Me.ButtonEX500.Name = "ButtonEX500"
-        Me.ButtonEX500.Size = New System.Drawing.Size(127, 60)
-        Me.ButtonEX500.TabIndex = 109
-        Me.ButtonEX500.Text = "500"
-        Me.ButtonEX500.UseVisualStyleBackColor = False
+        Me.ButtonEX100.BackColor = System.Drawing.Color.White
+        Me.ButtonEX100.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ButtonEX100.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ButtonEX100.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.ButtonEX100.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonEX100.Font = New System.Drawing.Font("Tahoma", 11.25!)
+        Me.ButtonEX100.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(74, Byte), Integer), CType(CType(74, Byte), Integer))
+        Me.ButtonEX100.Location = New System.Drawing.Point(3, 267)
+        Me.ButtonEX100.Name = "ButtonEX100"
+        Me.ButtonEX100.Size = New System.Drawing.Size(127, 60)
+        Me.ButtonEX100.TabIndex = 111
+        Me.ButtonEX100.Text = "100"
+        Me.ButtonEX100.UseVisualStyleBackColor = False
         '
         'ButtonEX200
         '
@@ -214,21 +215,37 @@ Partial Class PaymentForm
         Me.ButtonEX200.Text = "200"
         Me.ButtonEX200.UseVisualStyleBackColor = False
         '
-        'ButtonEX100
+        'ButtonEX500
         '
-        Me.ButtonEX100.BackColor = System.Drawing.Color.White
-        Me.ButtonEX100.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ButtonEX100.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ButtonEX100.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.ButtonEX100.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonEX100.Font = New System.Drawing.Font("Tahoma", 11.25!)
-        Me.ButtonEX100.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(74, Byte), Integer), CType(CType(74, Byte), Integer))
-        Me.ButtonEX100.Location = New System.Drawing.Point(3, 267)
-        Me.ButtonEX100.Name = "ButtonEX100"
-        Me.ButtonEX100.Size = New System.Drawing.Size(127, 60)
-        Me.ButtonEX100.TabIndex = 111
-        Me.ButtonEX100.Text = "100"
-        Me.ButtonEX100.UseVisualStyleBackColor = False
+        Me.ButtonEX500.BackColor = System.Drawing.Color.White
+        Me.ButtonEX500.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ButtonEX500.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ButtonEX500.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.ButtonEX500.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonEX500.Font = New System.Drawing.Font("Tahoma", 11.25!)
+        Me.ButtonEX500.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(74, Byte), Integer), CType(CType(74, Byte), Integer))
+        Me.ButtonEX500.Location = New System.Drawing.Point(3, 135)
+        Me.ButtonEX500.Name = "ButtonEX500"
+        Me.ButtonEX500.Size = New System.Drawing.Size(127, 60)
+        Me.ButtonEX500.TabIndex = 109
+        Me.ButtonEX500.Text = "500"
+        Me.ButtonEX500.UseVisualStyleBackColor = False
+        '
+        'ButtonEx1000
+        '
+        Me.ButtonEx1000.BackColor = System.Drawing.Color.White
+        Me.ButtonEx1000.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ButtonEx1000.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ButtonEx1000.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.ButtonEx1000.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonEx1000.Font = New System.Drawing.Font("Tahoma", 11.25!)
+        Me.ButtonEx1000.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(74, Byte), Integer), CType(CType(74, Byte), Integer))
+        Me.ButtonEx1000.Location = New System.Drawing.Point(3, 69)
+        Me.ButtonEx1000.Name = "ButtonEx1000"
+        Me.ButtonEx1000.Size = New System.Drawing.Size(127, 60)
+        Me.ButtonEx1000.TabIndex = 108
+        Me.ButtonEx1000.Text = "1000"
+        Me.ButtonEx1000.UseVisualStyleBackColor = False
         '
         'TextBoxDiscType
         '
@@ -636,22 +653,6 @@ Partial Class PaymentForm
         Me.Label9.Size = New System.Drawing.Size(218, 16)
         Me.Label9.TabIndex = 254
         Me.Label9.Text = "______________________________"
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(74, Byte), Integer), CType(CType(74, Byte), Integer))
-        Me.Button1.Location = New System.Drawing.Point(3, 3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(127, 60)
-        Me.Button1.TabIndex = 257
-        Me.Button1.Text = "EXACT"
-        Me.Button1.UseVisualStyleBackColor = False
         '
         'PaymentForm
         '

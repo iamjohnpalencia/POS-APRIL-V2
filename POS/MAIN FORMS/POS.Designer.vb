@@ -99,29 +99,6 @@ Partial Class POS
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.DataGridViewOrders = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column43 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column42 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column45 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.halfbatch = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.seniordisc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.seniorqty = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.pwddisc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.pwdqty = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.athletedisc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.athleteqty = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.spdisc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.spqty = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel27 = New System.Windows.Forms.Panel()
         Me.Panel38 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -176,6 +153,29 @@ Partial Class POS
         Me.BackgroundWorkerCheckInternet = New System.ComponentModel.BackgroundWorker()
         Me.BackgroundWorkerSyncData = New System.ComponentModel.BackgroundWorker()
         Me.BackgroundWorkerContent = New System.ComponentModel.BackgroundWorker()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column43 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column42 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column45 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.halfbatch = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.seniordisc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.seniorqty = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.pwddisc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.pwdqty = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.athletedisc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.athleteqty = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.spdisc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.spqty = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel8.SuspendLayout()
         Me.Panel24.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -597,11 +597,11 @@ Partial Class POS
         Me.DataGridViewInv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridViewInv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewInv.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column10, Me.Column11, Me.Column14, Me.Column15, Me.Column18, Me.Origin, Me.Column51})
-        Me.DataGridViewInv.Location = New System.Drawing.Point(166, 438)
+        Me.DataGridViewInv.Location = New System.Drawing.Point(160, 217)
         Me.DataGridViewInv.Name = "DataGridViewInv"
         Me.DataGridViewInv.ReadOnly = True
         Me.DataGridViewInv.RowHeadersVisible = False
-        Me.DataGridViewInv.Size = New System.Drawing.Size(173, 52)
+        Me.DataGridViewInv.Size = New System.Drawing.Size(173, 42)
         Me.DataGridViewInv.TabIndex = 65
         Me.DataGridViewInv.Visible = False
         '
@@ -997,152 +997,6 @@ Partial Class POS
         Me.DataGridViewOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridViewOrders.Size = New System.Drawing.Size(340, 296)
         Me.DataGridViewOrders.TabIndex = 66
-        '
-        'Column1
-        '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle2
-        Me.Column1.FillWeight = 86.59849!
-        Me.Column1.HeaderText = "Name"
-        Me.Column1.Name = "Column1"
-        '
-        'Column2
-        '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.Column2.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Column2.FillWeight = 40.0!
-        Me.Column2.HeaderText = "Qty"
-        Me.Column2.Name = "Column2"
-        '
-        'Column3
-        '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.Column3.DefaultCellStyle = DataGridViewCellStyle4
-        Me.Column3.FillWeight = 50.0!
-        Me.Column3.HeaderText = "Price"
-        Me.Column3.Name = "Column3"
-        '
-        'Column4
-        '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle5
-        Me.Column4.FillWeight = 70.0!
-        Me.Column4.HeaderText = "Total"
-        Me.Column4.Name = "Column4"
-        '
-        'Column9
-        '
-        Me.Column9.HeaderText = "Column9"
-        Me.Column9.Name = "Column9"
-        Me.Column9.Visible = False
-        '
-        'Column12
-        '
-        Me.Column12.HeaderText = "Product ID"
-        Me.Column12.Name = "Column12"
-        Me.Column12.Visible = False
-        '
-        'Column13
-        '
-        Me.Column13.HeaderText = "SKU"
-        Me.Column13.Name = "Column13"
-        Me.Column13.Visible = False
-        '
-        'Column16
-        '
-        Me.Column16.HeaderText = "ColumnCAT"
-        Me.Column16.Name = "Column16"
-        Me.Column16.Visible = False
-        '
-        'Column17
-        '
-        Me.Column17.HeaderText = "ColumnCATOF"
-        Me.Column17.Name = "Column17"
-        Me.Column17.Visible = False
-        '
-        'Column19
-        '
-        Me.Column19.HeaderText = "ColumnSumID"
-        Me.Column19.Name = "Column19"
-        Me.Column19.Visible = False
-        '
-        'Column43
-        '
-        Me.Column43.HeaderText = "ColumnInvID"
-        Me.Column43.Name = "Column43"
-        Me.Column43.Visible = False
-        '
-        'Column20
-        '
-        Me.Column20.HeaderText = "Upgrade"
-        Me.Column20.Name = "Column20"
-        Me.Column20.Visible = False
-        '
-        'Column42
-        '
-        Me.Column42.HeaderText = "Origin"
-        Me.Column42.Name = "Column42"
-        Me.Column42.Visible = False
-        '
-        'Column45
-        '
-        Me.Column45.HeaderText = "addontype"
-        Me.Column45.Name = "Column45"
-        Me.Column45.Visible = False
-        '
-        'halfbatch
-        '
-        Me.halfbatch.HeaderText = "halfbatch"
-        Me.halfbatch.Name = "halfbatch"
-        Me.halfbatch.Visible = False
-        '
-        'seniordisc
-        '
-        Me.seniordisc.HeaderText = "seniordisc"
-        Me.seniordisc.Name = "seniordisc"
-        Me.seniordisc.Visible = False
-        '
-        'seniorqty
-        '
-        Me.seniorqty.HeaderText = "seniorqty"
-        Me.seniorqty.Name = "seniorqty"
-        Me.seniorqty.Visible = False
-        '
-        'pwddisc
-        '
-        Me.pwddisc.HeaderText = "pwddisc"
-        Me.pwddisc.Name = "pwddisc"
-        Me.pwddisc.Visible = False
-        '
-        'pwdqty
-        '
-        Me.pwdqty.HeaderText = "pwdqty"
-        Me.pwdqty.Name = "pwdqty"
-        Me.pwdqty.Visible = False
-        '
-        'athletedisc
-        '
-        Me.athletedisc.HeaderText = "athletedisc"
-        Me.athletedisc.Name = "athletedisc"
-        Me.athletedisc.Visible = False
-        '
-        'athleteqty
-        '
-        Me.athleteqty.HeaderText = "atheleteqty"
-        Me.athleteqty.Name = "athleteqty"
-        Me.athleteqty.Visible = False
-        '
-        'spdisc
-        '
-        Me.spdisc.HeaderText = "spdisc"
-        Me.spdisc.Name = "spdisc"
-        Me.spdisc.Visible = False
-        '
-        'spqty
-        '
-        Me.spqty.HeaderText = "spqty"
-        Me.spqty.Name = "spqty"
-        Me.spqty.Visible = False
         '
         'Panel27
         '
@@ -1780,6 +1634,152 @@ Partial Class POS
         '
         'BackgroundWorkerContent
         '
+        '
+        'Column1
+        '
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Column1.FillWeight = 86.59849!
+        Me.Column1.HeaderText = "Name"
+        Me.Column1.Name = "Column1"
+        '
+        'Column2
+        '
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.Column2.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Column2.FillWeight = 40.0!
+        Me.Column2.HeaderText = "Qty"
+        Me.Column2.Name = "Column2"
+        '
+        'Column3
+        '
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle4
+        Me.Column3.FillWeight = 50.0!
+        Me.Column3.HeaderText = "Price"
+        Me.Column3.Name = "Column3"
+        '
+        'Column4
+        '
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle5
+        Me.Column4.FillWeight = 70.0!
+        Me.Column4.HeaderText = "Total"
+        Me.Column4.Name = "Column4"
+        '
+        'Column9
+        '
+        Me.Column9.HeaderText = "Column9"
+        Me.Column9.Name = "Column9"
+        Me.Column9.Visible = False
+        '
+        'Column12
+        '
+        Me.Column12.HeaderText = "Product ID"
+        Me.Column12.Name = "Column12"
+        Me.Column12.Visible = False
+        '
+        'Column13
+        '
+        Me.Column13.HeaderText = "SKU"
+        Me.Column13.Name = "Column13"
+        Me.Column13.Visible = False
+        '
+        'Column16
+        '
+        Me.Column16.HeaderText = "ColumnCAT"
+        Me.Column16.Name = "Column16"
+        Me.Column16.Visible = False
+        '
+        'Column17
+        '
+        Me.Column17.HeaderText = "ColumnCATOF"
+        Me.Column17.Name = "Column17"
+        Me.Column17.Visible = False
+        '
+        'Column19
+        '
+        Me.Column19.HeaderText = "ColumnSumID"
+        Me.Column19.Name = "Column19"
+        Me.Column19.Visible = False
+        '
+        'Column43
+        '
+        Me.Column43.HeaderText = "ColumnInvID"
+        Me.Column43.Name = "Column43"
+        Me.Column43.Visible = False
+        '
+        'Column20
+        '
+        Me.Column20.HeaderText = "Upgrade"
+        Me.Column20.Name = "Column20"
+        Me.Column20.Visible = False
+        '
+        'Column42
+        '
+        Me.Column42.HeaderText = "Origin"
+        Me.Column42.Name = "Column42"
+        Me.Column42.Visible = False
+        '
+        'Column45
+        '
+        Me.Column45.HeaderText = "addontype"
+        Me.Column45.Name = "Column45"
+        Me.Column45.Visible = False
+        '
+        'halfbatch
+        '
+        Me.halfbatch.HeaderText = "halfbatch"
+        Me.halfbatch.Name = "halfbatch"
+        Me.halfbatch.Visible = False
+        '
+        'seniordisc
+        '
+        Me.seniordisc.HeaderText = "seniordisc"
+        Me.seniordisc.Name = "seniordisc"
+        Me.seniordisc.Visible = False
+        '
+        'seniorqty
+        '
+        Me.seniorqty.HeaderText = "seniorqty"
+        Me.seniorqty.Name = "seniorqty"
+        Me.seniorqty.Visible = False
+        '
+        'pwddisc
+        '
+        Me.pwddisc.HeaderText = "pwddisc"
+        Me.pwddisc.Name = "pwddisc"
+        Me.pwddisc.Visible = False
+        '
+        'pwdqty
+        '
+        Me.pwdqty.HeaderText = "pwdqty"
+        Me.pwdqty.Name = "pwdqty"
+        Me.pwdqty.Visible = False
+        '
+        'athletedisc
+        '
+        Me.athletedisc.HeaderText = "athletedisc"
+        Me.athletedisc.Name = "athletedisc"
+        Me.athletedisc.Visible = False
+        '
+        'athleteqty
+        '
+        Me.athleteqty.HeaderText = "atheleteqty"
+        Me.athleteqty.Name = "athleteqty"
+        Me.athleteqty.Visible = False
+        '
+        'spdisc
+        '
+        Me.spdisc.HeaderText = "spdisc"
+        Me.spdisc.Name = "spdisc"
+        Me.spdisc.Visible = False
+        '
+        'spqty
+        '
+        Me.spqty.HeaderText = "spqty"
+        Me.spqty.Name = "spqty"
+        Me.spqty.Visible = False
         '
         'POS
         '

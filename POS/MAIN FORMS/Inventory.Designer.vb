@@ -44,6 +44,9 @@ Partial Class Inventory
         Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Inventory))
+        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -68,6 +71,8 @@ Partial Class Inventory
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.DataGridViewFASTMOVING = New System.Windows.Forms.DataGridView()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
@@ -95,6 +100,10 @@ Partial Class Inventory
         Me.Button8 = New System.Windows.Forms.Button()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.DataGridViewSTOCKENTRY = New System.Windows.Forms.DataGridView()
+        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.ButtonSearchDailyTransaction = New System.Windows.Forms.Button()
         Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
@@ -107,12 +116,15 @@ Partial Class Inventory
         Me.Panel24 = New System.Windows.Forms.Panel()
         Me.ButtonKeyboard = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.Panel20 = New System.Windows.Forms.Panel()
+        Me.DateTimePickerZXreadingTo = New System.Windows.Forms.DateTimePicker()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.DataGridViewZreadInventory = New System.Windows.Forms.DataGridView()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.DateTimePickerZXreading = New System.Windows.Forms.DateTimePicker()
+        Me.DataGridViewZreadInvData = New System.Windows.Forms.DataGridView()
         Me.Panel6.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -147,6 +159,10 @@ Partial Class Inventory
         Me.Panel16.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel24.SuspendLayout()
+        Me.TabPage6.SuspendLayout()
+        Me.Panel20.SuspendLayout()
+        CType(Me.DataGridViewZreadInventory, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridViewZreadInvData, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel6
@@ -169,6 +185,7 @@ Partial Class Inventory
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Controls.Add(Me.TabPage5)
+        Me.TabControl1.Controls.Add(Me.TabPage6)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Font = New System.Drawing.Font("Tahoma", 11.0!)
         Me.TabControl1.Location = New System.Drawing.Point(20, 0)
@@ -538,6 +555,16 @@ Partial Class Inventory
         Me.DataGridViewFASTMOVING.Size = New System.Drawing.Size(1109, 402)
         Me.DataGridViewFASTMOVING.TabIndex = 2
         '
+        'Column9
+        '
+        Me.Column9.HeaderText = "Column9"
+        Me.Column9.Name = "Column9"
+        '
+        'Column10
+        '
+        Me.Column10.HeaderText = "Column10"
+        Me.Column10.Name = "Column10"
+        '
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(34, Byte), Integer))
@@ -856,6 +883,26 @@ Partial Class Inventory
         Me.DataGridViewSTOCKENTRY.Size = New System.Drawing.Size(1097, 312)
         Me.DataGridViewSTOCKENTRY.TabIndex = 6
         '
+        'Column11
+        '
+        Me.Column11.HeaderText = "Column11"
+        Me.Column11.Name = "Column11"
+        '
+        'Column12
+        '
+        Me.Column12.HeaderText = "Column12"
+        Me.Column12.Name = "Column12"
+        '
+        'Column13
+        '
+        Me.Column13.HeaderText = "Column13"
+        Me.Column13.Name = "Column13"
+        '
+        'Column14
+        '
+        Me.Column14.HeaderText = "Column14"
+        Me.Column14.Name = "Column14"
+        '
         'Panel16
         '
         Me.Panel16.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(34, Byte), Integer))
@@ -982,35 +1029,133 @@ Partial Class Inventory
         Me.Label2.TabIndex = 153
         Me.Label2.Text = "INVENTORY"
         '
-        'Column9
+        'TabPage6
         '
-        Me.Column9.HeaderText = "Column9"
-        Me.Column9.Name = "Column9"
+        Me.TabPage6.Controls.Add(Me.DataGridViewZreadInvData)
+        Me.TabPage6.Controls.Add(Me.Panel20)
+        Me.TabPage6.Location = New System.Drawing.Point(4, 27)
+        Me.TabPage6.Name = "TabPage6"
+        Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage6.Size = New System.Drawing.Size(1115, 445)
+        Me.TabPage6.TabIndex = 5
+        Me.TabPage6.Text = "Logs"
+        Me.TabPage6.UseVisualStyleBackColor = True
         '
-        'Column10
+        'Panel20
         '
-        Me.Column10.HeaderText = "Column10"
-        Me.Column10.Name = "Column10"
+        Me.Panel20.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.Panel20.Controls.Add(Me.DateTimePickerZXreadingTo)
+        Me.Panel20.Controls.Add(Me.CheckBox1)
+        Me.Panel20.Controls.Add(Me.Label19)
+        Me.Panel20.Controls.Add(Me.DataGridViewZreadInventory)
+        Me.Panel20.Controls.Add(Me.Button2)
+        Me.Panel20.Controls.Add(Me.DateTimePickerZXreading)
+        Me.Panel20.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel20.Location = New System.Drawing.Point(3, 3)
+        Me.Panel20.Name = "Panel20"
+        Me.Panel20.Size = New System.Drawing.Size(1109, 37)
+        Me.Panel20.TabIndex = 5
         '
-        'Column11
+        'DateTimePickerZXreadingTo
         '
-        Me.Column11.HeaderText = "Column11"
-        Me.Column11.Name = "Column11"
+        Me.DateTimePickerZXreadingTo.Enabled = False
+        Me.DateTimePickerZXreadingTo.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.DateTimePickerZXreadingTo.Location = New System.Drawing.Point(453, 6)
+        Me.DateTimePickerZXreadingTo.Name = "DateTimePickerZXreadingTo"
+        Me.DateTimePickerZXreadingTo.Size = New System.Drawing.Size(260, 22)
+        Me.DateTimePickerZXreadingTo.TabIndex = 22
         '
-        'Column12
+        'CheckBox1
         '
-        Me.Column12.HeaderText = "Column12"
-        Me.Column12.Name = "Column12"
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Checked = True
+        Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox1.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.CheckBox1.Location = New System.Drawing.Point(102, 9)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(79, 18)
+        Me.CheckBox1.TabIndex = 21
+        Me.CheckBox1.Text = "Inventory"
+        Me.CheckBox1.UseVisualStyleBackColor = True
         '
-        'Column13
+        'Label19
         '
-        Me.Column13.HeaderText = "Column13"
-        Me.Column13.Name = "Column13"
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.Label19.Location = New System.Drawing.Point(12, 10)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(84, 14)
+        Me.Label19.TabIndex = 18
+        Me.Label19.Text = "Filter By Date "
         '
-        'Column14
+        'DataGridViewZreadInventory
         '
-        Me.Column14.HeaderText = "Column14"
-        Me.Column14.Name = "Column14"
+        Me.DataGridViewZreadInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewZreadInventory.Location = New System.Drawing.Point(891, 6)
+        Me.DataGridViewZreadInventory.Name = "DataGridViewZreadInventory"
+        Me.DataGridViewZreadInventory.ReadOnly = True
+        Me.DataGridViewZreadInventory.Size = New System.Drawing.Size(44, 23)
+        Me.DataGridViewZreadInventory.TabIndex = 3
+        Me.DataGridViewZreadInventory.Visible = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(77, Byte), Integer))
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Location = New System.Drawing.Point(719, 6)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(84, 22)
+        Me.Button2.TabIndex = 17
+        Me.Button2.Text = "Search"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'DateTimePickerZXreading
+        '
+        Me.DateTimePickerZXreading.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.DateTimePickerZXreading.Location = New System.Drawing.Point(187, 6)
+        Me.DateTimePickerZXreading.Name = "DateTimePickerZXreading"
+        Me.DateTimePickerZXreading.Size = New System.Drawing.Size(260, 22)
+        Me.DateTimePickerZXreading.TabIndex = 4
+        '
+        'DataGridViewZreadInvData
+        '
+        Me.DataGridViewZreadInvData.AllowUserToAddRows = False
+        Me.DataGridViewZreadInvData.AllowUserToDeleteRows = False
+        Me.DataGridViewZreadInvData.AllowUserToResizeColumns = False
+        Me.DataGridViewZreadInvData.AllowUserToResizeRows = False
+        DataGridViewCellStyle22.BackColor = System.Drawing.Color.White
+        Me.DataGridViewZreadInvData.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle22
+        Me.DataGridViewZreadInvData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridViewZreadInvData.BackgroundColor = System.Drawing.Color.White
+        Me.DataGridViewZreadInvData.BorderStyle = System.Windows.Forms.BorderStyle.None
+        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
+        DataGridViewCellStyle23.Font = New System.Drawing.Font("Tahoma", 11.0!)
+        DataGridViewCellStyle23.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewZreadInvData.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle23
+        Me.DataGridViewZreadInvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle24.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle24.Font = New System.Drawing.Font("Tahoma", 11.0!)
+        DataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(209, Byte), Integer))
+        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewZreadInvData.DefaultCellStyle = DataGridViewCellStyle24
+        Me.DataGridViewZreadInvData.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridViewZreadInvData.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.DataGridViewZreadInvData.EnableHeadersVisualStyles = False
+        Me.DataGridViewZreadInvData.Location = New System.Drawing.Point(3, 40)
+        Me.DataGridViewZreadInvData.Name = "DataGridViewZreadInvData"
+        Me.DataGridViewZreadInvData.Size = New System.Drawing.Size(1109, 402)
+        Me.DataGridViewZreadInvData.TabIndex = 8
         '
         'Inventory
         '
@@ -1061,6 +1206,11 @@ Partial Class Inventory
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel24.ResumeLayout(False)
+        Me.TabPage6.ResumeLayout(False)
+        Me.Panel20.ResumeLayout(False)
+        Me.Panel20.PerformLayout()
+        CType(Me.DataGridViewZreadInventory, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridViewZreadInvData, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1133,4 +1283,13 @@ Partial Class Inventory
     Friend WithEvents Column12 As DataGridViewTextBoxColumn
     Friend WithEvents Column13 As DataGridViewTextBoxColumn
     Friend WithEvents Column14 As DataGridViewTextBoxColumn
+    Friend WithEvents TabPage6 As TabPage
+    Friend WithEvents Panel20 As Panel
+    Friend WithEvents DateTimePickerZXreadingTo As DateTimePicker
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents Label19 As Label
+    Friend WithEvents DataGridViewZreadInventory As DataGridView
+    Friend WithEvents Button2 As Button
+    Friend WithEvents DateTimePickerZXreading As DateTimePicker
+    Friend WithEvents DataGridViewZreadInvData As DataGridView
 End Class

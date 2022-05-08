@@ -117,6 +117,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MAIN FORMS\AuditTrail.Designer.vb">
+      <DependentUpon>AuditTrail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN FORMS\AuditTrail.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MAIN FORMS\Auth.Designer.vb">
       <DependentUpon>Auth.vb</DependentUpon>
     </Compile>
@@ -153,6 +159,7 @@
     <Compile Include="MAIN FORMS\SettingsForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MODULES\EJournal.vb" />
     <Compile Include="MODULES\NEWPOSMODULE.vb" />
     <Compile Include="MODULES\TransactionVariables.vb" />
     <Compile Include="MODULES\ZXReading.vb" />
@@ -248,6 +255,12 @@
       <DependentUpon>CheckingForUpdates.vb</DependentUpon>
     </Compile>
     <Compile Include="SUBFORMS\CheckingForUpdates.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SUBFORMS\CustomerInfo.Designer.vb">
+      <DependentUpon>CustomerInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SUBFORMS\CustomerInfo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SUBFORMS\Discounts.Designer.vb">
@@ -435,6 +448,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="MAIN FORMS\AuditTrail.resx">
+      <DependentUpon>AuditTrail.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MAIN FORMS\Auth.resx">
       <DependentUpon>Auth.vb</DependentUpon>
     </EmbeddedResource>
@@ -497,6 +513,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SUBFORMS\CheckingForUpdates.resx">
       <DependentUpon>CheckingForUpdates.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SUBFORMS\CustomerInfo.resx">
+      <DependentUpon>CustomerInfo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SUBFORMS\Discounts.resx">
       <DependentUpon>Discounts.vb</DependentUpon>

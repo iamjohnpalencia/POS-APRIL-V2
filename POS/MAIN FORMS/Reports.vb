@@ -56,7 +56,6 @@ Public Class Reports
             TabControl1.TabPages(6).Text = "Crew Sales"
             TabControl1.TabPages(7).Text = "Item Return"
             TabControl1.TabPages(8).Text = "Deposit Slip"
-            TabControl1.TabPages(9).Text = "Z/X Reading"
             ComboBoxTransactionType.SelectedIndex = 0
             ToolStripComboBoxStatus.SelectedIndex = 0
 
@@ -71,7 +70,7 @@ Public Class Reports
 
             reportsreturnsandrefunds(False)
             viewdeposit(False)
-            FillDatagridZreadInv(False)
+
             LoadCrewSales(False)
             'If ClientRole = "Admin" Then
             '    ButtonZreadAdmin.Visible = True
@@ -83,8 +82,8 @@ Public Class Reports
 
             If S_Zreading = Format(Now().AddDays(1), "yyyy-MM-dd") Then
                 'ButtonZread.Enabled = False
-                ToolStripButtonZReading.Enabled = False
-                ButtonZreadAdmin.Enabled = False
+                ButtonZReading.Enabled = False
+                'ButtonZreadAdmin.Enabled = False
             End If
 
             If DataGridViewDaily.Rows.Count > 0 Then
@@ -988,7 +987,12 @@ Public Class Reports
             Try
 
                 Dim TotalLines As Integer = 0
-                Dim BodyLine As Integer = 520
+                Dim BodyLine As Integer = 540
+                If DataGridViewDaily.SelectedRows(0).Cells(2).Value > 0 Then
+                    BodyLine = 540
+                Else
+                    BodyLine = 470
+                End If
                 Dim CountHeaderLine As Integer = count("id", "loc_receipt WHERE type = 'Header' AND status = 1")
                 Dim ProductLine As Integer = 0
                 Dim CountFooterLine As Integer = count("id", "loc_receipt WHERE type = 'Footer' AND status = 1")
@@ -1012,6 +1016,8 @@ Public Class Reports
                     PrintPreviewDialog1.Document = printdoc
                     PrintPreviewDialog1.ShowDialog()
                 End If
+
+                InsertIntoEJournal()
 
             Catch ex As Exception
                 MessageBox.Show("An error occurred while trying to load the " &
@@ -1078,7 +1084,7 @@ Public Class Reports
                     ElseIf .Rows(i).Cells(11).Value = "Lalafood" Then
                         Lalafood += .Rows(i).Cells(1).Value
                         Lalafoodqty += 1
-                    ElseIf .Rows(i).Cells(11).Value = "Representation Expenses" Then
+                    ElseIf .Rows(i).Cells(11).Value = "Complementary Expenses" Then
                         RepExpense += .Rows(i).Cells(1).Value
                         RepExpenseqty += 1
                     ElseIf .Rows(i).Cells(11).Value = "Food Panda" Then
@@ -1109,8 +1115,8 @@ Public Class Reports
                     RightToLeftDisplay(sender, e, 160, "Paymaya(" & Paymayaqty & ")", NUMBERFORMAT(Paymaya), font, 0, 0)
                 ElseIf .Text = "Lalafood" Then
                     RightToLeftDisplay(sender, e, 160, "Lalafood(" & Lalafoodqty & ")", NUMBERFORMAT(Lalafood), font, 0, 0)
-                ElseIf .Text = "Representation Expenses" Then
-                    RightToLeftDisplay(sender, e, 160, "Rep. Expenses(" & RepExpenseqty & ")", NUMBERFORMAT(RepExpense), font, 0, 0)
+                ElseIf .Text = "Complementary Expenses" Then
+                    RightToLeftDisplay(sender, e, 160, "Complementary Expenses(" & RepExpenseqty & ")", NUMBERFORMAT(RepExpense), font, 0, 0)
                 ElseIf .Text = "Food Panda" Then
                     RightToLeftDisplay(sender, e, 160, "Food Panda(" & FoodPandaqty & ")", NUMBERFORMAT(FoodPanda), font, 0, 0)
                 ElseIf .Text = "Others" Then
@@ -1141,12 +1147,22 @@ Public Class Reports
             If ToolStripComboBoxStatus.Text = "Complete" Then
                 ReceiptHeaderOne(sender, e, False, DataGridViewDaily.SelectedRows(0).Cells(0).Value, True, True)
                 ReceiptBody(sender, e, False, DataGridViewDaily.SelectedRows(0).Cells(0).Value, True)
-                ReceiptBodyFooter(sender, e, False, DataGridViewDaily.SelectedRows(0).Cells(0).Value)
+                If DataGridViewDaily.SelectedRows(0).Cells(2).Value > 0 Then
+                    ReceiptBodyFooter(sender, e, False, DataGridViewDaily.SelectedRows(0).Cells(0).Value, True, True)
+                Else
+                    ReceiptBodyFooter(sender, e, False, DataGridViewDaily.SelectedRows(0).Cells(0).Value, True, False)
+                End If
+
                 ReceiptFooterOne(sender, e, False, False)
             Else
                 ReceiptHeaderOne(sender, e, True, DataGridViewDaily.SelectedRows(0).Cells(0).Value, True, True)
                 ReceiptBody(sender, e, True, DataGridViewDaily.SelectedRows(0).Cells(0).Value, True)
-                ReceiptBodyFooter(sender, e, True, DataGridViewDaily.SelectedRows(0).Cells(0).Value)
+
+                If DataGridViewDaily.SelectedRows(0).Cells(2).Value > 0 Then
+                    ReceiptBodyFooter(sender, e, False, DataGridViewDaily.SelectedRows(0).Cells(0).Value, True, True)
+                Else
+                    ReceiptBodyFooter(sender, e, False, DataGridViewDaily.SelectedRows(0).Cells(0).Value, True, False)
+                End If
                 ReceiptFooterOne(sender, e, True, False)
             End If
 
@@ -1352,33 +1368,8 @@ Public Class Reports
 
     Dim threadlist As List(Of Thread) = New List(Of Thread)
     Dim thread1 As Thread
-    Private Sub FillDatagridZreadInv(searchdate As Boolean)
-        Try
-            table = "loc_zread_inventory I INNER JOIN loc_product_formula F ON F.server_formula_id = I.server_inventory_id "
-            fields = "I.product_ingredients as Ingredients, i.sku , CONCAT_WS(' ', ROUND(I.stock_primary,0), F.primary_unit) as PrimaryValue , CONCAT_WS(' ', ROUND(I.stock_secondary,0), F.secondary_unit) as UOM , ROUND(I.stock_no_of_servings,0) as NoofServings, I.zreading"
-            If searchdate = False Then
-                where = "zreading = '" & Format(Now(), "yyyy-MM-dd") & "' AND I.stock_status = 1 AND I.store_id = " & ClientStoreID & " ORDER BY I.product_ingredients ASC"
-                GLOBAL_SELECT_ALL_FUNCTION_WHERE(table:=table, datagrid:=DataGridViewZreadInvData, fields:=fields, where:=where)
-            Else
-                where = "zreading = '" & Format(DateTimePickerZXreading.Value, "yyyy-MM-dd") & "' AND I.stock_status = 1 AND I.store_id = " & ClientStoreID & " ORDER BY I.product_ingredients ASC"
-                GLOBAL_SELECT_ALL_FUNCTION_WHERE(table:=table, datagrid:=DataGridViewZreadInvData, fields:=fields, where:=where)
-            End If
-            With DataGridViewZreadInvData
-                .Columns(0).HeaderText = "Ingredients"
-                .Columns(1).HeaderText = "SKU"
-                .Columns(2).HeaderText = "Primary Value"
-                .Columns(3).HeaderText = "UOM"
-                .Columns(4).HeaderText = "No. of Servings"
-                .Columns(5).HeaderText = "Zreading Date"
-            End With
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-            SendErrorReport(ex.ToString)
-        End Try
-    End Sub
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        FillDatagridZreadInv(True)
-    End Sub
+
+
     Private Sub MainInventorySub()
         Try
             With DataGridViewZreadInventory
@@ -2337,25 +2328,7 @@ Public Class Reports
         End Try
     End Sub
 
-    Private Sub ToolStripButton7_Click(sender As Object, e As EventArgs) Handles ToolStripButton7.Click
-        Try
-            'BackgroundWorkerEJournal.WorkerReportsProgress = True
-            'BackgroundWorkerEJournal.WorkerSupportsCancellation = True
-            'BackgroundWorkerEJournal.RunWorkerAsync()
-            'DisableFormClose = True
-            'ToolStripButton7.Enabled = False
-            'ToolStripButton4.Enabled = False
 
-
-            If ToolStripComboBoxStatus.Text = "Complete" Then
-                GenerateTxtFile(False)
-            Else
-                GenerateTxtFile(True)
-            End If
-        Catch ex As Exception
-            SendErrorReport(ex.ToString)
-        End Try
-    End Sub
     'Dim ThreadEJournal As Thread
     'Dim ThreadListEJournal As List(Of Thread) = New List(Of Thread)
     'Private Sub BackgroundWorkerEJournal_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorkerEJournal.DoWork
@@ -2401,328 +2374,7 @@ Public Class Reports
     'End Sub
 
 
-    Private Sub GenerateTxtFile(VoidReturn As Boolean)
-        Try
-            Dim Denom As String = ""
 
-            Dim connectionlocal As MySqlConnection = LocalhostConn()
-            Dim sql As String = ""
-            Dim cmd As MySqlCommand
-            Dim dt As DataTable = New DataTable
-            Dim da As MySqlDataAdapter
-
-            Dim CompleteDirectoryPath As String = ""
-
-            If Not Directory.Exists(My.Computer.FileSystem.SpecialDirectories.Desktop & "\E-Journal") Then
-                Directory.CreateDirectory(My.Computer.FileSystem.SpecialDirectories.Desktop & "\E-journal")
-                CompleteDirectoryPath = My.Computer.FileSystem.SpecialDirectories.Desktop & "\E-journal\" & FullDateFormatForSaving()
-                Directory.CreateDirectory(CompleteDirectoryPath)
-            Else
-                CompleteDirectoryPath = My.Computer.FileSystem.SpecialDirectories.Desktop & "\E-journal\" & FullDateFormatForSaving()
-                Directory.CreateDirectory(CompleteDirectoryPath)
-            End If
-
-            Dim TotalRowsToAdd As Integer = 0
-            With DataGridViewDaily
-                For i As Integer = 0 To .Rows.Count - 1 Step +1
-
-                    dt = New DataTable
-                    sql = "SELECT product_name,quantity,price,total,product_category,addontype FROM loc_daily_transaction_details WHERE transaction_number = '" & .Rows(i).Cells(0).Value.ToString & "'"
-                    cmd = New MySqlCommand(sql, connectionlocal)
-                    da = New MySqlDataAdapter(cmd)
-                    da.Fill(dt)
-                    TotalRowsToAdd += dt.Rows.Count
-                Next
-
-            End With
-            If VoidReturn Then
-                Denom = "-"
-                sql = "SELECT count(id) FROM loc_receipt WHERE type IN ('Header','REFUND-HEADER') AND status = 1 ORDER BY id ASC"
-            Else
-                sql = "SELECT count(id) FROM loc_receipt WHERE type IN ('Header','SALES-INVOICE') AND status = 1 ORDER BY id ASC"
-            End If
-
-            cmd = New MySqlCommand(sql, connectionlocal)
-            Dim headerResult = cmd.ExecuteScalar
-            Dim TotalHeaderResult = headerResult * DataGridViewDaily.Rows.Count
-
-            sql = "SELECT count(id) FROM loc_receipt WHERE type = 'Footer' AND status = 1"
-
-            cmd = New MySqlCommand(sql, connectionlocal)
-            Dim FooterResult = cmd.ExecuteScalar
-            Dim TotalFooterResult = FooterResult * DataGridViewDaily.Rows.Count
-
-            Dim TotalDgvRows As Integer = DataGridViewDaily.Rows.Count * 52
-            TotalDgvRows += TotalHeaderResult + TotalFooterResult
-            TotalRowsToAdd += TotalRowsToAdd + TotalDgvRows
-
-            Dim TxtFileLine(TotalRowsToAdd) As String
-            Console.Write(TotalRowsToAdd)
-            'Console.Write("Total Rows " & TotalRowsToAdd)
-            'Console.WriteLine(TxtFileLine.Length)
-            With DataGridViewDaily
-                Dim a As Integer = 0
-                For i As Integer = 0 To .Rows.Count - 1 Step +1
-                    Dim transactionnumber As String = .Rows(i).Cells(0).Value.ToString
-                    If VoidReturn Then
-                        sql = "SELECT description, type FROM loc_receipt WHERE type IN ('Header','REFUND-HEADER','OFFICIAL-REFUND') AND status = 1 ORDER BY id ASC"
-                    Else
-                        sql = "SELECT description, type FROM loc_receipt WHERE type IN ('Header','SALES-INVOICE','OFFICIAL-INVOICE') AND status = 1 ORDER BY id ASC"
-                    End If
-                    cmd = New MySqlCommand(sql, connectionlocal)
-                    da = New MySqlDataAdapter(cmd)
-                    dt = New DataTable
-                    da.Fill(dt)
-                    Dim SalesInvoiceHeader As String = ""
-                    Dim OfficialInvoiceRefund As String = ""
-
-                    TxtFileLine(a) = ClientBrand.ToUpper
-                    a += 1
-                    For ab As Integer = 0 To dt.Rows.Count - 1 Step +1
-                        If dt(ab)(1).ToString = "SALES-INVOICE" Then
-                            SalesInvoiceHeader = dt(ab)(0).ToString
-                        ElseIf dt(ab)(1).ToString = "REFUND-HEADER" Then
-                            SalesInvoiceHeader = dt(ab)(0).ToString
-                        ElseIf dt(ab)(1).ToString = "OFFICIAL-INVOICE" Then
-                            OfficialInvoiceRefund = dt(ab)(0).ToString
-                        ElseIf dt(ab)(1).ToString = "OFFICIAL-REFUND" Then
-                            OfficialInvoiceRefund = dt(ab)(0).ToString
-                        Else
-                            TxtFileLine(a) = dt(ab)(0)
-                            a += 1
-                        End If
-                    Next
-                    sql = "SELECT * FROM loc_daily_transaction WHERE transaction_number = '" & transactionnumber & "'"
-                    cmd = New MySqlCommand(sql, connectionlocal)
-                    Using reader As MySqlDataReader = cmd.ExecuteReader
-                        If reader.HasRows Then
-                            While reader.Read
-                                TxtFileLine(a) = "-------------------------------"
-                                a += 1
-                                Dim SINumber = reader("si_number")
-                                TxtFileLine(a) = "SI No.: " & Format(SINumber, S_SIFormat)
-                                a += 1
-                                TxtFileLine(a) = "Cashier: " & reader("crew_id") & " " & returnfullname(reader("crew_id"))
-                                a += 1
-                                TxtFileLine(a) = "Date: " & reader("created_at")
-                                a += 1
-                                TxtFileLine(a) = "Hardware Serial #: "
-                                a += 1
-                                TxtFileLine(a) = "    ***********************"
-                                a += 1
-                                TxtFileLine(a) = "         " & SalesInvoiceHeader
-                                a += 1
-                                TxtFileLine(a) = "    ***********************"
-                                a += 1
-                                TxtFileLine(a) = "-------------------------------"
-                                a += 1
-                            End While
-                        End If
-                    End Using
-
-
-                    dt = New DataTable
-                    sql = "SELECT * FROM loc_daily_transaction_details WHERE transaction_number = '" & transactionnumber & "'"
-                    cmd = New MySqlCommand(sql, connectionlocal)
-                    da = New MySqlDataAdapter(cmd)
-                    da.Fill(dt)
-
-                    For ai As Integer = 0 To dt.Rows.Count - 1 Step +1
-                        Dim price = dt(ai)(6)
-                        If dt(ai)(14).ToString = "Add-Ons" Then
-                            If dt(ai)(18).Value.ToString = "Classic" Then
-                                TxtFileLine(a) = "     @" & dt(ai)(3) & "         " & price
-                                a += 1
-                            Else
-                                TxtFileLine(a) = dt(ai)(4) & "      " & dt(ai)(2) & "      " & dt(ai)(5) & "      " & Denom & price
-                                a += 1
-                            End If
-                        Else
-                            TxtFileLine(a) = dt(ai)(4) & "      " & dt(ai)(2) & "      " & dt(ai)(5) & "      " & Denom & price
-                            a += 1
-                            If dt(ai)(17) > 0 Then
-                                TxtFileLine(a) = "     + UPGRADE BRWN " & dt(ai)(17)
-                                a += 1
-                            End If
-                            If dt(ai)(20) > 0 Then
-                                TxtFileLine(a) = "    + " & dt(ai)(20) & " SENIOR DISCOUNT"
-                                a += 1
-                            End If
-                            If dt(ai)(22) > 0 Then
-                                TxtFileLine(a) = "    + " & dt(ai)(22) & " PWD DISCOUNT"
-                                a += 1
-                            End If
-                            If dt(ai)(24) > 0 Then
-                                TxtFileLine(a) = "    + " & dt(ai)(24) & "ATHLETE DISCOUNT"
-                                a += 1
-                            End If
-                            If dt(ai)(26) > 0 Then
-                                TxtFileLine(a) = "    + " & dt(ai)(26) & " S.P DISCOUNT"
-                                a += 1
-                            End If
-                        End If
-
-                    Next
-
-
-                    Dim GetStoreID As String = ""
-                    Dim GetTransactionType As String = ""
-                    sql = "SELECT * FROM loc_daily_transaction WHERE transaction_number = '" & transactionnumber & "'"
-                    cmd = New MySqlCommand(sql, connectionlocal)
-                    Using reader As MySqlDataReader = cmd.ExecuteReader
-                        If reader.HasRows Then
-                            While reader.Read
-                                GetStoreID = reader("store_id")
-                                GetTransactionType = reader("transaction_type")
-                                Dim NETSALES = reader("grosssales")
-                                a += 1
-                                TxtFileLine(a) = "Sub Total:                " & NETSALES
-                                a += 1
-                                If reader("discount_type") <> "N/A" Then
-                                    TxtFileLine(a) = "Discount: " & reader("discount_type") & "        " & Denom & reader("totaldiscount")
-                                    a += 1
-                                Else
-                                    TxtFileLine(a) = "Discount:                 " & Denom & reader("totaldiscount")
-                                    a += 1
-                                End If
-
-                                TxtFileLine(a) = "Order Total:              " & Denom & reader("amountdue")
-                                a += 1
-                                TxtFileLine(a) = "Credit Sale:              " & Denom & reader("amounttendered")
-                                a += 1
-                                TxtFileLine(a) = "Change:                   " & Denom & reader("change")
-                                a += 1
-                                TxtFileLine(a) = "    ***********************"
-                                a += 1
-                                TxtFileLine(a) = "-------------------------------"
-                                a += 1
-                                TxtFileLine(a) = "Vatable Sales:            " & Denom & reader("vatablesales")
-                                a += 1
-                                TxtFileLine(a) = "Vat Exempt Sales:         " & Denom & reader("vatexemptsales")
-                                a += 1
-                                TxtFileLine(a) = "Vat Amount:               " & Denom & reader("vatpercentage")
-                                a += 1
-                                TxtFileLine(a) = "Less Vat:                 " & Denom & "0.00"
-                                a += 1
-                                TxtFileLine(a) = "Zero Rated Sales:         " & Denom & reader("zeroratedsales")
-                                a += 1
-                                TxtFileLine(a) = "    ***********************"
-                                a += 1
-                                TxtFileLine(a) = "-------------------------------"
-                                a += 1
-                            End While
-                        End If
-                    End Using
-
-                    Dim Qty = sum("quantity", "loc_daily_transaction_details WHERE transaction_number = '" & transactionnumber & "'")
-                    a += 1
-                    TxtFileLine(a) = "Total Item/s: " & Qty
-                    a += 1
-                    TxtFileLine(a) = "Store ID: " & GetStoreID
-                    a += 1
-                    TxtFileLine(a) = "Terminal No.: " & S_Terminal_No.ToString
-                    a += 1
-                    TxtFileLine(a) = "Transaction Type: " & GetTransactionType
-                    a += 1
-                    TxtFileLine(a) = "Reprint Copy"
-                    a += 1
-                    TxtFileLine(a) = OfficialInvoiceRefund
-                    a += 1
-                    TxtFileLine(a) = "    ***********************"
-                    a += 1
-                    TxtFileLine(a) = "-------------------------------"
-                    a += 1
-
-                    TxtFileLine(a) = "     CUSTOMER INFORMATION "
-                    a += 1
-                    TxtFileLine(a) = "Name: _________________________"
-                    a += 1
-                    TxtFileLine(a) = "Tin: __________________________"
-                    a += 1
-                    TxtFileLine(a) = "Address: ______________________"
-                    a += 1
-                    TxtFileLine(a) = "B. Style: _____________________"
-                    a += 2
-
-                    Dim senior_id As String = "______________________"
-                    Dim senior_name As String = "____________________"
-                    sql = "SELECT * FROM loc_senior_details WHERE transaction_number = '" & transactionnumber & "'"
-                    cmd = New MySqlCommand(sql, connectionlocal)
-                    Using reader As MySqlDataReader = cmd.ExecuteReader
-                        If reader.HasRows Then
-                            While reader.Read
-                                senior_id = reader("senior_id")
-                                senior_name = reader("senior_name")
-                            End While
-                        End If
-                    End Using
-                    TxtFileLine(a) = "Cust ID: " & senior_id
-                    a += 1
-                    TxtFileLine(a) = "Cust Name: " & senior_name
-                    a += 1
-                    TxtFileLine(a) = "Phone: ________________________"
-                    a += 1
-                    TxtFileLine(a) = "Cust Sign: ____________________"
-                    a += 1
-                    TxtFileLine(a) = "    ***********************"
-                    a += 1
-                    TxtFileLine(a) = "-------------------------------"
-                    a += 1
-
-                    sql = "SELECT * FROM loc_receipt WHERE type = 'Footer' AND status = 1"
-                    cmd = New MySqlCommand(sql, LocalhostConn())
-                    da = New MySqlDataAdapter(cmd)
-                    dt = New DataTable
-                    da.Fill(dt)
-
-                    TxtFileLine(a) = S_Dev_Comp_Name.ToUpper
-                    a += 1
-                    For C As Integer = 0 To dt.Rows.Count - 1 Step +1
-                        TxtFileLine(a) = dt(C)(2).ToUpper
-                        a += 1
-                    Next
-
-                    sql = "SELECT * FROM loc_receipt WHERE type = 'VALIDITY' AND status = 1"
-                    cmd = New MySqlCommand(sql, LocalhostConn())
-                    da = New MySqlDataAdapter(cmd)
-                    dt = New DataTable
-                    da.Fill(dt)
-
-                    For C As Integer = 0 To dt.Rows.Count - 1 Step +1
-                        TxtFileLine(a) = dt(C)(2).ToUpper
-                        a += 1
-                    Next
-
-                    If VoidReturn Then
-                        sql = "SELECT * FROM loc_receipt WHERE type = 'REFUND-FOOTER' AND status = 1"
-                        cmd = New MySqlCommand(sql, LocalhostConn())
-                        da = New MySqlDataAdapter(cmd)
-                        dt = New DataTable
-                        da.Fill(dt)
-
-                        For C As Integer = 0 To dt.Rows.Count - 1 Step +1
-                            TotalDgvRows += 1
-                            TxtFileLine(a) = dt(C)(2).ToUpper
-                            a += 1
-                        Next
-                    End If
-
-                    a += 1
-                    TxtFileLine(a) = "   ---***---***---***---***---  "
-                    a += 1
-                    TxtFileLine(a) = ""
-                    a += 1
-
-                Next
-                Dim CompletePath As String = CompleteDirectoryPath & "\ejournal" & FullDateFormatForSaving() & ".txt"
-                File.WriteAllLines(CompletePath, TxtFileLine, Encoding.UTF8)
-            End With
-
-            connectionlocal.Close()
-        Catch ex As Exception
-            SendErrorReport(ex.ToString)
-        End Try
-    End Sub
 
 
 
@@ -2790,57 +2442,8 @@ Public Class Reports
     '    End Try
     'End Sub
 
-    Private Sub ToolStripButton11_Click(sender As Object, e As EventArgs) Handles ButtonZreadAdmin.Click
-        Try
-            Dim result As Integer = MessageBox.Show("It seems like you have not generated Z-reading before ? Would you like to generate now ?", "Z-Reading", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-            If result = DialogResult.Yes Then
-                Try
-                    'Fill dgv inv
-                    GLOBAL_SELECT_ALL_FUNCTION("loc_pos_inventory", "*", DataGridViewZreadInventory)
-                    'Update inventory
-                    MainInventorySub()
-                    'Fill again
-                    GLOBAL_SELECT_ALL_FUNCTION("loc_pos_inventory", "*", DataGridViewZreadInventory)
-                    'Print zread
-                    XREADORZREAD = "Z-READ"
+    Private Sub ToolStripButton11_Click(sender As Object, e As EventArgs)
 
-                    printdocXread.DefaultPageSettings.PaperSize = New PaperSize("Custom", ReturnPrintSize(), 1000)
-
-                    If S_Print_XZRead = "YES" Then
-                        printdocXread.Print()
-                    Else
-                        PrintPreviewDialogXread.Document = printdocXread
-                        PrintPreviewDialogXread.ShowDialog()
-                    End If
-
-                    'Update Zread
-                    S_Zreading = Format(Now, "yyyy-MM-dd")
-                    sql = "UPDATE loc_settings SET S_Zreading = '" & S_Zreading & "'"
-                    cmd = New MySqlCommand(sql, LocalhostConn())
-                    cmd.ExecuteNonQuery()
-                    cmd.Dispose()
-                    LocalhostConn.Close()
-                    'Insert to local zread inv
-
-
-                    'MsgBox(ReturnStringToDate(S_Zreading))
-                    'XZreadingInventory(S_Zreading)
-                    If S_Zreading = Format(Now().AddDays(1), "yyyy-MM-dd") Then
-                        'ButtonZread.Enabled = False
-                        ToolStripButtonZReading.Enabled = False
-                        ButtonZreadAdmin.Enabled = False
-                    End If
-                    Button7.PerformClick()
-                Catch ex As Exception
-                    SendErrorReport(ex.ToString)
-                End Try
-
-            Else
-                MessageBox.Show("This will continue your yesterday's record ...", "Z-Reading", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            End If
-        Catch ex As Exception
-            SendErrorReport(ex.ToString)
-        End Try
     End Sub
     Private Sub PrintDocument2_PrintPage(sender As Object, e As PrintPageEventArgs) Handles printdocZRead.PrintPage
         Try
@@ -2854,125 +2457,15 @@ Public Class Reports
         End Try
     End Sub
 
-    Private Sub ToolStripButtonXReading_Click(sender As Object, e As EventArgs) Handles ToolStripButtonXReading.Click
-        Try
-            XREADORZREAD = "X-READ"
-            FillZreadData(" zreading = '" & S_Zreading & "'", S_Zreading, S_Zreading)
-            printdocZRead.DefaultPageSettings.PaperSize = New PaperSize("Custom", ReturnPrintSize(), 1020)
+    Private Sub ToolStripButtonXReading_Click(sender As Object, e As EventArgs)
 
-            If S_Print_XZRead = "YES" Then
-                printdocZRead.Print()
-            Else
-                PrintPreviewDialogZread.Document = printdocZRead
-                PrintPreviewDialogZread.ShowDialog()
-            End If
-
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-            SendErrorReport(ex.ToString)
-        Finally
-            SystemLogDesc = "X-Reading : " & FullDate24HR() & " Crew : " & returnfullname(ClientCrewID)
-            SystemLogType = "X-READ"
-            GLOBAL_SYSTEM_LOGS(SystemLogType, SystemLogDesc)
-        End Try
     End Sub
-    Private Sub ToolStripButtonZReading_Click(sender As Object, e As EventArgs) Handles ToolStripButtonZReading.Click
-        Try
-            ReprintZRead = False
-            Dim msg = MessageBox.Show("Are you sure you want to generate Z-READ ? Press Yes to continue or No to cancel", "Z-reading", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
+    Private Sub ToolStripButtonZReading_Click(sender As Object, e As EventArgs)
 
-            If msg = DialogResult.Yes Then
-                My.Settings.zcounter += 1
-                Dim ConnectionLocal As MySqlConnection = LocalhostConn()
-                'Fill dgv inv
-                GLOBAL_SELECT_ALL_FUNCTION("loc_pos_inventory", "*", DataGridViewZreadInventory)
-                'Update inventory
-                MainInventorySub()
-                'Fill again
-                GLOBAL_SELECT_ALL_FUNCTION("loc_pos_inventory", "*", DataGridViewZreadInventory)
-                'Print zread
-                XREADORZREAD = "Z-READ"
-                FillZreadData(" zreading = '" & S_Zreading & "'", S_Zreading, S_Zreading)
-                printdocZRead.DefaultPageSettings.PaperSize = New PaperSize("Custom", ReturnPrintSize(), 1020)
-
-                If S_Print_XZRead = "YES" Then
-                    printdocZRead.Print()
-                Else
-                    PrintPreviewDialogZread.Document = printdocZRead
-                    PrintPreviewDialogZread.ShowDialog()
-                End If
-
-                GetOldGrandtotal()
-                'Update Zread
-                S_Zreading = Format(DateAdd("d", 1, S_Zreading), "yyyy-MM-dd")
-                sql = "UPDATE loc_settings SET S_Zreading = '" & S_Zreading & "'"
-                cmd = New MySqlCommand(sql, ConnectionLocal)
-                cmd.ExecuteNonQuery()
-                cmd.Dispose()
-
-                sql = "UPDATE loc_pos_inventory SET zreading = '" & S_Zreading & "'"
-                LocalhostConn.Close()
-                cmd = New MySqlCommand(sql, ConnectionLocal)
-                cmd.ExecuteNonQuery()
-
-                cmd.Dispose()
-                ConnectionLocal.Close()
-                'Insert to local zread inv
-                XZreadingInventory(S_Zreading)
-
-                If S_Zreading = Format(Now().AddDays(1), "yyyy-MM-dd") Then
-                    'ButtonZread.Enabled = False
-                    ToolStripButtonZReading.Enabled = False
-                    ButtonZreadAdmin.Enabled = False
-                End If
-                Button7.PerformClick()
-
-            End If
-        Catch ex As Exception
-            SendErrorReport(ex.ToString)
-        Finally
-            SystemLogDesc = "Z-Reading : " & FullDate24HR() & " Crew : " & returnfullname(ClientCrewID)
-            SystemLogType = "Z-READ"
-            GLOBAL_SYSTEM_LOGS(SystemLogType, SystemLogDesc)
-        End Try
     End Sub
     Dim ReprintZRead As Boolean = False
-    Private Sub ToolStripButtonZReadingReprint_Click(sender As Object, e As EventArgs) Handles ToolStripButtonZReadingReprint.Click
+    Private Sub ToolStripButtonZReadingReprint_Click(sender As Object, e As EventArgs)
 
-        Try
-            ReprintZRead = True
-            Dim FromDate, ToDate As String
-            FromDate = Format(DateTimePickerZXreading.Value, "yyyy-MM-dd")
-            ToDate = Format(DateTimePickerZXreadingTo.Value, "yyyy-MM-dd")
-
-            XREADORZREAD = "Z-READ"
-
-            If FromDate = ToDate Then
-                Dim ConnectionLocal As MySqlConnection = LocalhostConn()
-                Dim Query As String = "UPDATE loc_zread_table SET ZXReprintCount = @1 WHERE ZXdate = '" & FromDate & "'"
-                Dim Command As MySqlCommand = New MySqlCommand(Query, ConnectionLocal)
-                Dim TotalReprint = ZXReprintCount + 1
-                Command.Parameters.Add("@1", MySqlDbType.Text).Value = TotalReprint
-                Command.ExecuteNonQuery()
-            End If
-
-            FIllZReadReprint(FromDate, ToDate)
-
-            printdocZRead.DefaultPageSettings.PaperSize = New PaperSize("Custom", ReturnPrintSize(), 1050)
-            If S_Print_XZRead = "YES" Then
-                printdocZRead.Print()
-            Else
-                PrintPreviewDialogZread.Document = printdocZRead
-                PrintPreviewDialogZread.ShowDialog()
-            End If
-
-        Catch ex As Exception
-            SendErrorReport(ex.ToString)
-        Finally
-            SystemLogDesc = "Z-Reading Reprint : " & FullDate24HR() & " Crew : " & returnfullname(ClientCrewID)
-            SystemLogType = "Z-READ REPRINT"
-            GLOBAL_SYSTEM_LOGS(SystemLogType, SystemLogDesc)
-        End Try
     End Sub
 
 
@@ -3160,7 +2653,7 @@ Public Class Reports
                 t.Join()
             Next
 
-            ThreadZXRead = New Thread(Sub() ZXRepExpense = sum("amountdue", "loc_daily_transaction WHERE active = 3 AND " & ZReadDateFilter & " AND transaction_type = 'Representation Expenses' "))
+            ThreadZXRead = New Thread(Sub() ZXRepExpense = sum("amountdue", "loc_daily_transaction WHERE active = 3 AND " & ZReadDateFilter & " AND transaction_type = 'Complementary Expenses' "))
             ThreadZXRead.Start()
             ThreadlistZXRead.Add(ThreadZXRead)
             For Each t In ThreadlistZXRead
@@ -3615,13 +3108,7 @@ Public Class Reports
         End Try
     End Sub
 
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
-        If CheckBox1.Checked Then
-            DateTimePickerZXreadingTo.Enabled = False
-        Else
-            DateTimePickerZXreadingTo.Enabled = True
-        End If
-    End Sub
+
 
     Private Sub ButtonAdvancedCustomReports_Click(sender As Object, e As EventArgs) Handles ButtonAdvancedCustomReports.Click
         AdvancedCustomReport.Show()
@@ -3637,4 +3124,189 @@ Public Class Reports
     Private Sub ToolStripComboBoxStatus_TextChanged(sender As Object, e As EventArgs) Handles ToolStripComboBoxStatus.SelectedIndexChanged
         ToolStripButton6.PerformClick()
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles ButtonXREAD.Click
+        Try
+            XREADORZREAD = "X-READ"
+            FillZreadData(" zreading = '" & S_Zreading & "'", S_Zreading, S_Zreading)
+            printdocZRead.DefaultPageSettings.PaperSize = New PaperSize("Custom", ReturnPrintSize(), 1020)
+
+            If S_Print_XZRead = "YES" Then
+                printdocZRead.Print()
+            Else
+                PrintPreviewDialogZread.Document = printdocZRead
+                PrintPreviewDialogZread.ShowDialog()
+            End If
+            InsertIntoEJournal()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+            SendErrorReport(ex.ToString)
+        Finally
+            SystemLogDesc = "X-Reading : " & FullDate24HR() & " Crew : " & returnfullname(ClientCrewID)
+            SystemLogType = "X-READ"
+            GLOBAL_SYSTEM_LOGS(SystemLogType, SystemLogDesc)
+        End Try
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles ButtonZReading.Click
+        Try
+            ReprintZRead = False
+            Dim msg = MessageBox.Show("Are you sure you want to generate Z-READ ? Press Yes to continue or No to cancel", "Z-reading", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
+
+            If msg = DialogResult.Yes Then
+                My.Settings.zcounter += 1
+                Dim ConnectionLocal As MySqlConnection = LocalhostConn()
+                'Fill dgv inv
+                GLOBAL_SELECT_ALL_FUNCTION("loc_pos_inventory", "*", DataGridViewZreadInventory)
+                'Update inventory
+                MainInventorySub()
+                'Fill again
+                GLOBAL_SELECT_ALL_FUNCTION("loc_pos_inventory", "*", DataGridViewZreadInventory)
+                'Print zread
+                XREADORZREAD = "Z-READ"
+                FillZreadData(" zreading = '" & S_Zreading & "'", S_Zreading, S_Zreading)
+                printdocZRead.DefaultPageSettings.PaperSize = New PaperSize("Custom", ReturnPrintSize(), 1020)
+
+                If S_Print_XZRead = "YES" Then
+                    printdocZRead.Print()
+                Else
+                    PrintPreviewDialogZread.Document = printdocZRead
+                    PrintPreviewDialogZread.ShowDialog()
+                End If
+                InsertIntoEJournal()
+                GetOldGrandtotal()
+                'Update Zread
+                S_Zreading = Format(DateAdd("d", 1, S_Zreading), "yyyy-MM-dd")
+                sql = "UPDATE loc_settings SET S_Zreading = '" & S_Zreading & "'"
+                cmd = New MySqlCommand(sql, ConnectionLocal)
+                cmd.ExecuteNonQuery()
+                cmd.Dispose()
+
+                sql = "UPDATE loc_pos_inventory SET zreading = '" & S_Zreading & "'"
+                LocalhostConn.Close()
+                cmd = New MySqlCommand(sql, ConnectionLocal)
+                cmd.ExecuteNonQuery()
+
+                cmd.Dispose()
+                ConnectionLocal.Close()
+                'Insert to local zread inv
+                XZreadingInventory(S_Zreading)
+
+                If S_Zreading = Format(Now().AddDays(1), "yyyy-MM-dd") Then
+                    'ButtonZread.Enabled = False
+                    ButtonZReading.Enabled = False
+                    'ButtonZreadAdmin.Enabled = False
+                End If
+
+
+            End If
+        Catch ex As Exception
+            SendErrorReport(ex.ToString)
+        Finally
+            SystemLogDesc = "Z-Reading : " & FullDate24HR() & " Crew : " & returnfullname(ClientCrewID)
+            SystemLogType = "Z-READ"
+            GLOBAL_SYSTEM_LOGS(SystemLogType, SystemLogDesc)
+        End Try
+    End Sub
+
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles ButtonZREADREPRINT.Click
+
+        Try
+            ReprintZRead = True
+            Dim FromDate, ToDate As String
+            FromDate = Format(DateTimePickerZXreading.Value, "yyyy-MM-dd")
+            ToDate = Format(DateTimePickerZXreadingTo.Value, "yyyy-MM-dd")
+
+            XREADORZREAD = "Z-READ"
+
+            If FromDate = ToDate Then
+                Dim ConnectionLocal As MySqlConnection = LocalhostConn()
+                Dim Query As String = "UPDATE loc_zread_table SET ZXReprintCount = @1 WHERE ZXdate = '" & FromDate & "'"
+                Dim Command As MySqlCommand = New MySqlCommand(Query, ConnectionLocal)
+                Dim TotalReprint = ZXReprintCount + 1
+                Command.Parameters.Add("@1", MySqlDbType.Text).Value = TotalReprint
+                Command.ExecuteNonQuery()
+            End If
+
+            FIllZReadReprint(FromDate, ToDate)
+
+            printdocZRead.DefaultPageSettings.PaperSize = New PaperSize("Custom", ReturnPrintSize(), 1050)
+            If S_Print_XZRead = "YES" Then
+                printdocZRead.Print()
+            Else
+                PrintPreviewDialogZread.Document = printdocZRead
+                PrintPreviewDialogZread.ShowDialog()
+            End If
+
+            InsertIntoEJournal()
+        Catch ex As Exception
+            SendErrorReport(ex.ToString)
+        Finally
+            SystemLogDesc = "Z-Reading Reprint : " & FullDate24HR() & " Crew : " & returnfullname(ClientCrewID)
+            SystemLogType = "Z-READ REPRINT"
+            GLOBAL_SYSTEM_LOGS(SystemLogType, SystemLogDesc)
+        End Try
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Try
+            GenerateEJournalV2()
+        Catch ex As Exception
+            SendErrorReport(ex.ToString)
+        End Try
+    End Sub
+
+    Private Sub GenerateEJournalV2()
+        Try
+            Dim Denom As String = ""
+
+            Dim connectionlocal As MySqlConnection = LocalhostConn()
+            Dim sql As String = ""
+            Dim cmd As MySqlCommand
+            Dim dt As DataTable = New DataTable
+            Dim da As MySqlDataAdapter
+
+            Dim CompleteDirectoryPath As String = ""
+
+            If Not Directory.Exists(My.Computer.FileSystem.SpecialDirectories.Desktop & "\E-Journal") Then
+                Directory.CreateDirectory(My.Computer.FileSystem.SpecialDirectories.Desktop & "\E-journal")
+                CompleteDirectoryPath = My.Computer.FileSystem.SpecialDirectories.Desktop & "\E-journal\" & FullDateFormatForSaving()
+                Directory.CreateDirectory(CompleteDirectoryPath)
+            Else
+                CompleteDirectoryPath = My.Computer.FileSystem.SpecialDirectories.Desktop & "\E-journal\" & FullDateFormatForSaving()
+                Directory.CreateDirectory(CompleteDirectoryPath)
+            End If
+
+            Dim GrandTotalLines As Integer = 0
+            Dim WholeContentLine As String = ""
+            sql = "SELECT totallines, content FROM loc_e_journal WHERE (zreading BETWEEN '" & Format(DateTimePickerZXreading.Value, "yyyy-MM-dd") & "' AND '" & Format(DateTimePickerZXreadingTo.Value, "yyyy-MM-dd") & "') ORDER by id DESC"
+            cmd = New MySqlCommand(sql, connectionlocal)
+            da = New MySqlDataAdapter(cmd)
+            da.Fill(dt)
+            Console.WriteLine(sql)
+            For i As Integer = 0 To dt.Rows.Count - 1 Step +1
+                GrandTotalLines += dt(i)(0)
+                WholeContentLine &= dt(i)(1)
+            Next
+
+            Dim TotalDgvRows As Integer = GrandTotalLines
+            Dim TxtFileLine(TotalDgvRows) As String
+            Dim a As Integer = 0
+
+            Dim strArr() As String
+            Dim count As Integer
+
+            strArr = WholeContentLine.Split("/n")
+            For count = 0 To strArr.Length - 1
+                TxtFileLine(a) = strArr(count)
+                a += 1
+            Next
+
+            Dim CompletePath As String = CompleteDirectoryPath & "\ejournal" & FullDateFormatForSaving() & ".txt"
+            File.WriteAllLines(CompletePath, TxtFileLine, Encoding.UTF8)
+        Catch ex As Exception
+            SendErrorReport(ex.ToString)
+        End Try
+    End Sub
+
 End Class
