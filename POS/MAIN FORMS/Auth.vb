@@ -120,6 +120,7 @@ Public Class Auth
             Label4.Text = "No new user(s) available.  "
             Timer1.Start()
         Else
+            AuditTrail.LogToAuditTral("System", "Auth: Update successful, " & Account, "Normal")
             Label4.Text = "New user(s) available.  "
             Dim msg = "New user account has been added" & vbNewLine & Account
             Dim msgs = MsgBox(msg, MsgBoxStyle.OkOnly)

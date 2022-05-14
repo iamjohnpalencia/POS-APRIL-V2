@@ -88,7 +88,7 @@ Module RetrieveModule
                                 Login.Close()
                                 Grocery.Show()
                             End If
-
+                            AuditTrail.LogToAuditTral("User", "User Login: " & ClientCrewID, "Normal")
                         ElseIf Login.txtusername.Text = username And cipherText = password And userlevel = "Head Crew" And ClientStoreID = storeid And active = 1 And franguid = ClientGuid Then
                             MessageBox.Show("Welcome " + fullname + "!", "Login Successfully(" & ClientRole & ")", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             Login.txtusername.Text = ""
@@ -106,7 +106,7 @@ Module RetrieveModule
                                 Login.Close()
                                 Grocery.Show()
                             End If
-
+                            AuditTrail.LogToAuditTral("User", "User Login: " & ClientCrewID, "Normal")
                         ElseIf Login.txtusername.Text = username And cipherText = password And userlevel = "Manager" And ClientStoreID = storeid And active = 1 And franguid = ClientGuid Then
                             MessageBox.Show("Welcome " + fullname + "!", "Login Successfully(" & ClientRole & ")", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             Login.txtusername.Text = ""
@@ -124,6 +124,7 @@ Module RetrieveModule
                                 Login.Close()
                                 Grocery.Show()
                             End If
+                            AuditTrail.LogToAuditTral("User", "User Login: " & ClientCrewID, "Normal")
                         ElseIf Login.txtusername.Text = username And cipherText = password And userlevel = "Admin" Then
                             MessageBox.Show("Welcome " + fullname + "!", "Login Successfully(" & ClientRole & ")", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             Login.txtusername.Text = ""
@@ -141,11 +142,13 @@ Module RetrieveModule
                                 Login.Close()
                                 Grocery.Show()
                             End If
+                            AuditTrail.LogToAuditTral("User", "User Login: " & ClientCrewID, "Normal")
                         Else
                             MessageBox.Show("Incorrect username or password!", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
                             SystemLogType = "ERROR"
                             SystemLogDesc = "FAILED TO LOGIN: Username: " & Login.txtusername.Text & " Password: " & Login.txtpassword.Text
                             GLOBAL_SYSTEM_LOGS(SystemLogType, SystemLogDesc)
+                            AuditTrail.LogToAuditTral("User", "Invalid Credentials: " & Login.txtusername.Text, "Normal")
                         End If
                     Else
                         MessageBox.Show("Incorrect username or password!", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -154,6 +157,7 @@ Module RetrieveModule
                         SystemLogType = "ERROR"
                         SystemLogDesc = "FAILED TO LOGIN: Username and password input " & Login.txtusername.Text & " " & Login.txtpassword.Text
                         GLOBAL_SYSTEM_LOGS(SystemLogType, SystemLogDesc)
+                        AuditTrail.LogToAuditTral("User", "Invalid Credentials: " & Login.txtusername.Text, "Normal")
                     End If
                 End Try
             End If

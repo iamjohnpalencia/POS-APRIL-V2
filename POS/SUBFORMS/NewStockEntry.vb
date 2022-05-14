@@ -46,12 +46,16 @@ Public Class NewStockEntry
                 Else
                     where = "formula_id = " & TextBox1.Text
                 End If
+
+                AuditTrail.LogToAuditTral("Transaction", "Menu/Inventory/Stock Entry: " & TextBoxEQuantity.Text & " " & ComboBoxDESC.Text, "Normal")
+
                 TextBoxEQuantity.Clear()
                 GLOBAL_FUNCTION_UPDATE(table, fields, where)
                 MDIFORM.newMDIchildInventory.loadstockentry(False)
                 MDIFORM.newMDIchildInventory.loadinventory()
                 MDIFORM.newMDIchildInventory.loadstockadjustmentreport(False)
                 MDIFORM.newMDIchildInventory.loadcriticalstocks()
+
             Else
                 MsgBox("Quantity(Primary) must be greater than 0")
             End If

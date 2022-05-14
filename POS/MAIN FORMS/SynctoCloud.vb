@@ -1109,6 +1109,8 @@ Public Class SynctoCloud
                 Unsuccessful = True
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("Data", "Menu/Sync: Sync not Successful, " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -1144,6 +1146,8 @@ Public Class SynctoCloud
                                             POS.ProgressBar1.Value = totalrow
                                         End Sub)
                     Dim sync = MessageBox.Show("Synchronization Complete", "Sync", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    AuditTrail.LogToAuditTral("Data", "Menu/Sync: Sync Successful, " & ProgressBar1.Value.ToString, "Normal")
+
                     If sync = DialogResult.OK Then
                         Me.Close()
                         ButtonSYNCDATA.Enabled = True

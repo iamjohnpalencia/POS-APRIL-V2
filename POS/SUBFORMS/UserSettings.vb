@@ -57,6 +57,8 @@ Public Class UserSettings
                 Dim cmd As MySqlCommand = New MySqlCommand(sql, LocalhostConn)
                 Dim result = cmd.ExecuteNonQuery()
                 If result = 1 Then
+                    AuditTrail.LogToAuditTral("System", "Users: Deleted successfully, " & fullname, "Normal")
+
                     MsgBox("Account Deactivated")
                     Usersloadusers()
                     SystemLogType = "USER DEACTIVATION"

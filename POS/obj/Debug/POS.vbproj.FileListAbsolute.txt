@@ -459,3 +459,5 @@ C:\Users\jjrey\Source\Repos\POS-APRIL-V2\POS\obj\Debug\POS.exe.manifest
 C:\Users\jjrey\Source\Repos\POS-APRIL-V2\POS\obj\Debug\POS.application
 C:\Users\jjrey\Source\Repos\POS-APRIL-V2\POS\obj\Debug\POS.CustomerInfo.resources
 C:\Users\jjrey\Source\Repos\POS-APRIL-V2\POS\obj\Debug\POS.vbprojResolveAssemblyReference.cache
+C:\Users\jjrey\Source\Repos\POS-APRIL-V2\POS\obj\Debug\POS.AuditTrail.resources
+C:\Users\jjrey\Source\Repos\POS-APRIL-V2\POS\obj\Debug\POS.AuditTrailFilter.resources

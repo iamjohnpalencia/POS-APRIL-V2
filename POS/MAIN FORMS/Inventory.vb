@@ -36,14 +36,20 @@ Public Class Inventory
             loadinventorycustomdisapp()
 
             If ClientRole = "Crew" Then
-                'TabControl1.TabPages.Remove(TabControl1.TabPages(4))
                 TabControl1.TabPages.Remove(TabControl1.TabPages(3))
-                Button7.Enabled = False
-                Button7.Visible = False
+                ButtonResetInventory.Enabled = False
+                ButtonResetInventory.Visible = False
+                GroupBoxStockIN.Visible = False
+                GroupBoxStockAdjustment.Visible = False
             End If
 
-            '          DataGridViewRow row = DataGridView.Rows[0];
-            'row.Height = 15;
+            If ClientRole = "Crew" Or ClientRole = "Head Crew" Then
+                TabControl1.TabPages.Remove(TabControl1.TabPages(3))
+                ButtonResetInventory.Enabled = False
+                ButtonResetInventory.Visible = False
+                GroupBoxStockAdjustment.Visible = False
+            End If
+
         Catch ex As Exception
             SendErrorReport(ex.ToString)
         End Try
@@ -167,7 +173,7 @@ Public Class Inventory
             Dim Where = ""
             If searchdate = False Then
                 Where = " WHERE date(log_date_time) = CURRENT_DATE() AND log_type IN('NEW STOCK ADDED','STOCK REMOVAL','STOCK TRANSFER')"
-                StockAdjustmentReport = AsDatatable(table & where, fields, DataGridViewStockAdjustment)
+                StockAdjustmentReport = AsDatatable(Table & Where, Fields, DataGridViewStockAdjustment)
             Else
                 Where = " WHERE log_type IN('NEW STOCK ADDED','STOCK REMOVAL','STOCK TRANSFER') AND date(log_date_time) >= '" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "' AND date(log_date_time) <= '" & Format(DateTimePicker2.Value, "yyyy-MM-dd") & "'"
                 StockAdjustmentReport = AsDatatable(Table & Where, Fields, DataGridViewStockAdjustment)
@@ -214,7 +220,7 @@ Public Class Inventory
             SendErrorReport(ex.ToString)
         End Try
     End Sub
-    Private Sub Button7_Click_1(sender As Object, e As EventArgs) Handles Button7.Click
+    Private Sub Button7_Click_1(sender As Object, e As EventArgs) Handles ButtonResetInventory.Click
         Try
             Dim msg = MessageBox.Show("Are you sure you want to reset the inventory ? Press Yes to continue or No to cancel", "NOTICE", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
             If msg = DialogResult.Yes Then
@@ -245,6 +251,8 @@ Public Class Inventory
             printdoc.DefaultPageSettings.PaperSize = New PaperSize("Custom", ReturnPrintSize(), 200 + b)
             PrintPreviewDialog1.Document = printdoc
             PrintPreviewDialog1.ShowDialog()
+            AuditTrail.LogToAuditTral("Report", "Inventory: Generated Report, " & ClientCrewID, "Normal")
+
             ' printdoc.Print()
         Catch ex As Exception
             MessageBox.Show("An error occurred while trying to load the " &
@@ -299,7 +307,7 @@ Public Class Inventory
     Private Sub ButtonKeyboard_Click(sender As Object, e As EventArgs) Handles ButtonKeyboard.Click
         ShowKeyboard()
     End Sub
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles ButtonStockAdjustment.Click
         Enabled = False
         StockAdjustment.Show()
     End Sub
@@ -316,7 +324,7 @@ Public Class Inventory
         End If
     End Sub
 
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles ButtonStockIN.Click
         NewStockEntry.Show()
         Enabled = False
     End Sub

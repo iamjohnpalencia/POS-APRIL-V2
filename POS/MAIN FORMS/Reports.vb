@@ -126,6 +126,42 @@ Public Class Reports
             ToolStripComboBoxTransactionType.SelectedIndex = 0
 
             LoadProducts()
+
+            If ClientRole = "Crew" Then
+                ButtonZReading.Enabled = False
+                ButtonZReading.Visible = False
+
+                ButtonZREADREPRINT.Enabled = False
+                ButtonZREADREPRINT.Visible = False
+
+                ButtonSystemLogs.Enabled = False
+                ButtonSystemLogs.Visible = False
+
+                ButtonUserLogs.Enabled = False
+                ButtonUserLogs.Visible = False
+
+                ButtonEJournal.Visible = False
+                ButtonEJournal.Enabled = False
+
+                ButtonAuditTrail.Visible = False
+                ButtonAuditTrail.Enabled = False
+            End If
+
+            If ClientRole = "Head Crew" Then
+                ButtonZReading.Enabled = False
+                ButtonZReading.Visible = False
+
+                ButtonZREADREPRINT.Enabled = False
+                ButtonZREADREPRINT.Visible = False
+
+                ButtonEJournal.Visible = False
+                ButtonEJournal.Enabled = False
+
+                ButtonAuditTrail.Visible = False
+                ButtonAuditTrail.Enabled = False
+            End If
+
+
         Catch ex As Exception
             SendErrorReport(ex.ToString)
         End Try
@@ -989,9 +1025,9 @@ Public Class Reports
                 Dim TotalLines As Integer = 0
                 Dim BodyLine As Integer = 540
                 If DataGridViewDaily.SelectedRows(0).Cells(2).Value > 0 Then
-                    BodyLine = 540
+                    BodyLine = 570
                 Else
-                    BodyLine = 470
+                    BodyLine = 500
                 End If
                 Dim CountHeaderLine As Integer = count("id", "loc_receipt WHERE type = 'Header' AND status = 1")
                 Dim ProductLine As Integer = 0
@@ -1016,6 +1052,7 @@ Public Class Reports
                     PrintPreviewDialog1.Document = printdoc
                     PrintPreviewDialog1.ShowDialog()
                 End If
+                AuditTrail.LogToAuditTral("Report", "Reports/Daily Sales: Reprint Sales, " & ClientCrewID, "Normal")
 
                 InsertIntoEJournal()
 
@@ -1470,6 +1507,7 @@ Public Class Reports
                 previewsales.Document = printsales
                 previewsales.ShowDialog()
             End If
+            AuditTrail.LogToAuditTral("Report", "Reports/Sales Report: Generated Report, " & ClientCrewID, "Normal")
 
         Catch ex As Exception
             SendErrorReport(ex.ToString)
@@ -2030,6 +2068,8 @@ Public Class Reports
                         PrintPreviewDialogReturns.ShowDialog()
                     End If
                 End If
+                AuditTrail.LogToAuditTral("Report", "Item Return: Generated Report, " & ClientCrewID, "Normal")
+
                 ProductLine = 0
                 ColumnSpacing = 0
             Else
@@ -2191,6 +2231,7 @@ Public Class Reports
                         gfx.DrawString("Date Generated: " & FullDate24HR(), font, XBrushes.Black, 50, 183 + RowCount)
                     End If
                 Next
+                AuditTrail.LogToAuditTral("Report", "Reports/Custom Report: Generated Report, " & ClientCrewID, "Normal")
 
                 Dim filename = My.Computer.FileSystem.SpecialDirectories.Desktop & "\Custom Report-" & FullDateFormatForSaving() & ".pdf"
                 document.Save(filename)
@@ -2451,6 +2492,7 @@ Public Class Reports
             ReceiptHeaderOne(sender, e, False, "", False, False)
             ZXBody(sender, e)
             ZFooter(sender, e, ReprintZRead, Format(DateTimePickerZXreading.Value, "yyyy-MM-dd"), Format(DateTimePickerZXreadingTo.Value, "yyyy-MM-dd"))
+            AuditTrail.LogToAuditTral("System", "Reports: Generated " & XREADORZREAD & ", " & ClientCrewID, "Normal")
 
         Catch ex As Exception
             SendErrorReport(ex.ToString)
@@ -3127,6 +3169,8 @@ Public Class Reports
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles ButtonXREAD.Click
         Try
+            AuditTrail.LogToAuditTral("System", "Reports/Others: Accessed X-READ, " & ClientCrewID, "Normal")
+
             XREADORZREAD = "X-READ"
             FillZreadData(" zreading = '" & S_Zreading & "'", S_Zreading, S_Zreading)
             printdocZRead.DefaultPageSettings.PaperSize = New PaperSize("Custom", ReturnPrintSize(), 1020)
@@ -3154,6 +3198,8 @@ Public Class Reports
             Dim msg = MessageBox.Show("Are you sure you want to generate Z-READ ? Press Yes to continue or No to cancel", "Z-reading", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
 
             If msg = DialogResult.Yes Then
+                AuditTrail.LogToAuditTral("System", "Reports/Others: Accessed Z-READ, " & ClientCrewID, "Normal")
+
                 My.Settings.zcounter += 1
                 Dim ConnectionLocal As MySqlConnection = LocalhostConn()
                 'Fill dgv inv
@@ -3218,6 +3264,7 @@ Public Class Reports
             ToDate = Format(DateTimePickerZXreadingTo.Value, "yyyy-MM-dd")
 
             XREADORZREAD = "Z-READ"
+            AuditTrail.LogToAuditTral("System", "Reports/Others: Accessed Z-READ REPRINT, " & ClientCrewID, "Normal")
 
             If FromDate = ToDate Then
                 Dim ConnectionLocal As MySqlConnection = LocalhostConn()
@@ -3248,9 +3295,11 @@ Public Class Reports
         End Try
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles ButtonEJournal.Click
         Try
             GenerateEJournalV2()
+            AuditTrail.LogToAuditTral("System", "Reports/Others: Accessed E-JOURNAL, " & ClientCrewID, "Normal")
+
         Catch ex As Exception
             SendErrorReport(ex.ToString)
         End Try
@@ -3303,10 +3352,20 @@ Public Class Reports
             Next
 
             Dim CompletePath As String = CompleteDirectoryPath & "\ejournal" & FullDateFormatForSaving() & ".txt"
+
+            AuditTrail.LogToAuditTral("Report", "Reports/Others: E-Journal Generated, " & CompleteDirectoryPath, "Normal")
+
             File.WriteAllLines(CompletePath, TxtFileLine, Encoding.UTF8)
         Catch ex As Exception
             SendErrorReport(ex.ToString)
         End Try
     End Sub
 
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles ButtonAuditTrail.Click
+        MDIFORM.newMDIchildReports.Enabled = False
+        MDIFORM.Enabled = False
+        AuditTrail.LogToAuditTral("System", "Reports: Accessed AUDIT TRAIL, " & ClientCrewID, "Normal")
+
+        AuditTrail.Show()
+    End Sub
 End Class

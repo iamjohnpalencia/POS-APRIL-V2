@@ -227,6 +227,12 @@
     <Compile Include="SUBFORMS\AdvancedCustomReport.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SUBFORMS\AuditTrailFilter.Designer.vb">
+      <DependentUpon>AuditTrailFilter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SUBFORMS\AuditTrailFilter.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SUBFORMS\BegBalance.Designer.vb">
       <DependentUpon>BegBalance.vb</DependentUpon>
     </Compile>
@@ -498,6 +504,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SUBFORMS\AdvancedCustomReport.resx">
       <DependentUpon>AdvancedCustomReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SUBFORMS\AuditTrailFilter.resx">
+      <DependentUpon>AuditTrailFilter.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SUBFORMS\BegBalance.resx">
       <DependentUpon>BegBalance.vb</DependentUpon>

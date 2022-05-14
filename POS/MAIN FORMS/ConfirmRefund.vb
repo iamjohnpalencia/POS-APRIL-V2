@@ -16,9 +16,7 @@ Public Class ConfirmRefund
 
         Try
             If CheckColumnIfExist("user_code", "loc_users WHERE user_code = '" & Trim(TextBox1.Text) & "' AND user_level IN ('Manager', 'Admin', 'Head Crew')") Then
-
                 Button3.PerformClick()
-
             Else
                 MessageBox.Show("User code does not exist", "NOTICE", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
@@ -85,7 +83,7 @@ Public Class ConfirmRefund
             Da.Fill(Dt)
 
             Dim TotalLines As Integer = 0
-            Dim BodyLine As Integer = 530
+            Dim BodyLine As Integer = 560
             Dim CountHeaderLine As Integer = count("id", "loc_receipt WHERE type = 'Header' AND status = 1")
             Dim ProductLine As Integer = 0
             Dim CountFooterLine As Integer = count("id", "loc_receipt WHERE type = 'Footer' AND status = 1")
@@ -117,7 +115,7 @@ Public Class ConfirmRefund
                 Next
                 ReprintReturnsForm = 1
             End If
-
+            AuditTrail.LogToAuditTral("Transaction", "POS/Transaction Refund: " & TRANSACTIONNUMBER, "Normal")
             Dim UserCodeID = returnselect("user_id", "loc_users WHERE user_code = '" & Trim(TextBox1.Text) & "'")
             SettingsForm.INSERTRETURNS(TRANSACTIONNUMBER)
             GLOBAL_SYSTEM_LOGS("REFUND", "Crew: " & ClientCrewID & ", TRN. ID: " & TRANSACTIONNUMBER & ", Code: " & UserCodeID & ", Total: " & REFUNDTOTAL)

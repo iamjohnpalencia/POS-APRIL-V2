@@ -48,6 +48,7 @@ Public Class Loading
                 Thread.Sleep(50)
                 If i = 0 Then
                     Label1.Text = "Initializing component..."
+
                 End If
                 If i = 5 Then
                     Label1.Text = "Checking local connection..."
@@ -64,6 +65,7 @@ Public Class Loading
                 Thread.Sleep(50)
                 If i = 10 Then
                     If ValidLocalConnection Then
+
                         Label1.Text = "Getting information..."
                         IfConnectionIsConfigured = True
                         ValidDatabaseLocalConnection = True
@@ -211,6 +213,12 @@ Public Class Loading
                 End If
                 If i = 90 Then
                     Label1.Text = "Loading..."
+                    thread = New Thread(Sub() AuditTrail.LogToAuditTral("Start/Close", "Opening/Closing of Application details", "Normal"))
+                    thread.Start()
+                    threadList.Add(thread)
+                    For Each t In threadList
+                        t.Join()
+                    Next
                 End If
             Next
             For Each t In threadList
@@ -221,6 +229,8 @@ Public Class Loading
             Next
 
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Loading: Update not successful, " & ex.ToString, "Critical")
+
             MsgBox(ex.ToString)
             SendErrorReport(ex.ToString)
         End Try
@@ -340,6 +350,7 @@ Public Class Loading
     Private Sub LoadMasterList()
         Try
             If LocalConnectionIsOnOrValid = True Then
+
                 sql = "SELECT * FROM admin_masterlist WHERE masterlist_id = 1"
                 Dim cmd As MySqlCommand = New MySqlCommand(sql, LocalhostConn)
                 Dim da As MySqlDataAdapter = New MySqlDataAdapter(cmd)
@@ -379,6 +390,7 @@ Public Class Loading
                                 ProgressBar1.Maximum = 0
                                 Dim TotalRows = UPDATE_CATEGORY_DATATABLE.Rows.Count + UPDATE_PRODUCTS_DATATABLE.Rows.Count + UPDATE_FORMULA_DATATABLE.Rows.Count + UPDATE_INVENTORY_DATATABLE.Rows.Count + UPDATE_PRICE_CHANGE_DATATABLE.Rows.Count + UPDATE_COUPON_APPROVAL_DATATABLE.Rows.Count + UPDATE_CUSTOM_PROD_APP_DATATABLE.Rows.Count + UPDATE_PARTNERS_DATATABLE.Rows.Count + UPDATE_COUPONS_DATATABLE.Rows.Count
                                 ProgressBar1.Maximum = TotalRows
+                                AuditTrail.LogToAuditTral("System", "Loading: Update Detected, ", "Normal")
                                 BackgroundWorkerInstallUpdates.WorkerReportsProgress = True
                                 BackgroundWorkerInstallUpdates.WorkerSupportsCancellation = True
                                 BackgroundWorkerInstallUpdates.RunWorkerAsync()
@@ -724,6 +736,8 @@ Public Class Loading
     End Sub
 
     Private Sub BackgroundWorkerInstallUpdates_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorkerInstallUpdates.RunWorkerCompleted
+        AuditTrail.LogToAuditTral("System", "Loading: Update successful, ", "Normal")
+
         If S_Layout = "" Then
             ChooseLayout.Show()
             Close()

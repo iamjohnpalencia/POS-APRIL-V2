@@ -623,6 +623,7 @@ Public Class AdvancedCustomReport
                         gfx.DrawString("Date Generated: " & FullDate24HR(), font, XBrushes.Black, 50, 203 + RowCount)
                     End If
                 Next
+                AuditTrail.LogToAuditTral("Report", "Reports/Advanced Custom Report: Generated Report, " & ClientCrewID, "Normal")
 
                 Dim filename = My.Computer.FileSystem.SpecialDirectories.Desktop & "\Advanced-Custom-Report-" & FullDateFormatForSaving() & ".pdf"
                 document.Save(filename)

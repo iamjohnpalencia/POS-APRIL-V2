@@ -117,6 +117,7 @@ Public Class StockAdjustment
                         Else
                             where = "server_inventory_id = " & ID
                         End If
+                        AuditTrail.LogToAuditTral("Transaction", "Menu/Inventory/Stock Adjustment: New Stock " & SystemLogDesc, "Normal")
 
                         GLOBAL_FUNCTION_UPDATE(table, fields, where)
                     ElseIf ComboBoxAction.Text = "TRANSFER" Then
@@ -136,6 +137,7 @@ Public Class StockAdjustment
                         Else
                             where = "server_inventory_id = " & ID
                         End If
+                        AuditTrail.LogToAuditTral("Transaction", "Menu/Inventory/Stock Adjustment: Stock Transfer " & SystemLogDesc, "Normal")
 
                         GLOBAL_FUNCTION_UPDATE(table, fields, where)
                     ElseIf ComboBoxAction.Text = "DEDUCT" Then
@@ -155,6 +157,8 @@ Public Class StockAdjustment
                         Else
                             where = "server_inventory_id = " & ID
                         End If
+                        AuditTrail.LogToAuditTral("Transaction", "Menu/Inventory/Stock Adjustment: Stock Remove " & SystemLogDesc, "Normal")
+
                         GLOBAL_FUNCTION_UPDATE(table, fields, where)
                     End If
                     TextBoxIPQuantity.Clear()

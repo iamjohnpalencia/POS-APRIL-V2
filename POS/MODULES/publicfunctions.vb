@@ -1130,21 +1130,39 @@ Module publicfunctions
                             GetTransactionType = reader("transaction_type")
                             Dim NETSALES = reader("grosssales")
                             RECEIPTLINECOUNT += 20
-                            RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Sub Total: ", NETSALES & "-", FontDefault, 11, 0)
-                            FillEJournalContent("Sub Total:      " & "-" & NETSALES)
+                            RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Total Sales: ", NETSALES & "-", FontDefault, 11, 0)
+                            FillEJournalContent("Total Sales:      " & "-" & NETSALES)
+                            RECEIPTLINECOUNT += 10
+                            RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Amount Net of VAT: ", reader("vatablesales") & "-", FontDefault, 11, 0)
+                            FillEJournalContent("Amount Net of VAT:     -" & reader("vatablesales"))
                             RECEIPTLINECOUNT += 10
 
                             If reader("discount_type") <> "N/A" Then
-                                RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Discount: " & reader("discount_type"), reader("totaldiscount") & "-", FontDefault, 11, 0)
-                                FillEJournalContent("Discount: " & reader("discount_type") & "     -" & reader("totaldiscount"))
+                                RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Less Discount: " & reader("discount_type"), reader("totaldiscount") & "-", FontDefault, 11, 0)
+                                FillEJournalContent("Less Discount: " & reader("discount_type") & "     -" & reader("totaldiscount"))
                             Else
                                 RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Discount: ", reader("totaldiscount") & "-", FontDefault, 11, 0)
-                                FillEJournalContent("Discount:      -" & reader("totaldiscount"))
+                                FillEJournalContent("Less Discount:      -" & reader("totaldiscount"))
+                            End If
+                            RECEIPTLINECOUNT += 10
+
+                            If reader("zeroratedsales") > 0 Then
+                                RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Less Vat: ", "0.00" & "-", FontDefault, 11, 0)
+                                FillEJournalContent("Less VAT:     -0.00")
+                            Else
+                                RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Less Vat: ", reader("lessvat") & "-", FontDefault, 11, 0)
+                                FillEJournalContent("Less VAT:     -" & reader("lessvat"))
                             End If
 
                             RECEIPTLINECOUNT += 10
-                            RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Order Total: ", reader("amountdue") & "-", FontDefaultBold, 11, 0)
-                            FillEJournalContent("Order Total:      -" & reader("amountdue"))
+                            RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Amount Due: ", reader("amountdue") & "-", FontDefaultBold, 11, 0)
+                            FillEJournalContent("Amount Due:      -" & reader("amountdue"))
+                            RECEIPTLINECOUNT += 10
+                            RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Add VAT: ", "0.00-", FontDefaultBold, 11, 0)
+                            FillEJournalContent("Add VAT:      -0.00")
+                            RECEIPTLINECOUNT += 10
+                            RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Total Amount Due: ", reader("amountdue") & "-", FontDefaultBold, 11, 0)
+                            FillEJournalContent("Total Amount Due:      -" & reader("amountdue"))
                             RECEIPTLINECOUNT += 10
                             RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Credit Sale: ", "0.00-", FontDefault, 11, 0)
                             FillEJournalContent("Credit Sale:      -0.00")
@@ -1167,11 +1185,11 @@ Module publicfunctions
                             RECEIPTLINECOUNT += 10
 
                             If reader("zeroratedsales") > 0 Then
-                                RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Less Vat: ", "0.00" & "-", FontDefault, 11, 0)
-                                FillEJournalContent("Less Vat:     -0.00")
+                                RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Less VAT: ", "0.00" & "-", FontDefault, 11, 0)
+                                FillEJournalContent("Less VAT:     -0.00")
                             Else
-                                RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Less Vat: ", reader("lessvat") & "-", FontDefault, 11, 0)
-                                FillEJournalContent("Less Vat:     -" & reader("lessvat"))
+                                RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Less VAT: ", reader("lessvat") & "-", FontDefault, 11, 0)
+                                FillEJournalContent("Less VAT:     -" & reader("lessvat"))
                             End If
 
                             RECEIPTLINECOUNT += 10
@@ -1279,16 +1297,34 @@ Module publicfunctions
                                 GetTransactionType = reader("transaction_type")
                                 Dim NETSALES = reader("grosssales")
                                 RECEIPTLINECOUNT += 20
-                                RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Sub Total: ", NETSALES, FontDefault, 11, 0)
-                                FillEJournalContent("Sub Total:      " & NETSALES)
+                                RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Total Sales: ", NETSALES, FontDefault, 11, 0)
+                                FillEJournalContent("Total Sales:      " & NETSALES)
+                                RECEIPTLINECOUNT += 10
+                                RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Amount Net of VAT: ", reader("vatablesales"), FontDefault, 11, 0)
+                                FillEJournalContent("Amount Net of VAT:      " & reader("vatablesales"))
                                 RECEIPTLINECOUNT += 10
 
-                                RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Discount: ", reader("totaldiscount"), FontDefault, 11, 0)
-                                FillEJournalContent("Discount: " & reader("totaldiscount"))
+                                RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Less Discount: ", reader("totaldiscount"), FontDefault, 11, 0)
+                                FillEJournalContent("Less Discount: " & reader("totaldiscount"))
+                                RECEIPTLINECOUNT += 10
+
+                                If reader("zeroratedsales") > 0 Then
+                                    RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Less VAT: ", "0.00", FontDefault, 11, 0)
+                                    FillEJournalContent("Less VAT: :      0.00")
+                                Else
+                                    RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Less VAT: ", reader("lessvat"), FontDefault, 11, 0)
+                                    FillEJournalContent("Less VAT: :      " & reader("lessvat"))
+                                End If
 
                                 RECEIPTLINECOUNT += 10
-                                RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Order Total: ", reader("amountdue"), FontDefaultBold, 11, 0)
-                                FillEJournalContent("Order Total:      " & reader("amountdue"))
+                                RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Amount Due: ", reader("amountdue"), FontDefaultBold, 11, 0)
+                                FillEJournalContent("Amount Due:      " & reader("amountdue"))
+                                RECEIPTLINECOUNT += 10
+                                RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Add VAT: ", "0.00", FontDefaultBold, 11, 0)
+                                FillEJournalContent("Amount Due:      0.00")
+                                RECEIPTLINECOUNT += 10
+                                RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Total Amount Due: ", reader("amountdue"), FontDefaultBold, 11, 0)
+                                FillEJournalContent("Total Amount Due:      " & reader("amountdue"))
                                 RECEIPTLINECOUNT += 10
                                 RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Credit Sale: ", reader("amounttendered"), FontDefault, 11, 0)
                                 FillEJournalContent("Credit Sale:      " & reader("amounttendered"))
@@ -1317,6 +1353,7 @@ Module publicfunctions
                                     RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Less Vat: ", reader("lessvat"), FontDefault, 11, 0)
                                     FillEJournalContent("Less Vat: :      " & reader("lessvat"))
                                 End If
+
                                 RECEIPTLINECOUNT += 10
                                 RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Zero Rated Sales: ", reader("zeroratedsales"), FontDefault, 11, 0)
                                 FillEJournalContent("Zero Rated Sales:     " & reader("zeroratedsales"))
@@ -1412,33 +1449,49 @@ Module publicfunctions
                         End If
                         Dim Qty = SumOfColumnsToInt(.DataGridViewOrders, 1)
                         RECEIPTLINECOUNT += 20
-                        RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Sub Total: ", .TextBoxSUBTOTAL.Text, FontDefault, 11, 0)
-                        FillEJournalContent("Sub Total:      " & .TextBoxSUBTOTAL.Text)
+                        RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Total Sales: ", .TextBoxSUBTOTAL.Text, FontDefault, 11, 0)
+                        FillEJournalContent("Total Sales:      " & .TextBoxSUBTOTAL.Text)
                         RECEIPTLINECOUNT += 10
-
+                        RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Amount Net of VAT: ", NUMBERFORMAT(VATABLESALES), FontDefault, 11, 0)
+                        FillEJournalContent("Amount Net of VAT:      " & NUMBERFORMAT(VATABLESALES))
+                        RECEIPTLINECOUNT += 10
 
                         If SeniorGCDiscount Then
-                            RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Discount: " & PromoName, .TextBoxDISCOUNT.Text, FontDefault, 11, 0)
-                            FillEJournalContent("Discount:      " & PromoName & "     " & .TextBoxDISCOUNT.Text)
+                            RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Less Discount: " & PromoName, .TextBoxDISCOUNT.Text, FontDefault, 11, 0)
+                            FillEJournalContent("Less Discount:      " & PromoName & "     " & .TextBoxDISCOUNT.Text)
                         End If
                         If DiscAppleid Then
-                            RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Discount: ", .TextBoxDISCOUNT.Text, FontDefault, 11, 0)
-                            FillEJournalContent("Discount:      " & .TextBoxDISCOUNT.Text)
+                            RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Less Discount: ", .TextBoxDISCOUNT.Text, FontDefault, 11, 0)
+                            FillEJournalContent("Less Discount:      " & .TextBoxDISCOUNT.Text)
                         Else
                             If PromoApplied Then
-                                RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Discount: " & PromoName, .TextBoxDISCOUNT.Text, FontDefault, 11, 0)
-                                FillEJournalContent("Discount:      " & PromoName & "     " & .TextBoxDISCOUNT.Text)
+                                RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Less Discount: " & PromoName, .TextBoxDISCOUNT.Text, FontDefault, 11, 0)
+                                FillEJournalContent("Less Discount:      " & PromoName & "     " & .TextBoxDISCOUNT.Text)
                             Else
-                                RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Discount: ", .TextBoxDISCOUNT.Text, FontDefault, 11, 0)
-                                FillEJournalContent("Discount:      " & .TextBoxDISCOUNT.Text)
+                                RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Less Discount: ", .TextBoxDISCOUNT.Text, FontDefault, 11, 0)
+                                FillEJournalContent("Less Discount:      " & .TextBoxDISCOUNT.Text)
                             End If
-
+                        End If
+                        RECEIPTLINECOUNT += 10
+                        If S_ZeroRated = "0" Then
+                            RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Less VAT: ", NUMBERFORMAT(LESSVAT), FontDefault, 11, 0)
+                            FillEJournalContent("Less VAT:      " & NUMBERFORMAT(LESSVAT))
+                        Else
+                            RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Less VAT: ", "0.00", FontDefault, 11, 0)
+                            FillEJournalContent("Less VAT:      0.00")
                         End If
 
                         RECEIPTLINECOUNT += 10
-                        RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Order Total: ", NUMBERFORMAT(NETSALES), FontDefaultBold, 11, 0)
-                        FillEJournalContent("Order Total:      " & NUMBERFORMAT(NETSALES))
+                        RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Amount Due: ", NUMBERFORMAT(NETSALES), FontDefault, 11, 0)
+                        FillEJournalContent("Amount Due:      " & NUMBERFORMAT(NETSALES))
                         RECEIPTLINECOUNT += 10
+                        RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Add VAT: ", "0.00", FontDefault, 11, 0)
+                        FillEJournalContent("Add VAT:      0.00")
+                        RECEIPTLINECOUNT += 10
+                        RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Total Amount Due: ", NUMBERFORMAT(NETSALES), FontDefaultBold, 11, 0)
+                        FillEJournalContent("Total Amount Due:      " & NUMBERFORMAT(NETSALES))
+                        RECEIPTLINECOUNT += 10
+
                         RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Credit Sale: ", NUMBERFORMAT(Double.Parse(TEXTBOXMONEYVALUE)), FontDefault, 11, 0)
                         FillEJournalContent("Credit Sale:      " & NUMBERFORMAT(NETSALES))
                         RECEIPTLINECOUNT += 10
@@ -1466,6 +1519,7 @@ Module publicfunctions
                             RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Less Vat: ", "0.00", FontDefault, 11, 0)
                             FillEJournalContent("Less Vat:      0.00")
                         End If
+
                         RECEIPTLINECOUNT += 10
                         RightToLeftDisplay(sender, e, RECEIPTLINECOUNT, "Zero Rated Sales: ", NUMBERFORMAT(ZERORATEDSALES), FontDefault, 11, 0)
                         FillEJournalContent("Zero Rated Sales:      " & NUMBERFORMAT(ZERORATEDSALES))
@@ -1485,12 +1539,6 @@ Module publicfunctions
                         SimpleTextDisplay(sender, e, "Transaction Type: " & Trim(TRANSACTIONMODE), FontDefault, 0, RECEIPTLINECOUNT)
                         FillEJournalContent("Transaction Type.: " & Trim(TRANSACTIONMODE))
                         RECEIPTLINECOUNT += 10
-
-                        'If .Reprint = 1 Then
-                        '    SimpleTextDisplay(sender, e, "Customers Copy", FontDefault, 0, RECEIPTLINECOUNT)
-                        'Else
-                        '    SimpleTextDisplay(sender, e, "Reprint Copy", FontDefault, 0, RECEIPTLINECOUNT)
-                        'End If
 
                         RECEIPTLINECOUNT += 15
                         CenterTextDisplay(sender, e, OfficialInvoiceRefundBody, FontDefaultItalic, RECEIPTLINECOUNT + 20)

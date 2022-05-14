@@ -108,6 +108,7 @@ Public Class POS
             End With
         Catch ex As Exception
             SendErrorReport(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "POS/Load Category: " & ex.ToString, "Critical")
         End Try
     End Sub
     Dim Partners As String = ""
@@ -444,6 +445,7 @@ Public Class POS
             End With
         Catch ex As Exception
             SendErrorReport(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "POS/MIX : " & ex.ToString, "Critical")
         End Try
     End Sub
     Dim secondary_value As Double = 0
@@ -1225,6 +1227,7 @@ Public Class POS
             Next
         Catch ex As Exception
             SendErrorReport(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "POS/Customer Info : " & ex.ToString, "Critical")
         End Try
     End Sub
     Private Sub InsertFMStock()
@@ -1247,6 +1250,7 @@ Public Class POS
             Next
         Catch ex As Exception
             SendErrorReport(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "POS/Fm Stock : " & ex.ToString, "Critical")
         End Try
     End Sub
     Private Sub InsertDailyTransaction()
@@ -1292,6 +1296,7 @@ Public Class POS
             GLOBAL_INSERT_FUNCTION(table, fields, value)
         Catch ex As Exception
             SendErrorReport(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "POS/Daily Transaction : " & ex.ToString, "Critical")
         End Try
     End Sub
     Private Sub InsertDailyDetails()
@@ -1343,6 +1348,7 @@ Public Class POS
 
         Catch ex As Exception
             SendErrorReport(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "POS/Daily Transaction Details: " & ex.ToString, "Critical")
         End Try
     End Sub
     Private Sub InsertModeofTransaction()
@@ -1363,6 +1369,7 @@ Public Class POS
             ButtonClickCount = 0
         Catch ex As Exception
             SendErrorReport(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "POS/Mode of Transaction: " & ex.ToString, "Critical")
         End Try
     End Sub
     Private Sub InsertDiscountData()
@@ -1443,6 +1450,7 @@ Public Class POS
             End With
         Catch ex As Exception
             SendErrorReport(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "POS/Discount Data: " & ex.ToString, "Critical")
         End Try
     End Sub
     Private Sub InsertCouponData()
@@ -1475,6 +1483,7 @@ Public Class POS
 
         Catch ex As Exception
             SendErrorReport(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "POS/Coupon Data: " & ex.ToString, "Critical")
         End Try
     End Sub
     Private Sub InsertSeniorDetails()
@@ -1495,6 +1504,7 @@ Public Class POS
             GLOBAL_INSERT_FUNCTION(table, fields, value)
         Catch ex As Exception
             SendErrorReport(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "POS/Senior Data: " & ex.ToString, "Critical")
         End Try
     End Sub
 #End Region
@@ -1636,6 +1646,7 @@ Public Class POS
 
         Catch ex As Exception
             SendErrorReport(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "POS/BG Worker 1: " & ex.ToString, "Critical")
         End Try
     End Sub
     Private Sub BackgroundWorker1_ProgressChanged(sender As Object, e As System.ComponentModel.ProgressChangedEventArgs) Handles BackgroundWorkerTransactions.ProgressChanged
@@ -1668,9 +1679,9 @@ Public Class POS
                 Dim TotalLines As Integer = 0
                 Dim BodyLine As Integer = 560
                 If DiscAppleid Then
-                    BodyLine = 560
+                    BodyLine = 600
                 Else
-                    BodyLine = 510
+                    BodyLine = 540
                 End If
                 Dim CountHeaderLine As Integer = count("id", "loc_receipt WHERE type = 'Header' AND status = 1")
                 Dim ProductLine As Integer = 0
@@ -1800,6 +1811,7 @@ Public Class POS
             End With
         Catch ex As Exception
             SendErrorReport(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "POS/Fill Inventory: " & ex.ToString, "Critical")
         End Try
     End Sub
     Private Sub PrintDocument1_PrintPage(sender As Object, e As PrintPageEventArgs) Handles printdoc.PrintPage
@@ -1827,16 +1839,16 @@ Public Class POS
 
             ReceiptFooterOne(sender, e, False, True)
 
+            AuditTrail.LogToAuditTral("Transaction", "POS/Transaction Details: " & SiNumberToString, "Normal")
+
+
         Catch ex As Exception
             SendErrorReport(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "POS/Print Receipt: " & ex.ToString, "Critical")
         End Try
     End Sub
 #End Region
 #Region "Updates"
-#Region "Categories Update"
-
-
-#End Region
 #Region "Products Update"
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -2006,6 +2018,7 @@ Public Class POS
             If UPDATE_WORKER_CANCEL Then
                 MsgBox("Cannot fetch data. Please check your internet connection")
             End If
+            AuditTrail.LogToAuditTral("System", "POS: Update not successful, " & ex.ToString, "Critical")
             SendErrorReport(ex.ToString)
             Exit Sub
         End Try
@@ -2020,6 +2033,7 @@ Public Class POS
                     If UPDATE_CATEGORY_DATATABLE.Rows.Count > 0 Or UPDATE_PRODUCTS_DATATABLE.Rows.Count > 0 Or UPDATE_FORMULA_DATATABLE.Rows.Count > 0 Or UPDATE_INVENTORY_DATATABLE.Rows.Count > 0 Or UPDATE_PRICE_CHANGE_DATATABLE.Rows.Count > 0 Or UPDATE_COUPON_APPROVAL_DATATABLE.Rows.Count > 0 Or UPDATE_CUSTOM_PROD_APP_DATATABLE.Rows.Count Or UPDATE_COUPONS_DATATABLE.Rows.Count > 0 Or UPDATE_PARTNERS_DATATABLE.Rows.Count > 0 Then
                         CheckingForUpdates.CheckingUpdatesUPDATED = True
                         CheckingForUpdates.Close()
+                        AuditTrail.LogToAuditTral("System", "POS: Update Detected, ", "Normal")
 
                         Dim updatemessage = MessageBox.Show("New Updates are available. Would you like to update now ?", "New Updates", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
 
@@ -2076,6 +2090,7 @@ Public Class POS
             End If
         Catch ex As Exception
             SendErrorReport(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "POS/BG Worker Update Complete: " & ex.ToString, "Critical")
         End Try
     End Sub
     Private Sub BackgroundWorkerInstallUpdates_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorkerInstallUpdates.DoWork
@@ -2125,6 +2140,7 @@ Public Class POS
                 MsgBox("Cannot fetch data. Please check your internet connection")
             End If
             SendErrorReport(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "POS/BG Worker Install Update: " & ex.ToString, "Critical")
             Exit Sub
         End Try
     End Sub
@@ -2133,6 +2149,7 @@ Public Class POS
         Try
             CheckingForUpdates.CheckingUpdatesUPDATED = True
             CheckingForUpdates.Close()
+            AuditTrail.LogToAuditTral("System", "POS: Update successful, ", "Normal")
 
             If UPDATE_PRICE_CHANGE_BOOL = True Then
                 MsgBox("Product price changes approved")
@@ -2154,6 +2171,7 @@ Public Class POS
             BackgroundWorkerContent.RunWorkerAsync()
         Catch ex As Exception
             MsgBox(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "POS/BG Worker Install Update Complete: " & ex.ToString, "Critical")
         End Try
     End Sub
 
@@ -2211,6 +2229,7 @@ Public Class POS
             Next
         Catch ex As Exception
             SendErrorReport(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "POS/BG Worker Check Internet: " & ex.ToString, "Critical")
         End Try
     End Sub
 
@@ -2244,6 +2263,7 @@ Public Class POS
             End If
         Catch ex As Exception
             SendErrorReport(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "POS/BG Worker Check Internet Complete: " & ex.ToString, "Critical")
         End Try
     End Sub
     Dim ThreadAutoSyncData As Thread
@@ -2274,6 +2294,7 @@ Public Class POS
             Next
         Catch ex As Exception
             SendErrorReport(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "POS/BG Worker Sync Data: " & ex.ToString, "Critical")
         End Try
     End Sub
 
@@ -2306,12 +2327,12 @@ Public Class POS
             Next
         Catch ex As Exception
             SendErrorReport(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "POS/BG Worker Content: " & ex.ToString, "Critical")
         End Try
     End Sub
 
     Private Sub BackgroundWorkerContent_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorkerContent.RunWorkerCompleted
         Try
-
             For i As Integer = 0 To SELECT_DISCTINCT_PARTNERS_DT.Rows.Count - 1 Step +1
                 ComboBoxPartners.Items.Add(SELECT_DISCTINCT_PARTNERS_DT(i)(0))
             Next
@@ -2319,13 +2340,10 @@ Public Class POS
                 ComboBoxPartners.SelectedIndex = 0
             End If
             LoadCategory()
-
-
-
             DisplayInbox()
-
         Catch ex As Exception
             SendErrorReport(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "POS/BG Worker Content Complete: " & ex.ToString, "Critical")
         End Try
     End Sub
 
