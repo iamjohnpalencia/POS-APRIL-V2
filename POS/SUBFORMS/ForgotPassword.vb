@@ -24,6 +24,8 @@ Public Class ForgotPassword
                 ResetPassword.CrewUserId = row("user_id")
             Next
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Forget Password: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         If dt.Rows.Count > 0 Then

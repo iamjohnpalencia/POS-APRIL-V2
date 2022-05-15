@@ -69,6 +69,8 @@ Public Class Inventory
                 .Columns(7).HeaderCell.Value = "Date Created"
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Inventory: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -83,6 +85,7 @@ Public Class Inventory
                 .Columns(6).HeaderCell.Value = "Date Modified"
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Inventory: " & ex.ToString, "Critical")
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -97,6 +100,8 @@ Public Class Inventory
                 .Columns(6).HeaderCell.Value = "Date Modified"
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Inventory: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -129,6 +134,8 @@ Public Class Inventory
                 .Columns(1).HeaderCell.Value = "Total Stock Quantity"
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Inventory: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -161,6 +168,8 @@ Public Class Inventory
                 .Columns(3).Width = 200
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Inventory: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -196,6 +205,8 @@ Public Class Inventory
                 Next
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Inventory: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -233,6 +244,8 @@ Public Class Inventory
                 GLOBAL_SYSTEM_LOGS(SystemLogType, SystemLogDesc)
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Inventory: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -255,6 +268,8 @@ Public Class Inventory
 
             ' printdoc.Print()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Inventory: " & ex.ToString, "Critical")
+
             MessageBox.Show("An error occurred while trying to load the " &
                 "document for Print Preview. Make sure you currently have " &
                 "access to a printer. A printer must be localconnected and " &
@@ -282,7 +297,7 @@ Public Class Inventory
             End If
             RECEIPTLINECOUNT = 0
             ReceiptHeaderOne(sender, e, False, "", False, False)
-              RECEIPTLINECOUNT += 10
+            RECEIPTLINECOUNT += 10
             SimpleTextDisplay(sender, e, "INGREDIENTS", FontDefaultBold, 0, RECEIPTLINECOUNT)
             SimpleTextDisplay(sender, e, "PRIMARY", FontDefaultBold, 70 + BodySpacing, RECEIPTLINECOUNT)
             SimpleTextDisplay(sender, e, "SERVINGS", FontDefaultBold, 140 + BodySpacing, RECEIPTLINECOUNT)
@@ -301,6 +316,8 @@ Public Class Inventory
             RECEIPTLINECOUNT += 30
             CenterTextDisplay(sender, e, Format(Now(), "yyyy-MM-dd HH:mm:ss"), FontDefault, RECEIPTLINECOUNT)
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Inventory: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -369,7 +386,7 @@ Public Class Inventory
                 .Columns(5).HeaderText = "Zreading Date"
             End With
         Catch ex As Exception
-            MsgBox(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "Inventory: " & ex.ToString, "Critical")
             SendErrorReport(ex.ToString)
         End Try
     End Sub

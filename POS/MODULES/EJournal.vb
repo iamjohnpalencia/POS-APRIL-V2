@@ -28,6 +28,8 @@ Module EJournal
             EJOURLAN_Content = ""
             EJOURNAL_TotalLines = 0
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "E-Journal Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -50,6 +52,8 @@ Module EJournal
             DataAdapter = New MySqlDataAdapter(Command)
             DataAdapter.Fill(HeaderStrings)
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "E-Journal Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Return HeaderStrings
@@ -67,6 +71,8 @@ Module EJournal
             DataAdapter = New MySqlDataAdapter(Command)
             DataAdapter.Fill(FooterString)
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "E-Journal Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Return FooterString
@@ -84,6 +90,8 @@ Module EJournal
             DataAdapter = New MySqlDataAdapter(Command)
             DataAdapter.Fill(ValidityString)
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "E-Journal Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Return ValidityString
@@ -104,6 +112,8 @@ Module EJournal
             End If
 
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "E-Journal Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Return RefundFooterString

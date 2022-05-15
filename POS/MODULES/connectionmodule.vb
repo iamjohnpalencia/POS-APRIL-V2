@@ -127,6 +127,8 @@ Module connectionModule
                 End If
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Connection Module: " & ex.ToString, "Critical")
+
             MsgBox(ex.ToString)
         End Try
         Return ConnStr2

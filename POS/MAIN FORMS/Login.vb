@@ -78,6 +78,8 @@ Public Class Login
                 End If
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Login: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub

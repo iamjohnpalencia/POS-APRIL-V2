@@ -113,6 +113,8 @@ Public Class TakeOut
             End If
             Log()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Take Out: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub

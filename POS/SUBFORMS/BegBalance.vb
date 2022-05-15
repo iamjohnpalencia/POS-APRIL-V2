@@ -110,6 +110,8 @@ Public Class BegBalance
                 Close()
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "ADV Custom Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub

@@ -41,6 +41,8 @@ Public Class HoldOrder
                         GLOBAL_INSERT_FUNCTION(table:=table, fields:=fields, values:=value)
                     Next
                 Catch ex As Exception
+                    AuditTrail.LogToAuditTral("System", "Hold Order: " & ex.ToString, "Critical")
+
                     SendErrorReport(ex.ToString)
                 End Try
                 Try
@@ -61,6 +63,8 @@ Public Class HoldOrder
                         GLOBAL_INSERT_FUNCTION(table:=table, fields:=fields, values:=value)
                     Next
                 Catch ex As Exception
+                    AuditTrail.LogToAuditTral("System", "Hold Order: " & ex.ToString, "Critical")
+
                     SendErrorReport(ex.ToString)
                 End Try
                 Try

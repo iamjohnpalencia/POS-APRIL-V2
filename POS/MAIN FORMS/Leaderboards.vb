@@ -24,6 +24,8 @@ Public Class Leaderboards
             LoadTransfers()
             LoadLogs()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Inventory: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -53,6 +55,8 @@ Public Class Leaderboards
                 .Columns(4).Width = 100
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Inventory: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -82,6 +86,8 @@ Public Class Leaderboards
                 .Columns(4).HeaderCell.Value = "Status"
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Inventory: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -101,6 +107,8 @@ Public Class Leaderboards
                 DataGridViewRecentExpenses.Rows.Add(row("expense_number"), row("datetime"), row("crew_id"), row("total_amount"), rowActive)
             Next
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Inventory: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -112,6 +120,8 @@ Public Class Leaderboards
                 DatagridviewTransfers.Rows.Add(row("loc_systemlog_id"), row("log_description"), row("crew_id"), row("log_date_time"))
             Next
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Inventory: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -137,6 +147,8 @@ Public Class Leaderboards
                 DatagridviewLogs.Rows.Add(row("log_type"), row("log_description"), row("crew_id"), row("log_date_time"))
             Next
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Inventory: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -151,6 +163,8 @@ Public Class Leaderboards
                 Chart2.Series("Series1").Points.AddXY(dr.GetString("product_name"), dr.GetInt64("totalprice"))
             End While
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Inventory: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -187,6 +201,8 @@ Public Class Leaderboards
             End With
             LocalhostConn.close()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Inventory: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -194,6 +210,8 @@ Public Class Leaderboards
         Try
             LoadChart("SELECT DATE_FORMAT(zreading, '%Y-%m-%d') as zreading, SUM(total) FROM loc_daily_transaction_details WHERE DATE(CURRENT_DATE) - INTERVAL 7 DAY GROUP BY zreading DESC LIMIT 7", 0)
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Inventory: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -201,6 +219,8 @@ Public Class Leaderboards
         Try
             LoadChart("SELECT MONTHNAME(zreading) , SUM(total) FROM `loc_daily_transaction_details` WHERE DATE(zreading) - INTERVAL 1 MONTH GROUP BY MONTHNAME(zreading)", 2)
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Inventory: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -208,6 +228,8 @@ Public Class Leaderboards
         Try
             LoadChart("SELECT YEAR(zreading), SUM(total) FROM `loc_daily_transaction_details` WHERE YEAR(zreading) GROUP BY YEAR(zreading)", 1)
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Inventory: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -215,6 +237,8 @@ Public Class Leaderboards
         Try
             LoadChart("SELECT YEAR(zreading), SUM(total) FROM `loc_daily_transaction_details` WHERE YEAR(zreading) - INTERVAL 1 YEAR GROUP BY YEAR(zreading)", 1)
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Inventory: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub

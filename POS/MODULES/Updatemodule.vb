@@ -10,6 +10,8 @@ Module Updatemodule
             Dim cmd As MySqlCommand = New MySqlCommand(sql, LocalhostConn)
             cmd.ExecuteNonQuery()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Update Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         Finally
             LocalhostConn.Close()
@@ -76,6 +78,8 @@ Module Updatemodule
             Next
             UpdateInventoryCon.Close()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Update Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub

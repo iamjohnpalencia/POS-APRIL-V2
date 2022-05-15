@@ -373,6 +373,8 @@ Module publicfunctions
             EndingBalance = 0
             BegBalanceBool = False
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Public Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -658,6 +660,8 @@ Module publicfunctions
             End If
 
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Public Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -983,6 +987,8 @@ Module publicfunctions
             RECEIPTLINECOUNT += 30
 
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Public Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -1029,6 +1035,8 @@ Module publicfunctions
                 FillEJournalContent(S_Zreading & " " & Format(Now(), "HH:mm:ss"))
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Public Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -1552,6 +1560,8 @@ Module publicfunctions
                 End If
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Public Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         ', DISCAPPLIED As Boolean
@@ -1728,6 +1738,8 @@ Module publicfunctions
             RECEIPTLINECOUNT += 30
 
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Public Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -1813,6 +1825,8 @@ Module publicfunctions
             FillEJournalContent("   ---***---***---***---***---  ")
             FillEJournalContent("")
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Public Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -1898,6 +1912,8 @@ Module publicfunctions
                 CenterTextDisplay(sender, e, "VALID FOR CLAIM OF INPUT TAX", font1, a + 370)
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Public Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -2019,6 +2035,8 @@ Module publicfunctions
             SELECT_DISCTINCT_PARTNERS_DT = New DataTable
             Da.Fill(SELECT_DISCTINCT_PARTNERS_DT)
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Public Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub

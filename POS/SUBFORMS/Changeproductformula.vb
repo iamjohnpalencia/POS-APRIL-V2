@@ -17,6 +17,8 @@ Public Class Changeproductformula
             DataGridViewProducts.Columns(0).Visible = False
             DataGridViewProducts.Columns(2).Visible = False
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Change Formula: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -63,6 +65,8 @@ Public Class Changeproductformula
                 LocalhostConn.Close()
             Next
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Change Formula: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -103,6 +107,8 @@ Public Class Changeproductformula
                 LoadProducts()
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Change Formula: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub

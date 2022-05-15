@@ -63,6 +63,8 @@ Public Class NewStockEntry
             MDIFORM.LabelTotalCrititems.Text = count(table:="loc_pos_inventory WHERE stock_status = 1 AND critical_limit >= stock_primary AND store_id ='" & ClientStoreID & "' AND guid = '" & ClientGuid & "'", tocount:="inventory_id")
 
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "New Stock Entry: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -79,6 +81,8 @@ Public Class NewStockEntry
             TextBox1.Text = dt(0)(0)
             SelectFormulaEntry(dt(0)(0), dt(0)(3))
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "New Stock Entry: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -107,6 +111,8 @@ Public Class NewStockEntry
             Next
             LocalhostConn.Close()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "New Stock Entry: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -121,6 +127,8 @@ Public Class NewStockEntry
                 ComboBoxDESC.Items.Add(dt(i)(0))
             Next
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "New Stock Entry: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub

@@ -77,6 +77,8 @@ Public Class Registration
                 End If
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Registration: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub

@@ -38,6 +38,8 @@ Public Class AdvancedCustomReport
 
             ToolStripComboBoxTransactionType.SelectedIndex = 0
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "ADV Custom Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -56,6 +58,8 @@ Public Class AdvancedCustomReport
             Next
             ToolStripComboBoxDiscType.SelectedIndex = 0
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "ADV Custom Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -209,9 +213,6 @@ Public Class AdvancedCustomReport
                     End If
                 End If
             End If
-
-
-            Console.WriteLine(sql)
             If sql <> "" Then
                 cmd = New MySqlCommand(sql, ConnectionLocal)
                 da = New MySqlDataAdapter(cmd)
@@ -227,9 +228,9 @@ Public Class AdvancedCustomReport
 
                     Dim DiscVal As String = ""
                     If row("totaldiscount").ToString = "" Then
-                        dISCvAL = "0"
+                        DiscVal = "0"
                     Else
-                        dISCvAL = row("totaldiscount")
+                        DiscVal = row("totaldiscount")
                     End If
 
                     DataGridViewCustomReport.Rows.Add(row("transaction_number"), row("grosssales"), row("vatablesales"), row("vatpercentage"), row("lessvat"), row("vatexemptsales"), GCVal, DiscVal, row("transaction_type"), row("amountdue"))
@@ -449,6 +450,8 @@ Public Class AdvancedCustomReport
                 End Using
             Next
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "ADV Custom Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -461,6 +464,8 @@ Public Class AdvancedCustomReport
             ToolStripStatusLabel2.Text = DataGridViewCustomReport.Rows.Count
             TotalDiscountCustomReports = sum("totaldiscount", "loc_daily_transaction WHERE zreading >= '" & Format(DateTimePicker17.Value, "yyyy-MM-dd") & "' AND  zreading <= '" & Format(DateTimePicker18.Value, "yyyy-MM-dd") & "'")
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "ADV Custom Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -644,7 +649,7 @@ Public Class AdvancedCustomReport
 
             End If
         Catch ex As Exception
-            MsgBox(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "ADV Custom Reports: " & ex.ToString, "Critical")
             'SendErrorReport(ex.ToString)
         End Try
     End Sub

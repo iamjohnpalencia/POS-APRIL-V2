@@ -49,7 +49,7 @@ Public Class AuditTrail
             Next
 
         Catch ex As Exception
-            MsgBox(ex.ToString)
+            LogToAuditTral("System", "Audit: " & ex.ToString, "Critical")
         End Try
     End Sub
 
@@ -71,7 +71,7 @@ Public Class AuditTrail
                 Command.ExecuteNonQuery()
             End If
         Catch ex As Exception
-            MsgBox(ex.ToString)
+            LogToAuditTral("System", "Audit: " & ex.ToString, "Critical")
         End Try
     End Sub
 
@@ -199,7 +199,7 @@ Public Class AuditTrail
                 Process.Start(filename)
             End If
         Catch ex As Exception
-            MsgBox(ex.ToString)
+            LogToAuditTral("System", "Audit: " & ex.ToString, "Critical")
         End Try
 
     End Sub
@@ -248,7 +248,7 @@ Public Class AuditTrail
             LogToAuditTral("Report", "Audit Trail: Txt file generated, " & CompleteDirectoryPath, "Normal")
             File.WriteAllLines(CompletePath, TxtFileLine, Encoding.UTF8)
         Catch ex As Exception
-            SendErrorReport(ex.ToString)
+            LogToAuditTral("System", "Audit: " & ex.ToString, "Critical")
         End Try
     End Sub
 End Class

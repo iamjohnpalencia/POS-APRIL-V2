@@ -64,6 +64,8 @@ Public Class SeniorDetails
                 MessageBox.Show("Fill up all the blanks.", "NOTICE", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Senior Details: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -169,6 +171,8 @@ Public Class SeniorDetails
             TransactionVariables.DiscountName = COUPONNAME
             DiscountType = COUPONNAME
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Senior Details: " & ex.ToString, "Critical")
+
             MsgBox(ex.ToString)
         End Try
     End Sub

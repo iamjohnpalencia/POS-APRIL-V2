@@ -45,6 +45,8 @@ Public Class ManageProducts
                 .Columns(10).HeaderText = "Date Modified"
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Manage Products: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -69,6 +71,8 @@ Public Class ManageProducts
                 MsgBox("Select product first")
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Manage Products: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -89,6 +93,8 @@ Public Class ManageProducts
                 .Columns(10).HeaderText = "Date Modified"
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Manage Products: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -109,6 +115,8 @@ Public Class ManageProducts
                 .Columns(10).HeaderText = "Date Modified"
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Manage Products: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -124,6 +132,8 @@ Public Class ManageProducts
             Next
             ConnLocal.Close()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Manage Products: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -139,6 +149,8 @@ Public Class ManageProducts
             Next
             ConnLocal.Close()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Manage Products: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -215,7 +227,7 @@ Public Class ManageProducts
                 End If
             End With
         Catch ex As Exception
-            MsgBox(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "Manage Products: " & ex.ToString, "Critical")
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -242,6 +254,8 @@ Public Class ManageProducts
                 End If
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Manage Products: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -300,6 +314,8 @@ Public Class ManageProducts
                 End If
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Manage Products: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -333,6 +349,8 @@ Public Class ManageProducts
                 End If
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Manage Products: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub

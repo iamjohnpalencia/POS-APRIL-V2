@@ -37,6 +37,8 @@ Public Class AddUser
                 End If
             Next
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Add User: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -49,6 +51,8 @@ Public Class AddUser
                 updateuser()
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Add User: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -123,6 +127,8 @@ Public Class AddUser
                 End If
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Add User: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -172,6 +178,8 @@ Public Class AddUser
                 Close()
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Add User: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
 
@@ -200,6 +208,8 @@ Public Class AddUser
             End If
 
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Add User: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub

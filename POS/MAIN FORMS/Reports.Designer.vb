@@ -2157,6 +2157,7 @@ Partial Class Reports
         'ButtonUserLogs
         '
         Me.ButtonUserLogs.BackColor = System.Drawing.SystemColors.Window
+        Me.ButtonUserLogs.Enabled = False
         Me.ButtonUserLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonUserLogs.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonUserLogs.Location = New System.Drawing.Point(361, 117)
@@ -2181,6 +2182,7 @@ Partial Class Reports
         'ButtonSystemLogs
         '
         Me.ButtonSystemLogs.BackColor = System.Drawing.SystemColors.Window
+        Me.ButtonSystemLogs.Enabled = False
         Me.ButtonSystemLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonSystemLogs.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonSystemLogs.Location = New System.Drawing.Point(190, 117)

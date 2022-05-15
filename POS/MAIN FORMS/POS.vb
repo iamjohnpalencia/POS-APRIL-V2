@@ -68,6 +68,8 @@ Public Class POS
 
 
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "POS: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -133,7 +135,7 @@ Public Class POS
                 listviewproductsshow(name, ComboBoxPartners.Text)
             End If
         Catch ex As Exception
-            MsgBox(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "POS: " & ex.ToString, "Critical")
         End Try
     End Sub
 
@@ -257,6 +259,8 @@ Public Class POS
                 TextBoxQTY.Text = 0
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "POS: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -318,6 +322,8 @@ Public Class POS
                 MsgBox("Maximum sales capacity already reached. Please contact your administrator for immediate solution.")
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "POS: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -698,6 +704,8 @@ Public Class POS
                 t.Join()
             Next
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "POS: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -760,6 +768,8 @@ Public Class POS
 
 
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "POS: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -773,6 +783,8 @@ Public Class POS
                 ButtonApplyDiscounts.Enabled = False
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "POS: " & ex.ToString, "Critical")
+
             MsgBox(ex.ToString)
         End Try
     End Sub
@@ -803,6 +815,8 @@ Public Class POS
 
 
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "POS: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -1191,6 +1205,8 @@ Public Class POS
             CouponCode.ButtonSubmit.Enabled = True
             Enabled = False
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "POS: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub

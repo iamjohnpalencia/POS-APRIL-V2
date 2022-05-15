@@ -13,6 +13,8 @@ Module DeleteModule
             End With
             cmd.ExecuteNonQuery()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Delete Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub

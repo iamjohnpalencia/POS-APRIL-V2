@@ -210,6 +210,8 @@ Module ZXReading
             Command.ExecuteNonQuery()
 
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "ZX-READING Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -233,6 +235,8 @@ Module ZXReading
             Dim Da As MySqlDataAdapter = New MySqlDataAdapter(Command)
             Da.Fill(CashBreakDownDatatable)
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "ZX-READING Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Return CashBreakDownDatatable

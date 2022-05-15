@@ -44,6 +44,8 @@ Public Class UserSettings
 
 
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "User Settings: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -68,6 +70,8 @@ Public Class UserSettings
 
                 End If
             Catch ex As Exception
+                AuditTrail.LogToAuditTral("System", "User Settings: " & ex.ToString, "Critical")
+
                 SendErrorReport(ex.ToString)
             End Try
         End If

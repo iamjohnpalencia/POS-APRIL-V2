@@ -198,6 +198,8 @@ Public Class AddEditProducts
                 Close()
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Add Edit Products: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -256,6 +258,8 @@ Public Class AddEditProducts
                 t.Join()
             Next
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Add Edit Products: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub

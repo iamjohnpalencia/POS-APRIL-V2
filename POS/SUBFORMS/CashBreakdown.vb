@@ -29,6 +29,8 @@
             End If
 
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Cash Breakdown: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub

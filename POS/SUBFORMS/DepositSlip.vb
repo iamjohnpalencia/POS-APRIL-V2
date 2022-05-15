@@ -32,6 +32,8 @@ Public Class DepositSlip
                 ClearTextBox(Me)
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Deposit Slip: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -52,6 +54,8 @@ Public Class DepositSlip
             Next
             ComboBoxBankName.SelectedIndex = 0
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Deposit Slip: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub

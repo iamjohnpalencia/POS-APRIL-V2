@@ -4,6 +4,8 @@ Public Class SelectNewFormula
         Try
             GLOBAL_SELECT_ALL_FUNCTION("loc_product_formula", "`product_ingredients`", DataGridView1)
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Select Formula: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub

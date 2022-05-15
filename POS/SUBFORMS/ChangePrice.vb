@@ -34,6 +34,8 @@ Public Class ChangePrice
                 MsgBox("Fill all the fields")
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Price Change: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -55,7 +57,10 @@ Public Class ChangePrice
             result = cmd.ExecuteNonQuery()
             AuditTrail.LogToAuditTral("User", "Price Change : " & returnselect("product_name", "loc_admin_products") & ", Changed By: " & ClientCrewID, "Normal")
 
+
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Price Change: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         If result = 1 Then

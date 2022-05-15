@@ -119,6 +119,8 @@ Module NEWPOSMODULE
             End Using
             ConnectionLocal.Close()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "New POS Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -154,6 +156,8 @@ Module NEWPOSMODULE
             Compute()
             ConnectionLocal.Close()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "New POS Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -515,6 +519,8 @@ Module NEWPOSMODULE
                 End If
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "New POS Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -981,6 +987,8 @@ Module NEWPOSMODULE
                 End If
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "New POS Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub

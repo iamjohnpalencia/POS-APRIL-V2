@@ -43,6 +43,8 @@
                 End If
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Discounts: " & ex.ToString, "Critical")
+
             MsgBox(ex.ToString)
         End Try
     End Sub
@@ -76,6 +78,8 @@
                 End If
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Discounts: " & ex.ToString, "Critical")
+
             MsgBox(ex.ToString)
         End Try
     End Sub
@@ -98,6 +102,8 @@
                 Next
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Discounts: " & ex.ToString, "Critical")
+
             MsgBox(ex.ToString)
         End Try
         If DataGridView2.Rows.Count > 0 Then

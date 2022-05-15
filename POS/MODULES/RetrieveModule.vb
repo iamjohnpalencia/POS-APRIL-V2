@@ -162,6 +162,8 @@ Module RetrieveModule
                 End Try
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -198,6 +200,8 @@ Module RetrieveModule
             End Using
             ConnectionLocal.Close()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Return ReturnUsername
@@ -217,6 +221,8 @@ Module RetrieveModule
             End Using
             ConnectionLocal.Close()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Return ReturnUsername
@@ -240,6 +246,8 @@ Module RetrieveModule
                 End Using
             Loop Until (ReturnThis = False)
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Return Uniqid
@@ -304,6 +312,8 @@ Module RetrieveModule
                 Connectionlocal.Close()
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -336,6 +346,8 @@ Module RetrieveModule
                 Registration.TextBoxMAXID.Text = Format(Now, "yydd-MMHH-mmssyy")
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             MsgBox(ex.ToString)
         End Try
     End Sub
@@ -349,6 +361,8 @@ Module RetrieveModule
             cmd.Dispose()
             ConnectionLocal.Close()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Return formulaid
@@ -366,6 +380,8 @@ Module RetrieveModule
             da.Dispose()
             cmd.Dispose()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Return FullName
@@ -401,6 +417,8 @@ Module RetrieveModule
                 MyCloudConnection.Close()
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Return valuetoreturn
@@ -428,6 +446,8 @@ Module RetrieveModule
                 .SelectionMode = DataGridViewSelectionMode.FullRowSelect
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         Finally
             ConnectionLocal.Close()
@@ -459,6 +479,8 @@ Module RetrieveModule
                 .rowtemplate.height = 30
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         Finally
             ConnectionLocal.Close()
@@ -492,6 +514,8 @@ Module RetrieveModule
             ConnectionLocal.Close()
             cmd.Dispose()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -520,6 +544,8 @@ Module RetrieveModule
             ConnectionLocal.Close()
             cmd.Dispose()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -546,6 +572,8 @@ Module RetrieveModule
             ConnectionLocal.Close()
             ConnectionCloud.Close()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         Finally
             da.Dispose()
@@ -565,6 +593,8 @@ Module RetrieveModule
             cmd.Dispose()
             ConnectionLocal.Close()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Return returnval
@@ -585,6 +615,8 @@ Module RetrieveModule
             cmd.Dispose()
             ConnectionLocal.Close()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Return returncount
@@ -608,6 +640,8 @@ Module RetrieveModule
             cmd.Dispose()
             ConnectionLocal.Close()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Return returnsum
@@ -630,6 +664,8 @@ Module RetrieveModule
             cmd.Dispose()
             ConnectionLocal.Close()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
 
@@ -652,6 +688,8 @@ Module RetrieveModule
             cmd.Dispose()
             ConnectionLocal.Close()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Return RetunSel
@@ -673,6 +711,8 @@ Module RetrieveModule
             cmd.Dispose()
             ConnectionLocal.Close()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Return RetunSel
@@ -695,6 +735,8 @@ Module RetrieveModule
             ServerConn.Close()
 
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Return ReturnMun
@@ -714,6 +756,8 @@ Module RetrieveModule
             End Using
             ServerConn.Close()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Return ReturnProv
@@ -730,7 +774,7 @@ Module RetrieveModule
                         '    S_OLDGRANDTOTAL = sum("amountdue", "loc_daily_transaction WHERE zreading <> '" & S_Zreading & "'")
                         'Else
                         Dim CurrentZreadTotal As Double = sum("amountdue", "loc_daily_transaction WHERE zreading = '" & S_Zreading & "'")
-                            S_OLDGRANDTOTAL = reader("S_Old_Grand_Total") + CurrentZreadTotal
+                        S_OLDGRANDTOTAL = reader("S_Old_Grand_Total") + CurrentZreadTotal
                         'End If
                     End While
                 End If
@@ -742,6 +786,8 @@ Module RetrieveModule
             Cmd.Dispose()
             'Console.WriteLine(S_OLDGRANDTOTAL)
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -760,6 +806,8 @@ Module RetrieveModule
             ConnectionLocal.Close()
             Cmd.Dispose()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -778,6 +826,8 @@ Module RetrieveModule
                 End If
             End Using
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Return RetTransactionNum
@@ -797,6 +847,8 @@ Module RetrieveModule
                 End If
             End Using
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Return RetSINo
@@ -816,6 +868,8 @@ Module RetrieveModule
                 End If
             End Using
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Return ReturnMe
@@ -842,6 +896,8 @@ Module RetrieveModule
                                              End Sub)
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -985,8 +1041,10 @@ Module RetrieveModule
                 ConnectionServer.Close()
             End If
         Catch ex As Exception
-            Exit Sub
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
             SendErrorReport(ex.ToString)
+            Exit Sub
+
         End Try
     End Sub
     Private Sub GetAllProducts(FromPosUpdate As Integer)
@@ -1082,6 +1140,8 @@ Module RetrieveModule
                 dtlocal.Rows.Add(Cat)
             Next
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Return dtlocal
@@ -1216,6 +1276,8 @@ Module RetrieveModule
                 End If
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             Exit Sub
             SendErrorReport(ex.ToString)
             'If table doesnt have data
@@ -1240,6 +1302,8 @@ Module RetrieveModule
                 dtlocal.Rows.Add(Cat)
             Next
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Return dtlocal
@@ -1406,6 +1470,8 @@ Module RetrieveModule
                 End If
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             Exit Sub
             SendErrorReport(ex.ToString)
         End Try
@@ -1430,6 +1496,8 @@ Module RetrieveModule
             Next
             LocalhostConn.Close()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Return dtlocal
@@ -1594,6 +1662,8 @@ Module RetrieveModule
                 End If
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             Exit Sub
             SendErrorReport(ex.ToString)
         End Try
@@ -1617,6 +1687,8 @@ Module RetrieveModule
                 dtlocal.Rows.Add(Coup)
             Next
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Return dtlocal
@@ -1781,6 +1853,8 @@ Module RetrieveModule
                 End If
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             Exit Sub
             SendErrorReport(ex.ToString)
         End Try
@@ -1804,6 +1878,8 @@ Module RetrieveModule
                 dtlocal.Rows.Add(Cat)
             Next
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Return dtlocal
@@ -1938,6 +2014,8 @@ Module RetrieveModule
                 End If
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             Exit Sub
             SendErrorReport(ex.ToString)
         End Try
@@ -2066,6 +2144,8 @@ Module RetrieveModule
                 Next
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
+
             Exit Sub
             SendErrorReport(ex.ToString)
         End Try
@@ -2111,7 +2191,7 @@ Module RetrieveModule
             End If
 
         Catch ex As Exception
-            MsgBox(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "Retrieve Module: " & ex.ToString, "Critical")
             SendErrorReport(ex.ToString)
         End Try
     End Sub

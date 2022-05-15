@@ -43,6 +43,8 @@ Public Class ResetPassword
                 MessageBox.Show("Password did not match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Password Reset: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -52,6 +54,8 @@ Public Class ResetPassword
             Dim cmd As MySqlCommand = New MySqlCommand(sql, LocalhostConn)
             Dim result = cmd.ExecuteNonQuery
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Password Reset: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub

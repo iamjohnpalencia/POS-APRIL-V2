@@ -108,6 +108,8 @@ Public Class Auth
             End With
         Catch ex As Exception
             SendErrorReport(ex.ToString)
+            AuditTrail.LogToAuditTral("System", "Auth: " & ex.ToString, "Critical")
+
         End Try
     End Sub
     Private Sub BackgroundWorker1_ProgressChanged(sender As Object, e As System.ComponentModel.ProgressChangedEventArgs) Handles BackgroundWorker1.ProgressChanged

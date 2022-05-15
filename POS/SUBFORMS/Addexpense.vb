@@ -40,7 +40,10 @@ Public Class Addexpense
             Else
                 MsgBox("Create report first")
             End If
+
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Add Expense: " & ex.ToString, "Critical")
+
             MsgBox(ex.ToString)
         End Try
     End Sub
@@ -69,6 +72,8 @@ Public Class Addexpense
                 Next
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Add Expense: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         Try
@@ -92,6 +97,8 @@ Public Class Addexpense
                 GLOBAL_INSERT_FUNCTION(table:=table, fields:=fields, values:=value)
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Add Expense: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
         DataGridViewExpenses.Rows.Clear()
@@ -121,6 +128,8 @@ Public Class Addexpense
             SystemLogDesc = "Submitted by :" & returnfullname(ClientCrewID) & " : " & ClientRole
             GLOBAL_SYSTEM_LOGS(SystemLogType, SystemLogDesc)
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Add Expense: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub

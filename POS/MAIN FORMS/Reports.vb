@@ -163,6 +163,8 @@ Public Class Reports
 
 
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -186,6 +188,8 @@ Public Class Reports
             LabelCrewSalesQty.Text = SumOfColumnsToDecimal(DataGridViewCrewSales, 2)
             LabelCrewSalesTotal.Text = SumOfColumnsToDecimal(DataGridViewCrewSales, 1)
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -199,6 +203,8 @@ Public Class Reports
                 End While
             End Using
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -218,6 +224,8 @@ Public Class Reports
             Next
             ToolStripComboBoxDiscType.SelectedIndex = 0
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -247,6 +255,8 @@ Public Class Reports
             ComboBoxTransactionType.SelectedIndex = 0
             ToolStripComboBoxTransactionType.SelectedIndex = 0
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -285,6 +295,8 @@ Public Class Reports
                 DataGridViewSysLog.Rows.Add(row("log_type"), row("log_description"), row("log_date_time"))
             Next
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -313,6 +325,8 @@ Public Class Reports
                 .Columns(4).Visible = False
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -333,6 +347,8 @@ Public Class Reports
                 .Columns(2).HeaderText = "Date and Time"
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -405,6 +421,8 @@ Public Class Reports
                 Label9.Text = SumOfColumnsToInt(DataGridViewSales, 2)
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -431,6 +449,8 @@ Public Class Reports
                 .Columns(6).HeaderCell.Value = "Date"
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -468,6 +488,8 @@ Public Class Reports
             Next
 
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         Finally
             da.Dispose()
@@ -497,6 +519,8 @@ Public Class Reports
                 .Columns(9).Visible = False
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -517,6 +541,8 @@ Public Class Reports
             End Using
             ToolStripComboBoxProducts.SelectedIndex = 0
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -529,6 +555,8 @@ Public Class Reports
             ToolStripStatusLabel2.Text = DataGridViewCustomReport.Rows.Count
             TotalDiscountCustomReports = sum("coupon_total", "loc_coupon_data WHERE zreading >= '" & Format(DateTimePicker17.Value, "yyyy-MM-dd") & "' AND  zreading <= '" & Format(DateTimePicker18.Value, "yyyy-MM-dd") & "' AND status = 1")
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -970,6 +998,8 @@ Public Class Reports
                 End Using
             Next
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -1163,6 +1193,8 @@ Public Class Reports
 
             CenterTextDisplay(sender, e, "From: " & Format(DateTimePicker1.Value, "yyyy-MM-dd") & " - To: " & Format(DateTimePicker2.Value, "yyyy-MM-dd"), font, 180)
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -1399,6 +1431,8 @@ Public Class Reports
                 Con.Close()
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -1472,6 +1506,8 @@ Public Class Reports
                 Next
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -1510,6 +1546,8 @@ Public Class Reports
             AuditTrail.LogToAuditTral("Report", "Reports/Sales Report: Generated Report, " & ClientCrewID, "Normal")
 
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -1957,6 +1995,8 @@ Public Class Reports
 
 
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -2029,6 +2069,8 @@ Public Class Reports
                 End If
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -2076,6 +2118,8 @@ Public Class Reports
                 MsgBox("Select returned product first.")
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -2252,6 +2296,8 @@ Public Class Reports
 
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -2495,22 +2541,12 @@ Public Class Reports
             AuditTrail.LogToAuditTral("System", "Reports: Generated " & XREADORZREAD & ", " & ClientCrewID, "Normal")
 
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
-
-    Private Sub ToolStripButtonXReading_Click(sender As Object, e As EventArgs)
-
-    End Sub
-    Private Sub ToolStripButtonZReading_Click(sender As Object, e As EventArgs)
-
-    End Sub
     Dim ReprintZRead As Boolean = False
-    Private Sub ToolStripButtonZReadingReprint_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-
     Private Sub FillZreadData(ZReadDateFilter, Fromdate, ToDate)
         Try
             ResetZReadingVariables()
@@ -2923,6 +2959,8 @@ Public Class Reports
             ZXPointFiveTotal = ZXPointFiveQty * 0.05
             ZXdate = S_Zreading
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         Finally
             If XREADORZREAD = "Z-READ" Then
@@ -3143,9 +3181,9 @@ Public Class Reports
                     End While
                 End If
             End Using
-
-
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -3247,6 +3285,8 @@ Public Class Reports
 
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         Finally
             SystemLogDesc = "Z-Reading : " & FullDate24HR() & " Crew : " & returnfullname(ClientCrewID)
@@ -3287,6 +3327,8 @@ Public Class Reports
 
             InsertIntoEJournal()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         Finally
             SystemLogDesc = "Z-Reading Reprint : " & FullDate24HR() & " Crew : " & returnfullname(ClientCrewID)
@@ -3357,6 +3399,8 @@ Public Class Reports
 
             File.WriteAllLines(CompletePath, TxtFileLine, Encoding.UTF8)
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Reports: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -3365,7 +3409,6 @@ Public Class Reports
         MDIFORM.newMDIchildReports.Enabled = False
         MDIFORM.Enabled = False
         AuditTrail.LogToAuditTral("System", "Reports: Accessed AUDIT TRAIL, " & ClientCrewID, "Normal")
-
         AuditTrail.Show()
     End Sub
 End Class

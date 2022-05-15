@@ -128,6 +128,8 @@ Module Addmodule
             Connectionlocal.Close()
 
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Add Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -189,6 +191,8 @@ Module Addmodule
             Connectionlocal.Close()
 
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Add Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -256,6 +260,8 @@ Module Addmodule
 
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Add Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -295,6 +301,8 @@ Module Addmodule
                 Next
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Add Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -337,6 +345,8 @@ Module Addmodule
                 Next
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Add Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -396,6 +406,8 @@ Module Addmodule
                 Next
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Add Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -447,6 +459,8 @@ Module Addmodule
                 Next
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Add Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -499,6 +513,8 @@ Module Addmodule
                 Next
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Add Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -556,6 +572,8 @@ Module Addmodule
                 Next
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Add Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -579,6 +597,8 @@ Module Addmodule
             ConnectionLocal.Close()
             ConnectionServer.Close()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Add Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -599,6 +619,8 @@ Module Addmodule
             ConnectionLocal.Close()
             ConnectionServer.Close()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Add Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -628,6 +650,8 @@ Module Addmodule
             ConnectionLocal.Close()
             ConnectionServer.Close()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Add Module: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub

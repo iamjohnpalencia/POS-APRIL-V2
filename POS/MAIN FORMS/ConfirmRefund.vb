@@ -32,6 +32,7 @@ Public Class ConfirmRefund
             Dim Command As MySqlCommand = New MySqlCommand(Query, ConnectionLocal)
             Command.ExecuteNonQuery()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Confirm Refund: " & ex.ToString, "Critical")
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -63,6 +64,7 @@ Public Class ConfirmRefund
             ReceiptFooterOne(sender, e, True, False)
 
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Confirm Refund: " & ex.ToString, "Critical")
             SendErrorReport(ex.ToString)
         End Try
 
@@ -124,6 +126,8 @@ Public Class ConfirmRefund
 
             Close()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Confirm Refund: " & ex.ToString, "Critical")
+
             MsgBox(ex.ToString)
         End Try
 
@@ -188,6 +192,8 @@ Public Class ConfirmRefund
                 FillDatatable()
             Next
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Confirm Refund: " & ex.ToString, "Critical")
+
             MsgBox(ex.ToString)
         End Try
     End Sub
@@ -225,6 +231,8 @@ Public Class ConfirmRefund
                 Next
             End With
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Confirm Refund: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub

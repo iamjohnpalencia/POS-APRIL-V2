@@ -15,6 +15,8 @@
                 SettingsForm.LoadPartners()
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Add Bank: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub

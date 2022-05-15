@@ -27,6 +27,8 @@ Public Class Message
                 End If
             End If
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Message: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
@@ -95,6 +97,8 @@ Public Class Message
             Dim cmd As MySqlCommand = New MySqlCommand(sql, LocalhostConn)
             cmd.ExecuteNonQuery()
         Catch ex As Exception
+            AuditTrail.LogToAuditTral("System", "Message: " & ex.ToString, "Critical")
+
             SendErrorReport(ex.ToString)
         End Try
     End Sub
