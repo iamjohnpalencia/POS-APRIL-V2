@@ -1,4 +1,6 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.IO
+Imports System.Text
+Imports MySql.Data.MySqlClient
 Imports PdfSharp.Drawing
 Imports PdfSharp.Pdf
 
@@ -200,5 +202,53 @@ Public Class AuditTrail
             MsgBox(ex.ToString)
         End Try
 
+    End Sub
+
+    Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
+        GenerateEJournalV2()
+    End Sub
+    Private Sub GenerateEJournalV2()
+        Try
+
+            Dim CompleteDirectoryPath As String = ""
+
+            If Not Directory.Exists(My.Computer.FileSystem.SpecialDirectories.Desktop & "\AuditTrail") Then
+                Directory.CreateDirectory(My.Computer.FileSystem.SpecialDirectories.Desktop & "\AuditTrail")
+                CompleteDirectoryPath = My.Computer.FileSystem.SpecialDirectories.Desktop & "\AuditTrail\" & FullDateFormatForSaving()
+                Directory.CreateDirectory(CompleteDirectoryPath)
+            Else
+                CompleteDirectoryPath = My.Computer.FileSystem.SpecialDirectories.Desktop & "\AuditTrail\" & FullDateFormatForSaving()
+                Directory.CreateDirectory(CompleteDirectoryPath)
+            End If
+
+            Dim GrandTotalLines As Integer = DataGridViewAuditTrail.Rows.Count + 1
+            Dim TotalDgvRows As Integer = GrandTotalLines
+            Dim TxtFileLine(TotalDgvRows) As String
+            Dim a As Integer = 0
+
+            TxtFileLine(a) = "ID      Time      Group      Severity     Username     Description     Info"
+            a += 1
+
+            With DataGridViewAuditTrail
+                For i As Integer = 0 To .Rows.Count - 1 Step +1
+                    Dim ID As String = .Rows(i).Cells(0).Value
+                    Dim Time As String = .Rows(i).Cells(1).Value
+                    Dim Group As String = .Rows(i).Cells(2).Value
+                    Dim Severity As String = .Rows(i).Cells(3).Value
+                    Dim UserName As String = .Rows(i).Cells(4).Value
+                    Dim Description As String = .Rows(i).Cells(5).Value
+                    Dim Info As String = .Rows(i).Cells(6).Value
+                    TxtFileLine(a) = ID & "   " & Time & "   " & Group & "   " & Severity & "   " & UserName & "   " & Description & ";   " & Info
+                    a += 1
+            Next
+            End With
+
+
+            Dim CompletePath As String = CompleteDirectoryPath & "\AuditTrail" & FullDateFormatForSaving() & ".txt"
+            LogToAuditTral("Report", "Audit Trail: Txt file generated, " & CompleteDirectoryPath, "Normal")
+            File.WriteAllLines(CompletePath, TxtFileLine, Encoding.UTF8)
+        Catch ex As Exception
+            SendErrorReport(ex.ToString)
+        End Try
     End Sub
 End Class
