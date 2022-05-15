@@ -64,6 +64,8 @@ Public Class UserSettings
                     SystemLogType = "USER DEACTIVATION"
                     SystemLogDesc = "Deactivated by :" & returnfullname(ClientCrewID) & " : " & ClientRole
                     GLOBAL_SYSTEM_LOGS(SystemLogType, SystemLogDesc)
+                    AuditTrail.LogToAuditTral("User", "Delete User: User ID " & userid & " Deleted By: " & ClientCrewID, "Normal")
+
                 End If
             Catch ex As Exception
                 SendErrorReport(ex.ToString)

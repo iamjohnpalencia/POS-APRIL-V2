@@ -24,6 +24,7 @@ Public Class ChangePrice
         Try
             If Val(TextBoxPriceTo.Text) <> 0 Then
                 If SavePriceChange() = True Then
+
                     MsgBox("Submitted")
                     Close()
                 Else
@@ -52,6 +53,8 @@ Public Class ChangePrice
             cmd.Parameters.Add("@8", MySqlDbType.Text).Value = ClientGuid
             cmd.Parameters.Add("@9", MySqlDbType.Text).Value = "Unsynced"
             result = cmd.ExecuteNonQuery()
+            AuditTrail.LogToAuditTral("User", "Price Change : " & returnselect("product_name", "loc_admin_products") & ", Changed By: " & ClientCrewID, "Normal")
+
         Catch ex As Exception
             SendErrorReport(ex.ToString)
         End Try

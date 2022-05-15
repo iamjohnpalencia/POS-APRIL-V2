@@ -143,6 +143,8 @@ Public Class POS
             MessageBox.Show("Sync is on process please wait.", "Syncing", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
             If MessageBox.Show("Are you sure you really want to Logout ?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = vbYes Then
+                AuditTrail.LogToAuditTral("User", "User Logout: " & ClientCrewID, "Normal")
+
                 Enabled = False
                 LOGOUTFROMPOS = True
                 CashBreakdown.Show()

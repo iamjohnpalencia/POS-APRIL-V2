@@ -101,6 +101,8 @@ Public Class AddUser
                                     MsgBox(ex.ToString)
                                     SendErrorReport(ex.ToString)
                                 End Try
+                                AuditTrail.LogToAuditTral("User", "New User: User name " & TextBoxUSERNAME.Text & " Created By: " & ClientCrewID, "Normal")
+
                                 ClearTextBox(Me)
                                 selectmax(whatform:=3)
                                 SystemLogType = "NEW USER"
@@ -154,6 +156,8 @@ Public Class AddUser
                     End If
                     Dim where = " uniq_id = '" & userid & "'"
                     GLOBAL_FUNCTION_UPDATE(table, fields, where)
+                    AuditTrail.LogToAuditTral("User", "User Update: User name " & TextBoxUSERNAME.Text & " Updated By: " & ClientCrewID, "Normal")
+
                 Catch ex As Exception
                     MsgBox(ex.ToString)
                     SendErrorReport(ex.ToString)

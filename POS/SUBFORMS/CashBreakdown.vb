@@ -10,6 +10,7 @@
                 " & Val(TextBox50.Text) & "," & Val(TextBox20.Text) & "," & Val(TextBox10.Text) & "," & Val(TextBox5.Text) & "," & Val(TextBox1.Text) & ",
                 " & Val(TextBoxPoint25.Text) & "," & Val(TextBoxZeroPoint5.Text) & ",'" & FullDate24HR() & "', '" & ClientCrewID & "' , '1', '" & S_Zreading & "', 'Unsynced')"
                 GLOBAL_INSERT_FUNCTION(Table, Fields, Values)
+                AuditTrail.LogToAuditTral("User", "Cash Break Down: Total " & Label23.Text & " User: " & ClientCrewID, "Normal")
                 HASUPDATE = False
                 BegBalanceBool = False
                 FormIsOpen()

@@ -12,7 +12,6 @@ Public Class DepositSlip
             ElseIf String.IsNullOrWhiteSpace(ComboBoxBankName.Text) Then
                 MsgBox("Bank name is required")
             Else
-                MsgBox((DateTimePickerDATE.Value))
                 table = "loc_deposit"
                 fields = "(`name`, `transaction_number`, `amount`, `bank`, `transaction_date`, `store_id`, `guid`, `synced`, `crew_id`, `created_at`)"
                 value = "('" & TextBoxNAME.Text & "'  
@@ -27,6 +26,8 @@ Public Class DepositSlip
                                 ,'" & FullDate24HR() & "')"
                 GLOBAL_INSERT_FUNCTION(table:=table, fields:=fields, values:=value)
                 GLOBAL_SYSTEM_LOGS("DEPOSIT", "Name: " & TextBoxNAME.Text & " Trn.Number: " & TextBoxTRANNUM.Text & " Amount: " & TextBoxAMT.Text)
+                AuditTrail.LogToAuditTral("User", "Deposit: Name; " & TextBoxNAME.Text & " Trn.Number; " & TextBoxTRANNUM.Text & " Amount; " & TextBoxAMT.Text & ", Created By: " & ClientCrewID, "Normal")
+
                 MsgBox("Thank you!")
                 ClearTextBox(Me)
             End If
