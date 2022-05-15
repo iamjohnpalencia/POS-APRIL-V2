@@ -160,7 +160,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MODULES\EJournal.vb" />
-    <Compile Include="MODULES\Module1.vb" />
     <Compile Include="MODULES\NEWPOSMODULE.vb" />
     <Compile Include="MODULES\TransactionVariables.vb" />
     <Compile Include="MODULES\ZXReading.vb" />
