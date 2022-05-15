@@ -848,6 +848,7 @@ Public Class POS
             DiscAppleid = False
             SeniorDetailsID = ""
             SeniorDetailsName = ""
+            SeniorPhoneNumber = ""
             GETNOTDISCOUNTEDAMOUNT = 0
             DiscountName = ""
             DiscountType = ""
@@ -1133,6 +1134,7 @@ Public Class POS
             PromoApplied = False
             SeniorDetailsID = ""
             SeniorDetailsName = ""
+            SeniorPhoneNumber = ""
 
             DiscountsDatatable = New DataTable
             DiscountsDatatable.Columns.Add("name")
@@ -1211,20 +1213,19 @@ Public Class POS
             Dim cmd As MySqlCommand
             Dim sql = "INSERT INTO loc_customer_info (`transaction_number`, `cust_name`, `cust_tin`,`cust_address`, `cust_business`, `crew_id`, `store_id`, `created_at`, `active`, `synced`)
                        VALUES (@1,@2,@3,@4,@5,@6,@7,@8,@9,@10)"
-            For i As Integer = 0 To DataGridViewInv.Rows.Count - 1 Step +1
-                cmd = New MySqlCommand(sql, ConnectionLocal)
-                cmd.Parameters.Add("@1", MySqlDbType.Text).Value = S_TRANSACTION_NUMBER
-                cmd.Parameters.Add("@2", MySqlDbType.Text).Value = CUST_INFO_NAME
-                cmd.Parameters.Add("@3", MySqlDbType.Text).Value = CUST_INFO_TIN
-                cmd.Parameters.Add("@4", MySqlDbType.Text).Value = CUST_INFO_ADDRESS
-                cmd.Parameters.Add("@5", MySqlDbType.Text).Value = CUST_INFO_BUSINESS
-                cmd.Parameters.Add("@6", MySqlDbType.Text).Value = ClientCrewID
-                cmd.Parameters.Add("@7", MySqlDbType.Text).Value = ClientStoreID
-                cmd.Parameters.Add("@8", MySqlDbType.Text).Value = FullDate24HR()
-                cmd.Parameters.Add("@9", MySqlDbType.Text).Value = "1"
-                cmd.Parameters.Add("@10", MySqlDbType.Text).Value = "Unsynced"
-                cmd.ExecuteNonQuery()
-            Next
+            cmd = New MySqlCommand(sql, ConnectionLocal)
+            cmd.Parameters.Add("@1", MySqlDbType.Text).Value = S_TRANSACTION_NUMBER
+            cmd.Parameters.Add("@2", MySqlDbType.Text).Value = CUST_INFO_NAME
+            cmd.Parameters.Add("@3", MySqlDbType.Text).Value = CUST_INFO_TIN
+            cmd.Parameters.Add("@4", MySqlDbType.Text).Value = CUST_INFO_ADDRESS
+            cmd.Parameters.Add("@5", MySqlDbType.Text).Value = CUST_INFO_BUSINESS
+            cmd.Parameters.Add("@6", MySqlDbType.Text).Value = ClientCrewID
+            cmd.Parameters.Add("@7", MySqlDbType.Text).Value = ClientStoreID
+            cmd.Parameters.Add("@8", MySqlDbType.Text).Value = FullDate24HR()
+            cmd.Parameters.Add("@9", MySqlDbType.Text).Value = "1"
+            cmd.Parameters.Add("@10", MySqlDbType.Text).Value = "Unsynced"
+            cmd.ExecuteNonQuery()
+
         Catch ex As Exception
             SendErrorReport(ex.ToString)
             AuditTrail.LogToAuditTral("System", "POS/Customer Info : " & ex.ToString, "Critical")
@@ -1489,7 +1490,7 @@ Public Class POS
     Private Sub InsertSeniorDetails()
         Try
             Dim table As String = "loc_senior_details"
-            Dim fields As String = "(`transaction_number`, `senior_id`, `senior_name`, `active`, `crew_id`, `store_id`, `guid`, `date_created`, `totalguest`, `totalid`, `synced`)"
+            Dim fields As String = "(`transaction_number`, `senior_id`, `senior_name`, `active`, `crew_id`, `store_id`, `guid`, `date_created`, `totalguest`, `totalid`,`phone_number`, `synced`)"
             Dim value As String = "( '" & S_TRANSACTION_NUMBER & "'
                       , '" & SeniorDetailsID & "'
                       , '" & SeniorDetailsName & "'
@@ -1500,6 +1501,7 @@ Public Class POS
                       , '" & S_Zreading & "'
                       , " & DISCGUESTCOUNT & "
                       , " & DISCIDCOUNT & "
+                      , " & SeniorPhoneNumber & "
                       , 'Unsynced')"
             GLOBAL_INSERT_FUNCTION(table, fields, value)
         Catch ex As Exception

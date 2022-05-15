@@ -47,8 +47,11 @@ Partial Class AuditTrail
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.LabelDate = New System.Windows.Forms.Label()
         Me.ToolStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         CType(Me.DataGridViewAuditTrail, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -56,7 +59,7 @@ Partial Class AuditTrail
         'ToolStrip1
         '
         Me.ToolStrip1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton3})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton3, Me.ToolStripButton1})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(1168, 25)
@@ -94,6 +97,7 @@ Partial Class AuditTrail
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.LabelDate)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 25)
         Me.Panel1.Name = "Panel1"
@@ -215,6 +219,25 @@ Partial Class AuditTrail
         Me.GroupBox1.TabIndex = 9
         Me.GroupBox1.TabStop = False
         '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(70, 22)
+        Me.ToolStripButton1.Text = "Print(PDF)"
+        '
+        'LabelDate
+        '
+        Me.LabelDate.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LabelDate.Location = New System.Drawing.Point(0, 0)
+        Me.LabelDate.Name = "LabelDate"
+        Me.LabelDate.Size = New System.Drawing.Size(1168, 20)
+        Me.LabelDate.TabIndex = 0
+        Me.LabelDate.Text = "Date From - To:"
+        Me.LabelDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'AuditTrail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -236,6 +259,7 @@ Partial Class AuditTrail
         Me.ToolStrip1.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
         CType(Me.DataGridViewAuditTrail, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -258,4 +282,6 @@ Partial Class AuditTrail
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents LabelDate As Label
 End Class

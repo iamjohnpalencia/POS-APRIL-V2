@@ -49,6 +49,11 @@ Public Class SeniorDetails
                     Else
                         SeniorDetailsName &= "-" & Trim(TextBoxSENIORNAME.Text)
                     End If
+                    If SeniorPhoneNumber = "" Then
+                        SeniorPhoneNumber = Trim(TextBoxPhoneNumber.Text)
+                    Else
+                        SeniorPhoneNumber &= "-" & Trim(TextBoxPhoneNumber.Text)
+                    End If
                     DISCGUESTCOUNT = Double.Parse(TextBoxNumberOfGuest.Text)
                     DISCIDCOUNT = Double.Parse(TextBoxNumberOfID.Text)
                     ApplyDiscount()

@@ -26,7 +26,11 @@
         CUST_INFO_NAME = Trim(TextBoxCustName.Text)
         CUST_INFO_TIN = Trim(TextBoxCustTin.Text)
         CUST_INFO_ADDRESS = Trim(TextBoxCustAddress.Text)
-        CUST_INFO_BUSINESS = Trim(TextBoxCustAddress.Text)
+        CUST_INFO_BUSINESS = Trim(TextBoxCustBusiness.Text)
         Close()
+    End Sub
+
+    Private Sub ButtonKeyboard_Click(sender As Object, e As EventArgs) Handles ButtonKeyboard.Click
+        ShowKeyboard()
     End Sub
 End Class

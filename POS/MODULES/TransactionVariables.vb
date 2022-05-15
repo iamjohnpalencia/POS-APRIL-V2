@@ -5,6 +5,7 @@
     Public DiscAppleid As Boolean = False
     Public SeniorDetailsID As String
     Public SeniorDetailsName As String
+    Public SeniorPhoneNumber As String
     Public DiscountName As String
     Public DiscountType As String = "N/A"
 
@@ -40,6 +41,7 @@
             DiscAppleid = False
             SeniorDetailsID = ""
             SeniorDetailsName = ""
+            SeniorPhoneNumber = ""
             DiscountName = ""
             DiscountType = "N/A"
 

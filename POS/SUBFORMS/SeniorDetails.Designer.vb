@@ -36,6 +36,9 @@ Partial Class SeniorDetails
         Me.TextBoxNumberOfGuest = New System.Windows.Forms.NumericUpDown()
         Me.TextBoxNumberOfID = New System.Windows.Forms.NumericUpDown()
         Me.ButtonKeyboard = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TextBoxPhoneNumber = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         CType(Me.TextBoxNumberOfGuest, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextBoxNumberOfID, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -75,7 +78,7 @@ Partial Class SeniorDetails
         Me.ButtonCANCEL.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonCANCEL.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonCANCEL.ForeColor = System.Drawing.Color.White
-        Me.ButtonCANCEL.Location = New System.Drawing.Point(262, 208)
+        Me.ButtonCANCEL.Location = New System.Drawing.Point(263, 256)
         Me.ButtonCANCEL.Name = "ButtonCANCEL"
         Me.ButtonCANCEL.Size = New System.Drawing.Size(114, 31)
         Me.ButtonCANCEL.TabIndex = 106
@@ -89,7 +92,7 @@ Partial Class SeniorDetails
         Me.ButtonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonSubmit.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonSubmit.ForeColor = System.Drawing.Color.White
-        Me.ButtonSubmit.Location = New System.Drawing.Point(15, 208)
+        Me.ButtonSubmit.Location = New System.Drawing.Point(16, 256)
         Me.ButtonSubmit.Name = "ButtonSubmit"
         Me.ButtonSubmit.Size = New System.Drawing.Size(242, 31)
         Me.ButtonSubmit.TabIndex = 103
@@ -178,12 +181,44 @@ Partial Class SeniorDetails
         Me.ButtonKeyboard.TabIndex = 262
         Me.ButtonKeyboard.UseVisualStyleBackColor = False
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(13, 209)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(97, 16)
+        Me.Label7.TabIndex = 263
+        Me.Label7.Text = "Phone Number:"
+        '
+        'TextBoxPhoneNumber
+        '
+        Me.TextBoxPhoneNumber.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBoxPhoneNumber.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxPhoneNumber.Location = New System.Drawing.Point(16, 229)
+        Me.TextBoxPhoneNumber.Name = "TextBoxPhoneNumber"
+        Me.TextBoxPhoneNumber.Size = New System.Drawing.Size(360, 16)
+        Me.TextBoxPhoneNumber.TabIndex = 264
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(13, 231)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(365, 16)
+        Me.Label8.TabIndex = 265
+        Me.Label8.Text = "___________________________________________________"
+        '
         'SeniorDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(388, 257)
+        Me.ClientSize = New System.Drawing.Size(388, 299)
+        Me.Controls.Add(Me.TextBoxPhoneNumber)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.ButtonKeyboard)
         Me.Controls.Add(Me.TextBoxNumberOfID)
         Me.Controls.Add(Me.TextBoxNumberOfGuest)
@@ -223,4 +258,7 @@ Partial Class SeniorDetails
     Friend WithEvents TextBoxNumberOfGuest As NumericUpDown
     Friend WithEvents TextBoxNumberOfID As NumericUpDown
     Friend WithEvents ButtonKeyboard As Button
+    Friend WithEvents Label7 As Label
+    Friend WithEvents TextBoxPhoneNumber As TextBox
+    Friend WithEvents Label8 As Label
 End Class

@@ -1680,16 +1680,20 @@ Module publicfunctions
                                 SimpleTextDisplay(sender, e, reader("senior_name"), FontDefault, 70, RECEIPTLINECOUNT - 68)
                                 FillEJournalContent("Customer Name: " & reader("senior_name"))
                                 RECEIPTLINECOUNT += 10
+                                SimpleTextDisplay(sender, e, "Phone:", FontDefault, 0, RECEIPTLINECOUNT - 68)
+                                SimpleTextDisplay(sender, e, reader("phone_number"), FontDefault, 60, RECEIPTLINECOUNT - 68)
+                                FillEJournalContent("Phone: " & reader("phone_number"))
+                                RECEIPTLINECOUNT += 10
                             End While
                         Else
-                            'DISCAPPLIED = False
                             SimpleTextDisplay(sender, e, "Customer ID:", FontDefault, 0, RECEIPTLINECOUNT - 68)
                             FillEJournalContent("Customer ID:")
-                            'SimpleTextDisplay(sender, e, reader("senior_id"), FontDefault, 50, RECEIPTLINECOUNT - 68)
                             RECEIPTLINECOUNT += 10
                             SimpleTextDisplay(sender, e, "Customer Name:", FontDefault, 0, RECEIPTLINECOUNT - 68)
                             FillEJournalContent("Customer Name:")
-                            'SimpleTextDisplay(sender, e, reader("senior_name"), FontDefault, 50, RECEIPTLINECOUNT - 68)
+                            RECEIPTLINECOUNT += 10
+                            SimpleTextDisplay(sender, e, "Phone:", FontDefault, 0, RECEIPTLINECOUNT - 68)
+                            FillEJournalContent("Phone:")
                             RECEIPTLINECOUNT += 10
                         End If
                     End Using
@@ -1702,11 +1706,14 @@ Module publicfunctions
                     SimpleTextDisplay(sender, e, SeniorDetailsName, FontDefault, 70, RECEIPTLINECOUNT - 68)
                     FillEJournalContent("Customer Name: " & SeniorDetailsName)
                     RECEIPTLINECOUNT += 10
+                    SimpleTextDisplay(sender, e, "Phone:", FontDefault, 0, RECEIPTLINECOUNT - 68)
+                    SimpleTextDisplay(sender, e, SeniorPhoneNumber, FontDefault, 60, RECEIPTLINECOUNT - 68)
+                    FillEJournalContent("Phone: " & SeniorPhoneNumber)
+                    RECEIPTLINECOUNT += 10
+
                 End If
 
-                SimpleTextDisplay(sender, e, "Phone:", FontDefault, 0, RECEIPTLINECOUNT - 68)
-                FillEJournalContent("Phone:")
-                RECEIPTLINECOUNT += 10
+
                 SimpleTextDisplay(sender, e, "Customer Sign:", FontDefault, 0, RECEIPTLINECOUNT - 68)
                 FillEJournalContent("Customer Sign:")
                 RECEIPTLINECOUNT -= 50
